@@ -5,9 +5,9 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - URL_APP_8001=https://chat.ajornada.top
-      - URL_APP_8002=https://palanqueia.ajornada.top
-      - URL_APP_8003=https://iata.ajornada.top
+      - URL_APP_8001=https://chat.ajornada.top/chatnormas
+      - URL_APP_8002=https://palanqueia.ajornada.top/palanqueia
+      - URL_APP_8003=https://iata.ajornada.top/iata
       - URL_APP_8004=https://mosaiko.ajornada.top
       - URL_APP_8005=https://lia.ajornada.top
       - URL_APP_8006=https://auditoria.ajornada.top
