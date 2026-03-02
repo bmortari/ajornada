@@ -218,8 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const history = JSON.parse(savedHistory);
                 if (history.length === 0) return; // Não carrega nada se o histórico salvo estiver vazio
                 history.forEach(msg => {
-                    const messageElement = this.createMessageElement('', msg.role);
-                    messageElement.querySelector('.message-content p').innerHTML = msg.content;
+                    const messageElement = this.createMessageElement(msg.content, msg.role);
                     this.elements.chatContainer.appendChild(messageElement);
                 });
             }
