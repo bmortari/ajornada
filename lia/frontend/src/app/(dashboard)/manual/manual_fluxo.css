@@ -1,0 +1,456 @@
+/**
+ * Sistema LIA - Fluxo do Processo Licitatório (React)
+ * =====================================================
+ * Todas as variáveis CSS usam o sistema do globals.css (Shadcn/Tailwind)
+ */
+
+/* Container principal do fluxo */
+.fluxo-container {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Legenda */
+.fluxo-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--muted);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+}
+
+.legenda-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.legenda-diamond {
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+/* Fluxo visual - layout vertical */
+.fluxo-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    min-width: 900px;
+    padding: 1.25rem 0;
+}
+
+/* Nó do fluxo (artefato) */
+.fluxo-node {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 12px 20px;
+    border-radius: 0.5rem;
+    border: 2px solid;
+    background: var(--card);
+    min-width: 280px;
+    max-width: 360px;
+    transition: all 0.2s ease;
+    position: relative;
+    cursor: default;
+}
+
+.fluxo-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.fluxo-node-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.fluxo-node-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0 0 2px 0;
+}
+
+.fluxo-node-info p {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Gateway (losango de decisão) */
+.fluxo-gateway {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.gateway-diamond {
+    width: 48px;
+    height: 48px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid;
+    border-radius: 6px;
+    position: relative;
+}
+
+.gateway-diamond-inner {
+    transform: rotate(-45deg);
+    font-size: 1rem;
+}
+
+.gateway-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--foreground);
+    text-align: center;
+    max-width: 200px;
+}
+
+.gateway-sublabel {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    text-align: center;
+    max-width: 280px;
+    font-style: italic;
+}
+
+/* Conector vertical (seta para baixo) */
+.fluxo-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.fluxo-connector-line {
+    width: 2px;
+    height: 24px;
+    background: #94a3b8;
+}
+
+.fluxo-connector-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #94a3b8;
+}
+
+/* Ramificação (branches) */
+.fluxo-branches {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.fluxo-branches::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background: #94a3b8;
+}
+
+.fluxo-branches.branches-2::before {
+    width: 50%;
+}
+
+.fluxo-branches.branches-3::before {
+    width: 70%;
+}
+
+.fluxo-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+    max-width: 360px;
+    position: relative;
+}
+
+.fluxo-branch::before {
+    content: '';
+    width: 2px;
+    height: 16px;
+    background: #94a3b8;
+}
+
+/* Branch label (condição) */
+.branch-condition {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.branch-condition-detail {
+    font-size: 0.65rem;
+    color: var(--muted-foreground);
+    text-align: center;
+    margin-bottom: 4px;
+    font-family: monospace;
+    background: var(--muted);
+    padding: 2px 8px;
+    border-radius: 0.25rem;
+    max-width: 280px;
+}
+
+/* Fim do processo */
+.fluxo-end {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    background: var(--lia-sage);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.fluxo-end svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Início do processo */
+.fluxo-start {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 9999px;
+    background: var(--lia-slate);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ====== Cores por tipo de artefato — paleta muted ====== */
+.node-dfd  { border-color: var(--lia-slate); }
+.node-dfd  .fluxo-node-icon { background: var(--lia-slate); }
+
+.node-je   { border-color: var(--lia-rose); }
+.node-je   .fluxo-node-icon { background: var(--lia-rose); }
+
+.node-etp  { border-color: var(--lia-sage); }
+.node-etp  .fluxo-node-icon { background: var(--lia-sage); }
+
+.node-rdve { border-color: var(--lia-violet); }
+.node-rdve .fluxo-node-icon { background: var(--lia-violet); }
+
+.node-jva  { border-color: var(--lia-amber); }
+.node-jva  .fluxo-node-icon { background: var(--lia-amber); }
+
+.node-tafo { border-color: var(--lia-teal); }
+.node-tafo .fluxo-node-icon { background: var(--lia-teal); }
+
+.node-trs  { border-color: var(--lia-copper); }
+.node-trs  .fluxo-node-icon { background: var(--lia-copper); }
+
+.node-ade  { border-color: var(--lia-rose); }
+.node-ade  .fluxo-node-icon { background: var(--lia-rose); }
+
+.node-jpef { border-color: var(--lia-indigo); }
+.node-jpef .fluxo-node-icon { background: var(--lia-indigo); }
+
+.node-ce   { border-color: var(--lia-steel); }
+.node-ce   .fluxo-node-icon { background: var(--lia-steel); }
+
+.node-pp   { border-color: var(--lia-teal); }
+.node-pp   .fluxo-node-icon { background: var(--lia-teal); }
+
+.node-pgr  { border-color: var(--lia-rose); }
+.node-pgr  .fluxo-node-icon { background: var(--lia-rose); }
+
+.node-tr   { border-color: var(--lia-amber); }
+.node-tr   .fluxo-node-icon { background: var(--lia-amber); }
+
+.node-adl  { border-color: var(--lia-copper); }
+.node-adl  .fluxo-node-icon { background: var(--lia-copper); }
+
+.node-jf   { border-color: var(--lia-indigo); }
+.node-jf   .fluxo-node-icon { background: var(--lia-indigo); }
+
+.node-ed   { border-color: var(--lia-violet); }
+.node-ed   .fluxo-node-icon { background: var(--lia-violet); }
+
+.node-mc   { border-color: var(--lia-sage); }
+.node-mc   .fluxo-node-icon { background: var(--lia-sage); }
+
+.node-chk  { border-color: var(--lia-copper); }
+.node-chk  .fluxo-node-icon { background: var(--lia-copper); }
+
+/* Gateway colors (soft accents) */
+.gateway-pac { border-color: var(--lia-slate);  background: rgba(100, 116, 139, 0.08); }
+.gateway-etp { border-color: var(--lia-sage);   background: rgba(107, 154, 125, 0.08); }
+.gateway-tr  { border-color: var(--lia-amber);  background: rgba(212, 160, 83, 0.08); }
+
+/* Branch condition colors (soft pill badges) */
+.condition-yes    { background: rgba(107, 154, 125, 0.12); color: #3d6b50; border: 1px solid rgba(107, 154, 125, 0.25); }
+.condition-no     { background: rgba(196, 122, 138, 0.12); color: #8b4557; border: 1px solid rgba(196, 122, 138, 0.25); }
+.condition-arp    { background: rgba(139, 126, 200, 0.12); color: #5a4f8a; border: 1px solid rgba(139, 126, 200, 0.25); }
+.condition-baixo  { background: rgba(184, 136, 111, 0.12); color: #7a5840; border: 1px solid rgba(184, 136, 111, 0.25); }
+.condition-normal { background: rgba(100, 116, 139, 0.12); color: #3d4d60; border: 1px solid rgba(100, 116, 139, 0.25); }
+.condition-direta { background: rgba(212, 160, 83, 0.12);  color: #7a5c2e; border: 1px solid rgba(212, 160, 83, 0.25); }
+.condition-licit  { background: rgba(94, 173, 176, 0.12);  color: #3a7577; border: 1px solid rgba(94, 173, 176, 0.25); }
+
+/* ====== Tabela de artefatos ====== */
+.artefatos-ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+}
+
+.artefatos-ref-table th {
+    background: var(--muted);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--foreground);
+    border-bottom: 2px solid var(--border);
+}
+
+.artefatos-ref-table td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted-foreground);
+}
+
+.artefatos-ref-table tr:hover td {
+    background: var(--muted);
+}
+
+.artefatos-ref-table .sigla-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 28px;
+    border-radius: 0.25rem;
+    color: white;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+/* Tooltip do fluxo */
+.fluxo-node[data-tooltip] {
+    position: relative;
+}
+
+.fluxo-node[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 0.25rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    z-index: 50;
+    pointer-events: none;
+}
+
+/* Sub-ramificação interna */
+.fluxo-sub-branches {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.fluxo-sub-branches::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: #94a3b8;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 1200px) {
+    .fluxo-branches {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .fluxo-branches::before {
+        display: none;
+    }
+
+    .fluxo-branch::before {
+        display: none;
+    }
+
+    .fluxo-branch {
+        max-width: 100%;
+    }
+
+    .fluxo-visual {
+        min-width: unset;
+    }
+
+    .fluxo-sub-branches {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fluxo-sub-branches::before {
+        display: none;
+    }
+}

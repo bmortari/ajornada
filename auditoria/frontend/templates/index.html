@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente de Auditoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/static/css/output.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 flex flex-col min-h-screen">
+
+    <!-- Cabeçalho com a Identidade Visual -->
+    <header class="bg-gradient-to-br from-primary-600 to-primary-800 text-white text-center py-12 md:py-16">
+        <div class="container mx-auto px-4">
+            <img src="/static/assets/img/logo_nativa_svg.svg" alt="Logo Nativa" class="w-24 h-24 mx-auto mb-4" />
+            <h1 class="text-4xl md:text-5xl font-bold">Agente de Auditoria</h1>
+            <p class="text-lg text-primary-100 mt-2">A plataforma de automação com IA que transforma sua auditoria.</p>
+        </div>
+    </header>
+
+    <div class="flex-grow flex items-center">
+        <div class="container mx-auto px-4 py-8 md:py-12 2xl:max-w-7xl">
+            <!-- Seção de Serviços -->
+            <main class="pb-24">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white text-center mb-8">Serviços disponíveis</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 gap-6">
+
+                    <!-- Card para Plano de Trabalho -->
+                    <a href="/plano-de-trabalho"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customOrange">
+                        <div class="p-4 bg-customOrange-light rounded-full mb-3">
+                            <i class="uil uil-file-alt text-3xl text-customOrange"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Plano de Trabalho</h3>
+                    </a>
+
+                    <!-- Card para Matriz de Planejamento -->
+                    <a href="/matriz-de-planejamento"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customRed">
+                        <div class="p-4 bg-customRed-light rounded-full mb-3">
+                            <i class="uil uil-file-contract text-3xl text-customRed"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Matriz de Planejamento</h3>
+                    </a>
+
+                   <!-- Card para Requisição de Documentos -->
+                    <a href="/requisicao-de-documentos"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customTeal">
+                        <div class="p-4 bg-customTeal-light rounded-full mb-3">
+                            <i class="uil uil-file-download-alt text-3xl text-customTeal"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Requisição de Documentos e Informações</h3>
+                    </a>
+
+                    <!-- Card para Área de Respostas (Auditado) -->
+                    <a href="/responder-requisicao"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customCyan">
+                        <div class="p-4 bg-customCyan-light rounded-full mb-3">
+                            <i class="uil uil-envelope-edit text-3xl text-customCyan"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Área de Respostas (Auditado)</h3>
+                    </a>
+
+                    <!-- Card para Área de Respostas (Auditoria) -->
+                    <a href="/respostas-unidade-auditoria"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customGray">
+                        <div class="p-4 bg-customGray-light rounded-full mb-3">
+                            <i class="uil uil-envelope-open text-3xl text-customGray"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Área de Respostas (Auditoria)</h3>
+                    </a>
+
+                    <!-- Card para Matriz de Achados -->
+                    <a href="/matriz-de-achados"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customBlue">
+                        <div class="p-4 bg-customBlue-light rounded-full mb-3">
+                            <i class="uil uil-file-search-alt text-3xl text-customBlue"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Matriz de Achados</h3>
+                    </a>
+
+                    <!-- Card para Relatório -->
+                    <a href="/relatorio"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customAmber">
+                        <div class="p-4 bg-customAmber-light rounded-full mb-3">
+                            <i class="uil uil-document-layout-left text-3xl text-customAmber"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Relatório</h3>
+                    </a>
+
+                    <!-- Card para Gerar Parecer da Auditoria -->
+                    <!-- DESATIVADO
+                    <a href="/parecer-auditoria"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customRed">
+                        <div class="p-4 bg-customRed-light rounded-full mb-3">
+                            <i class="uil uil-file-medical-alt text-3xl text-customRed"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Parecer da Auditoria</h3>
+                    </a>
+                    -->
+
+                    <!-- Card para Gerar Decisão Presidencial -->
+                    <!-- DESATIVADO
+                    <a href="/decisao-presidencial"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customTeal">
+                        <div class="p-4 bg-customTeal-light rounded-full mb-3">
+                            <i class="uil uil-file-shield-alt text-3xl text-customTeal"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Decisão Presidencial</h3>
+                    </a>
+                    -->
+
+                    <!-- Card para Plano de Ação -->
+                    <a href="/plano-de-acao"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customGreen">
+                        <div class="p-4 bg-customGreen-light rounded-full mb-3">
+                            <i class="uil uil-file-check-alt text-3xl text-customGreen"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Gerar Plano de Ação</h3>
+                    </a>
+
+                    <!-- Card para Acessar painéis BI -->
+                    <!-- DESATIVADO
+                    <a href="https://apps.tre-ap.jus.br/internet/paineisbi/index.html?BI=auditoria"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customPurple">
+                        <div class="p-4 bg-customPurple-light rounded-full mb-3">
+                            <i class="uil uil-chart-pie text-3xl text-customPurple"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Acessar painéis BI</h3>
+                    </a>
+                    -->
+
+                    <!-- Card para Manual de Uso -->
+                    <a href="/manual-de-uso"
+                       class="flex flex-col items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1 group border-t-4 border-transparent hover:border-customIndigo">
+                        <div class="p-4 bg-customIndigo-light rounded-full mb-3">
+                            <i class="uil uil-book-open text-3xl text-customIndigo"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-gray-800 dark:text-white text-center">Manual de Uso</h3>
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="fixed bottom-0 left-0 right-0 text-center py-4 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400">
+        <p class="text-sm">Desenvolvido em parceria por:</p>
+        <div class="flex justify-center items-center space-x-6 mt-2">
+            <img src="/static/assets/img/logo_tre_acre_trans.png" alt="Logo TRE Acre" class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/static/assets/img/logo_tre_amapa_trans.png" alt="Logo TRE Amapa" class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/static/assets/img/logo_tre_goias_trans.png" alt="Logo TRE Goias" class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/static/assets/img/TJAP.jpg" alt="Logo TJAP" class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+            <img src="/static/assets/img/PPGE.jpg" alt="Logo PPGE" class="h-12 opacity-70 hover:opacity-100 transition-opacity">      
+            <img src="/static/assets/img/PPGGTD.jpeg" alt="Logo PPGGTD" class="w-12 h-12 rounded-full object-cover opacity-70 hover:opacity-100 transition-opacity">
+        </div>
+    </footer>
+
+    <div id="chatbot-container" class="fixed bottom-0 right-0 z-50 pr-4">
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-toggle" class="absolute bottom-5 right-5 bg-primary-600 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-700 transition-transform transform hover:scale-110">
+            <i class="uil uil-comments-alt text-3xl"></i>
+        </button>
+    
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="hidden absolute bottom-0 right-4 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col" style="height: 500px;">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                    <i class="uil uil-robot text-primary-600"></i>
+                    Assistente Virtual
+                </h3>
+                <button id="chatbot-minimize" class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                    <i class="uil uil-angle-down text-2xl"></i>
+                </button>
+            </div>
+    
+            <!-- Messages -->
+            <div id="chatbot-messages" class="flex-grow p-4 overflow-y-auto">
+                <!-- Example Message -->
+                <div class="flex items-start gap-2.5 mb-4">
+                    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                        <p class="text-sm font-normal text-gray-900 dark:text-white">Olá! Como posso te ajudar hoje?</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Input -->
+            <div class="p-4 border-t border-gray-200 dark:border-gray-600">
+                <div class="flex items-center gap-2">
+                    <input type="text" id="chatbot-input" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Digite sua mensagem...">
+                    <button id="chatbot-attach" class="text-gray-400 hover:text-gray-600 dark:hover:text-white p-2.5 rounded-lg border border-gray-300 dark:border-gray-600">
+                        <i class="uil uil-paperclip text-sm"></i>
+                    </button>
+                    <input type="file" id="chatbot-file" class="hidden" multiple accept=".pdf,.doc,.docx,.txt,.xlsx,.xls">
+                    <button id="chatbot-send" class="bg-primary-600 text-white p-2.5 rounded-lg hover:bg-primary-700">
+                        <i class="uil uil-message"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/flowbite.min.js"></script>
+    <script src="/static/js/chatbot.js"></script>
+</body>
+</html>

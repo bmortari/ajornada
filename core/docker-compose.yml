@@ -1,0 +1,23 @@
+services:
+  fastapi_app_prod:
+    build: .
+    container_name: mestrado-prod
+    ports:
+      - "8000:8000"
+    environment:
+      - URL_APP_8001=https://chat.ajornada.top
+      - URL_APP_8002=https://palanqueia.ajornada.top
+      - URL_APP_8003=https://iata.ajornada.top
+      - URL_APP_8004=https://mosaiko.ajornada.top
+      - URL_APP_8005=https://lia.ajornada.top
+      - URL_APP_8006=https://auditoria.ajornada.top
+      - URL_APP_8007=https://chatdatajud.ajornada.top
+    volumes:
+      - .:/code
+    restart: unless-stopped
+    networks:
+      - nativa-net
+
+networks:
+  nativa-net:
+    external: true

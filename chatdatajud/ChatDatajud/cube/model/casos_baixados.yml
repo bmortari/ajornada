@@ -1,0 +1,69 @@
+cubes:
+  - name: casos_baixados
+    sql_table: public.tbaix
+    title: "Casos Baixados"
+    description: "Processos baixados/encerrados no sistema Datajud (TRE-GO)"
+
+    dimensions:
+      - name: tribunal
+        sql: tribunal
+        type: string
+      - name: grau
+        sql: grau
+        type: string
+      - name: nome_orgao
+        sql: nome_orgao
+        type: string
+        title: "Órgão"
+      - name: uf
+        sql: uf
+        type: string
+      - name: municipio
+        sql: municipio
+        type: string
+      - name: ano
+        sql: ano
+        type: number
+      - name: mes
+        sql: mes
+        type: number
+      - name: nome_ultima_classe
+        sql: nome_ultima_classe
+        type: string
+        title: "Classe Processual"
+      - name: data_inicio
+        sql: data_inicio
+        type: time
+        title: "Data de Início"
+      - name: data_referencia
+        sql: data_referencia
+        type: time
+        title: "Data da Baixa"
+      - name: formato
+        sql: formato
+        type: string
+      - name: procedimento
+        sql: procedimento
+        type: string
+      - name: recurso_originario
+        sql: recurso_originario
+        type: string
+        title: "Tipo (Originário/Recursal)"
+      - name: poder_publico
+        sql: poder_publico
+        type: string
+
+    measures:
+      - name: count
+        type: count
+        title: "Total de Baixas"
+      - name: processos_distintos
+        sql: processo
+        type: count_distinct
+        title: "Processos Baixados"
+      - name: tempo_medio_baixa_dias
+        type: avg
+        sql: "EXTRACT(EPOCH FROM (data_referencia - data_inicio)) / 86400"
+        title: "Tempo Médio até Baixa (dias)"
+
+

@@ -1,0 +1,44 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+*.egg-info/
+.eggs/
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+.claude
+
+# Database local (sera criado no container)
+*.db
+
+# Testes
+.pytest_cache
+.coverage
+htmlcov/
+
+# Documentacao
+*.md
+docs/
+
+# Misc
+.DS_Store
+Thumbs.db
+
+# Frontend (built separately, not needed in backend image)
+frontend/node_modules
+frontend/.next
+frontend/.turbo

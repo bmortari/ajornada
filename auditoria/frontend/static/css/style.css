@@ -1,0 +1,32 @@
+/* ... (nenhuma alteração nos estilos) ... */
+.modal-body-full { height: 70vh; overflow-y: auto; }
+.conteudo-renderizado h1, .conteudo-renderizado h2, .conteudo-renderizado h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+.conteudo-renderizado p { margin-bottom: 1rem; }
+.conteudo-renderizado table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+.conteudo-renderizado th, .conteudo-renderizado td { border: 1px solid #d1d5db; padding: 0.75rem; text-align: left; }
+.conteudo-renderizado th { background-color: #f9fafb; }
+.dark .conteudo-renderizado th { background-color: #374151; border-color: #4b5563; }
+.dark .conteudo-renderizado td { border-color: #4b5563; }
+.conteudo-renderizado ul, .conteudo-renderizado ol { padding-left: 1.5rem; margin-bottom: 1rem; list-style-position: inside; }
+.conteudo-renderizado li { margin-bottom: 0.5rem; }
+.file-input { display: none; }
+
+/* ✅ Estilos para o novo editor de conteúdo */
+.wysiwyg-editor {
+    height: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    overflow-y: auto;
+}
+.wysiwyg-editor[contenteditable="false"] {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.dark .wysiwyg-editor {
+    border-color: #4b5563;
+}
+.dark .wysiwyg-editor[contenteditable="false"] {
+     background-color: #374151;
+}

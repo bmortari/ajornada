@@ -1,0 +1,531 @@
+{% extends "base.html" %}
+
+{% block title %}Apresentação - Jornada Agêntica{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', path='scr/apresentacao.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="presentation-container">
+    
+    <!-- Barra de Progresso -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Indicador de Slides -->
+    <div class="slide-indicator">
+        <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
+    </div>
+
+    <!-- Container dos Slides -->
+    <div class="slides-wrapper" id="slidesWrapper">
+        
+        <!-- Slide 1: Capa -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content slide-cover">
+                <div class="cover-logos">
+                    <img src="{{ url_for('static', path='img/PPGGTD.jpeg') }}" alt="PPGGTD">
+                    <img src="{{ url_for('static', path='img/tre-go-inverse.png') }}" alt="TRE-GO">
+                </div>
+                <div class="cover-institution">
+                    <p>UNIVERSIDADE FEDERAL DO TOCANTINS</p>
+                    <p>PROGRAMA DE PÓS-GRADUAÇÃO EM MODELAGEM E TRANSFORMAÇÃO DIGITAL</p>
+                </div>
+                <h1 class="cover-title">
+                    UMA JORNADA DE TRANSFORMAÇÃO DIGITAL NO SERVIÇO PÚBLICO:
+                    <span class="highlight">RUMO AO AGÊNTICO</span>
+                </h1>
+                <div class="cover-author">
+                    <p class="author-name">BRUNO MORTARI</p>
+                    <p class="advisor">Orientador: Prof. Dr. Gentil Veloso Barbosa</p>
+                </div>
+                <div class="cover-badges">
+                    <span class="badge"><i class="uil uil-trophy"></i> 3 Premiações</span>
+                    <span class="badge"><i class="uil uil-robot"></i> 6+ Produtos</span>
+                    <span class="badge"><i class="uil uil-file-alt"></i> 8+ Publicações</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: Visão Geral -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">02</span>
+                    <h2>Visão Geral</h2>
+                </div>
+                <div class="slide-body two-columns">
+                    <div class="column">
+                        <div class="info-card">
+                            <i class="uil uil-lightbulb-alt"></i>
+                            <h3>O Problema</h3>
+                            <p>A administração pública enfrenta demandas crescentes em cenário de recursos limitados, com processos rotineiros que consomem esforço humano em tarefas repetitivas.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="uil uil-rocket"></i>
+                            <h3>A Proposta</h3>
+                            <p>Integração de LLMs e agentes autônomos nas rotinas administrativas do setor público brasileiro, migrando para sistemas que traçam rotas e executam tarefas.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="highlight-box">
+                            <h3><i class="uil uil-balance-scale"></i> Marco Regulatório</h3>
+                            <p>Conformidade com a <strong>Resolução CNJ 615/2025</strong> — primeiro regulamento abrangente para IA judicial em língua portuguesa.</p>
+                            <div class="stats-row">
+                                <div class="stat">
+                                    <span class="stat-number">178</span>
+                                    <span class="stat-label">Projetos de IA nos tribunais</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">45,8%</span>
+                                    <span class="stat-label">Tribunais usam IA generativa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Introdução -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">03</span>
+                    <h2>Introdução</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <i class="uil uil-map"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Era dos Mapas Digitais</h4>
+                                <p>Sistemas que apresentam informações e auxiliam na navegação, mas dependem do usuário para tomar decisões e executar ações.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-arrow">
+                            <i class="uil uil-arrow-right"></i>
+                        </div>
+                        <div class="timeline-item active">
+                            <div class="timeline-marker">
+                                <i class="uil uil-robot"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Era Agêntica</h4>
+                                <p>Sistemas autônomos que traçam rotas, executam tarefas e tomam decisões dentro de parâmetros definidos — com supervisão humana.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-question">
+                        <i class="uil uil-question-circle"></i>
+                        <p><strong>Questão Central:</strong> Como desenvolver agentes de IA eficazes mantendo o equilíbrio ético entre autonomia do sistema e supervisão humana ("Human-in-the-loop")?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Fundamentação Teórica -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">04</span>
+                    <h2>Fundamentação Teórica</h2>
+                </div>
+                <div class="slide-body three-columns">
+                    <div class="theory-card">
+                        <div class="theory-icon">
+                            <i class="uil uil-brain"></i>
+                        </div>
+                        <h3>LLMs</h3>
+                        <p>Large Language Models como base para compreensão e geração de texto em linguagem natural.</p>
+                        <ul>
+                            <li>Processamento contextual</li>
+                            <li>Raciocínio em cadeia</li>
+                            <li>Geração assistida</li>
+                        </ul>
+                    </div>
+                    <div class="theory-card">
+                        <div class="theory-icon">
+                            <i class="uil uil-circuit"></i>
+                        </div>
+                        <h3>Agentes de IA</h3>
+                        <p>Sistemas autônomos que percebem ambiente, tomam decisões e executam ações.</p>
+                        <ul>
+                            <li>Orquestração de tarefas</li>
+                            <li>Uso de ferramentas</li>
+                            <li>Memória e contexto</li>
+                        </ul>
+                    </div>
+                    <div class="theory-card featured">
+                        <div class="theory-icon">
+                            <i class="uil uil-file-shield-alt"></i>
+                        </div>
+                        <h3>CNJ 615/2025</h3>
+                        <p>Marco regulatório para IA no Judiciário brasileiro.</p>
+                        <ul>
+                            <li>Classificação de riscos</li>
+                            <li>Supervisão obrigatória</li>
+                            <li>Cadastro no Sinapses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Justificativa -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">05</span>
+                    <h2>Justificativa</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="justification-grid">
+                        <div class="justify-item">
+                            <div class="justify-icon pulse">
+                                <i class="uil uil-clock"></i>
+                            </div>
+                            <h4>Momento Ideal</h4>
+                            <p>Maturidade tecnológica das LLMs combinada com marco regulatório recém-estabelecido cria janela de oportunidade única.</p>
+                        </div>
+                        <div class="justify-item">
+                            <div class="justify-icon pulse">
+                                <i class="uil uil-users-alt"></i>
+                            </div>
+                            <h4>Demanda Real</h4>
+                            <p>Servidores públicos sobrecarregados com tarefas repetitivas que poderiam ser automatizadas com segurança.</p>
+                        </div>
+                        <div class="justify-item">
+                            <div class="justify-icon pulse">
+                                <i class="uil uil-shield-check"></i>
+                            </div>
+                            <h4>Segurança Jurídica</h4>
+                            <p>Resolução CNJ 615/2025 oferece arcabouço legal para desenvolvimento responsável de soluções de IA.</p>
+                        </div>
+                        <div class="justify-item">
+                            <div class="justify-icon pulse">
+                                <i class="uil uil-chart-growth"></i>
+                            </div>
+                            <h4>Impacto Mensurável</h4>
+                            <p>Possibilidade de demonstrar ganhos de eficiência e qualidade através de produtos funcionais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Objetivos -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">06</span>
+                    <h2>Objetivos</h2>
+                </div>
+                <div class="slide-body objectives-layout">
+                    <div class="main-objective">
+                        <div class="objective-badge">OBJETIVO GERAL</div>
+                        <p>Desenvolver e validar um ecossistema de agentes de IA para otimização de processos administrativos no serviço público, garantindo conformidade regulatória e supervisão humana adequada.</p>
+                    </div>
+                    <div class="specific-objectives">
+                        <h3>Objetivos Específicos</h3>
+                        <div class="obj-list">
+                            <div class="obj-item">
+                                <span class="obj-num">01</span>
+                                <p>Mapear processos administrativos candidatos à automação via Análise Cognitiva de Tarefas</p>
+                            </div>
+                            <div class="obj-item">
+                                <span class="obj-num">02</span>
+                                <p>Desenvolver protótipos funcionais de agentes especializados utilizando Design Thinking</p>
+                            </div>
+                            <div class="obj-item">
+                                <span class="obj-num">03</span>
+                                <p>Avaliar conformidade com a Resolução CNJ 615/2025 e frameworks de governança</p>
+                            </div>
+                            <div class="obj-item">
+                                <span class="obj-num">04</span>
+                                <p>Validar resultados através de métricas de eficiência e satisfação do usuário</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Metodologia -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">07</span>
+                    <h2>Metodologia</h2>
+                </div>
+                <div class="slide-body methodology-layout">
+                    <div class="method-card">
+                        <div class="method-header">
+                            <i class="uil uil-lightbulb-alt"></i>
+                            <h3>Design Thinking</h3>
+                        </div>
+                        <div class="method-phases">
+                            <div class="phase">
+                                <span>Empatizar</span>
+                            </div>
+                            <div class="phase-arrow">→</div>
+                            <div class="phase">
+                                <span>Definir</span>
+                            </div>
+                            <div class="phase-arrow">→</div>
+                            <div class="phase">
+                                <span>Idear</span>
+                            </div>
+                            <div class="phase-arrow">→</div>
+                            <div class="phase">
+                                <span>Prototipar</span>
+                            </div>
+                            <div class="phase-arrow">→</div>
+                            <div class="phase">
+                                <span>Testar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-header">
+                            <i class="uil uil-analysis"></i>
+                            <h3>Análise Cognitiva de Tarefas (ACT)</h3>
+                        </div>
+                        <p>Mapeamento de processos mentais invisíveis — decisões, julgamentos e estratégias — que a análise tradicional não captura.</p>
+                        <div class="act-methods">
+                            <span class="act-tag">CDM</span>
+                            <span class="act-tag">ACTA</span>
+                            <span class="act-tag">Think-Aloud</span>
+                        </div>
+                    </div>
+                    <div class="method-card highlight">
+                        <div class="method-header">
+                            <i class="uil uil-user-check"></i>
+                            <h3>Human-in-the-Loop</h3>
+                        </div>
+                        <p>Integração ativa de humanos no fluxo de trabalho da IA para maximizar potencial enquanto mitiga riscos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Produtos Desenvolvidos -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">08</span>
+                    <h2>Produtos Desenvolvidos</h2>
+                </div>
+                <div class="slide-body products-layout">
+                    <div class="ecosystem-highlight">
+                        <div class="ecosystem-logo">
+                            <img src="{{ url_for('static', path='img/nativa.png') }}" alt="Nativa IA">
+                        </div>
+                        <div class="ecosystem-info">
+                            <h3>Ecossistema Nativa IA</h3>
+                            <p>Suíte integrada de agentes de IA desenvolvidos com Design Thinking</p>
+                            <div class="ecosystem-badges">
+                                <span class="badge gold"><i class="uil uil-trophy"></i> 2 Premiações</span>
+                                <span class="badge"><i class="uil uil-award"></i> Selo de Inovação</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="products-grid">
+                        <a href="{{ url_for('embed_app_8001') }}" class="product-mini">
+                            <i class="uil uil-comments-alt"></i>
+                            <span>ChatNormas</span>
+                        </a>
+                        <a href="{{ url_for('embed_app_8002') }}" class="product-mini">
+                            <i class="uil uil-microphone"></i>
+                            <span>PalanqueIA</span>
+                        </a>
+                        <a href="{{ url_for('embed_app_8003') }}" class="product-mini">
+                            <i class="uil uil-notes"></i>
+                            <span>IATA</span>
+                        </a>
+                        <a href="{{ url_for('embed_app_8004') }}" class="product-mini">
+                            <i class="uil uil-check-circle"></i>
+                            <span>Checagem</span>
+                        </a>
+                        <a href="{{ url_for('embed_app_8005') }}" class="product-mini">
+                            <i class="uil uil-file-contract"></i>
+                            <span>LIA</span>
+                        </a>
+                        <a href="{{ url_for('embed_app_8006') }}" class="product-mini featured">
+                            <i class="uil uil-search-alt"></i>
+                            <span>Auditoria</span>
+                            <small>🏆 Prêmio</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Resultados -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">09</span>
+                    <h2>Resultados</h2>
+                </div>
+                <div class="slide-body results-layout">
+                    <div class="results-metrics">
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="uil uil-robot"></i>
+                            </div>
+                            <div class="metric-value">6+</div>
+                            <div class="metric-label">Agentes Funcionais</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="uil uil-file-alt"></i>
+                            </div>
+                            <div class="metric-value">8+</div>
+                            <div class="metric-label">Publicações Científicas</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">
+                                <i class="uil uil-database"></i>
+                            </div>
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Datasets Públicos</div>
+                        </div>
+                        <div class="metric-card highlight">
+                            <div class="metric-icon">
+                                <i class="uil uil-trophy"></i>
+                            </div>
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Premiações</div>
+                        </div>
+                    </div>
+                    <div class="results-highlight">
+                        <h3>Principais Contribuições</h3>
+                        <ul class="contribution-list">
+                            <li><i class="uil uil-check"></i> Validação da viabilidade de agentes no setor público</li>
+                            <li><i class="uil uil-check"></i> Framework de conformidade com CNJ 615/2025</li>
+                            <li><i class="uil uil-check"></i> Metodologia replicável para outros órgãos</li>
+                            <li><i class="uil uil-check"></i> Equilíbrio entre autonomia e supervisão humana</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Premiações -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <span class="slide-number">10</span>
+                    <h2>Premiações</h2>
+                </div>
+                <div class="slide-body awards-layout">
+                    <div class="awards-grid">
+                        <div class="award-card gold">
+                            <div class="award-ribbon">🥇</div>
+                            <div class="award-icon">
+                                <img src="{{ url_for('static', path='img/nativa.png') }}" alt="Nativa">
+                            </div>
+                            <h3>Nativa IA</h3>
+                            <p class="award-name">Prêmio Justiça Eleitoral</p>
+                            <p class="award-category">Categoria: Inovação Tecnológica</p>
+                            <p class="award-org">TSE - Tribunal Superior Eleitoral</p>
+                        </div>
+                        <div class="award-card silver">
+                            <div class="award-ribbon">🥈</div>
+                            <div class="award-icon">
+                                <img src="{{ url_for('static', path='img/nativa.png') }}" alt="Nativa">
+                            </div>
+                            <h3>Nativa IA</h3>
+                            <p class="award-name">Selo de Inovação</p>
+                            <p class="award-category">Reconhecimento de Excelência</p>
+                            <p class="award-org">TRE-GO</p>
+                        </div>
+                        <div class="award-card bronze">
+                            <div class="award-ribbon">🏆</div>
+                            <div class="award-icon">
+                                <i class="uil uil-search-alt"></i>
+                            </div>
+                            <h3>Agente de Auditoria</h3>
+                            <p class="award-name">Prêmio Geração de Valor</p>
+                            <p class="award-category">Eficiência Operacional</p>
+                            <p class="award-org">TRE-GO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Conclusão -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content slide-conclusion">
+                <div class="slide-header">
+                    <span class="slide-number">11</span>
+                    <h2>Conclusão</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="conclusion-main">
+                        <blockquote>
+                            "É possível desenvolver agentes de IA eficazes para o setor público mantendo o equilíbrio ético entre autonomia do sistema e supervisão humana."
+                        </blockquote>
+                    </div>
+                    <div class="conclusion-points">
+                        <div class="point">
+                            <i class="uil uil-check-circle"></i>
+                            <p><strong>Hipótese Validada:</strong> O momento atual é ideal para proliferação de serviços assistidos por IA.</p>
+                        </div>
+                        <div class="point">
+                            <i class="uil uil-check-circle"></i>
+                            <p><strong>Conformidade Demonstrada:</strong> Produtos alinhados com CNJ 615/2025 e frameworks internacionais.</p>
+                        </div>
+                        <div class="point">
+                            <i class="uil uil-check-circle"></i>
+                            <p><strong>Impacto Real:</strong> 3 premiações e adoção institucional validam a proposta.</p>
+                        </div>
+                    </div>
+                    <div class="conclusion-cta">
+                        <p>Explore os produtos e a dissertação completa:</p>
+                        <div class="cta-buttons">
+                            <a href="{{ url_for('read_produtos') }}" class="cta-btn">
+                                <i class="uil uil-layer-group"></i> Ver Produtos
+                            </a>
+                            <a href="{{ url_for('read_tese') }}" class="cta-btn primary">
+                                <i class="uil uil-book-alt"></i> Dissertação
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navegação -->
+    <nav class="slide-navigation">
+        <button class="nav-btn prev" id="prevBtn" disabled>
+            <i class="uil uil-angle-left"></i>
+            <span>Anterior</span>
+        </button>
+        <div class="nav-dots" id="navDots"></div>
+        <button class="nav-btn next" id="nextBtn">
+            <span>Próximo</span>
+            <i class="uil uil-angle-right"></i>
+        </button>
+    </nav>
+
+    <!-- Atalhos de teclado -->
+    <div class="keyboard-hint">
+        <span><kbd>←</kbd> <kbd>→</kbd> Navegar</span>
+        <span><kbd>F</kbd> Tela Cheia</span>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='scr/apresentacao.js') }}"></script>
+{% endblock %}

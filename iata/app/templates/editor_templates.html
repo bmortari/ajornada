@@ -1,0 +1,155 @@
+{% block title %}Mosaiko - Editor de Templates de Ata{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', path='editor_templates.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container-editor">
+    <div class="header-editor">
+        <h1>🎨 Editor Visual de Templates de Ata</h1>
+        <p>Crie e personalize templates de atas profissionais</p>
+    </div>
+
+    <div class="main-content-editor">
+        <!-- Painel Esquerdo: Seleção e Editor -->
+        <div class="left-panel">
+            <!-- Seleção de Template Base -->
+            <div class="section-card">
+                <h3>📋 Selecionar Template Base</h3>
+                <select id="template-base" onchange="carregarTemplateBase()">
+                    <option value="">Escolha um template...</option>
+                    <option value="reuniao_trabalho">📋 Reunião de Trabalho</option>
+                    <option value="sessao_judiciaria">⚖️ Sessão Judiciária</option>
+                    <option value="reuniao_condominio">🏢 Reunião de Condomínio</option>
+                    <option value="assembleia_geral">👥 Assembleia Geral</option>
+                    <option value="novo">✨ Criar do Zero</option>
+                </select>
+            </div>
+
+            <!-- Editor de Código -->
+            <div class="section-card editor-container">
+                <div class="editor-header">
+                    <h3>💻 Editor HTML/CSS</h3>
+                    <div class="editor-actions">
+                        <button class="btn-editor" onclick="formatarCodigo()">
+                            🎨 Formatar
+                        </button>
+                        <button class="btn-editor" onclick="inserirPlaceholder()">
+                            ➕ Adicionar Campo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="tabs-editor">
+                    <button class="tab-editor active" onclick="switchEditorTab('html')">
+                        HTML
+                    </button>
+                    <button class="tab-editor" onclick="switchEditorTab('css')">
+                        CSS (Opcional)
+                    </button>
+                </div>
+
+                <div id="html-editor" class="editor-content">
+                    <textarea id="html-textarea" placeholder="Cole ou edite o HTML do template aqui..."></textarea>
+                </div>
+
+                <div id="css-editor" class="editor-content" style="display: none;">
+                    <textarea id="css-textarea" placeholder="CSS adicional (opcional)..."></textarea>
+                </div>
+
+                <div class="editor-footer">
+                    <small>💡 Use {{nome_do_campo}} para criar placeholders dinâmicos</small>
+                </div>
+            </div>
+
+            <!-- Campos Detectados -->
+            <div class="section-card" id="campos-detectados" style="display: none;">
+                <h3>🔍 Campos Detectados</h3>
+                <div id="lista-campos" class="campos-list"></div>
+            </div>
+
+            <!-- Ações -->
+            <div class="section-card actions-card">
+                <button class="btn-action primary" onclick="gerarPreview()">
+                    👁️ Visualizar Preview
+                </button>
+                <button class="btn-action" onclick="baixarTemplate()">
+                    💾 Baixar Template
+                </button>
+                <button class="btn-action" onclick="resetarEditor()">
+                    🔄 Limpar
+                </button>
+            </div>
+        </div>
+
+        <!-- Painel Direito: Preview -->
+        <div class="right-panel">
+            <div class="preview-container">
+                <div class="preview-header">
+                    <h3>👁️ Preview do Template</h3>
+                    <div class="preview-actions">
+                        <button class="btn-preview" onclick="atualizarPreview()">
+                            🔄 Atualizar
+                        </button>
+                        <button class="btn-preview" onclick="toggleFullscreen()">
+                            🔲 Tela Cheia
+                        </button>
+                    </div>
+                </div>
+
+                <div class="preview-frame-container">
+                    <iframe id="preview-frame" title="Preview do Template"></iframe>
+                </div>
+
+                <div class="preview-info">
+                    <p>ℹ️ O preview mostra o template com dados de exemplo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Ajuda -->
+    <div id="modal-ajuda" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>📖 Guia Rápido</h2>
+            
+            <h3>Como usar o Editor:</h3>
+            <ol>
+                <li><strong>Escolha um template base</strong> ou crie do zero</li>
+                <li><strong>Edite o HTML</strong> no editor</li>
+                <li><strong>Use placeholders</strong> como <code>{{nome_campo}}</code></li>
+                <li><strong>Visualize</strong> o preview com dados de exemplo</li>
+                <li><strong>Baixe</strong> o template ou exporte como PDF</li>
+            </ol>
+
+            <h3>Placeholders Comuns:</h3>
+            <ul>
+                <li><code>{{data}}</code> - Data</li>
+                <li><code>{{hora}}</code> - Hora</li>
+                <li><code>{{empresa}}</code> - Nome da empresa</li>
+                <li><code>{{participantes}}</code> - Lista de participantes</li>
+                <li><code>{{decisoes}}</code> - Decisões tomadas</li>
+            </ul>
+
+            <h3>Dicas:</h3>
+            <ul>
+                <li>Use HTML semântico (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>)</li>
+                <li>Mantenha CSS inline ou na tag <code>&lt;style&gt;</code></li>
+                <li>Teste o preview frequentemente</li>
+                <li>Campos com listas devem usar HTML: <code>&lt;li&gt;item&lt;/li&gt;</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Botão de Ajuda Flutuante -->
+    <button class="btn-help" onclick="abrirModal()">
+        ❓
+    </button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='/editor_templates.js') }}"></script>
+{% endblock %}

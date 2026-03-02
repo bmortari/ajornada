@@ -1,0 +1,122 @@
+cubes:
+  - name: datamart
+    sql_table: public.datamart
+    title: "Datamart Analítico"
+    description: "Datamart consolidado com todas as dimensões analíticas do Datajud (TRE-GO)"
+
+    dimensions:
+      - name: sigla_tribunal
+        sql: sigla_tribunal
+        type: string
+        title: "Tribunal"
+      - name: ramo_justica
+        sql: ramo_justica
+        type: string
+        title: "Ramo da Justiça"
+      - name: uf_oj
+        sql: uf_oj
+        type: string
+        title: "UF"
+      - name: municipio_oj
+        sql: municipio_oj
+        type: string
+        title: "Município"
+      - name: situacao
+        sql: situacao
+        type: string
+      - name: classe
+        sql: classe
+        type: string
+        title: "Classe Processual"
+      - name: competencia_grupo
+        sql: competencia_grupo
+        type: string
+        title: "Grupo de Competência"
+      - name: procedimento
+        sql: procedimento
+        type: string
+      - name: formato
+        sql: formato
+        type: string
+      - name: originario
+        sql: originario
+        type: string
+      - name: data_ajuizamento
+        sql: data_ajuizamento
+        type: time
+      - name: dt_baixa
+        sql: dt_baixa
+        type: time
+        title: "Data da Baixa"
+      - name: orgao_julgador
+        sql: orgao_julgador
+        type: string
+        title: "Órgão Julgador"
+      - name: tipo_unidade
+        sql: tipo_unidade
+        type: string
+      - name: classificacao_unidade
+        sql: classificacao_unidade
+        type: string
+      - name: competencia
+        sql: competencia
+        type: string
+      - name: competencia_tipo
+        sql: competencia_tipo
+        type: string
+      - name: tipo_conclusao
+        sql: tipo_conclusao
+        type: string
+      - name: nome
+        sql: nome
+        type: string
+        title: "Nome do Processo"
+      # Flags
+      - name: flag_violencia_domestica
+        sql: flag_violencia_domestica
+        type: string
+      - name: flag_feminicidio
+        sql: flag_feminicidio
+        type: string
+      - name: flag_acao_penal
+        sql: flag_acao_penal
+        type: string
+      - name: flag_improbidade
+        sql: flag_improbidade
+        type: string
+      - name: flag_familia
+        sql: flag_familia
+        type: string
+      - name: flag_infancia
+        sql: flag_infancia
+        type: string
+      - name: flag_saude
+        sql: flag_saude
+        type: string
+      - name: flag_ambiental
+        sql: flag_ambiental
+        type: string
+      - name: flag_trabalho_escravo
+        sql: flag_trabalho_escravo
+        type: string
+      - name: flag_racismo
+        sql: flag_racismo
+        type: string
+      - name: poder_publico
+        sql: poder_publico
+        type: string
+
+    measures:
+      - name: count
+        type: count
+        title: "Total de Processos"
+      - name: valor_causa_soma
+        type: sum
+        sql: "CAST(NULLIF(valor_causa, '') AS NUMERIC)"
+        title: "Valor Total das Causas"
+      - name: valor_causa_medio
+        type: avg
+        sql: "CAST(NULLIF(valor_causa, '') AS NUMERIC)"
+        title: "Valor Médio da Causa"
+
+

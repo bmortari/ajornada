@@ -1,0 +1,83 @@
+cubes:
+  - name: casos_pendentes
+    sql_table: public.cpl
+    title: "Casos Pendentes (Congestionamento)"
+    description: "Processos pendentes com métricas de congestionamento (TRE-GO)"
+
+    dimensions:
+      - name: tribunal
+        sql: tribunal
+        type: string
+      - name: grau
+        sql: grau
+        type: string
+      - name: nome_orgao
+        sql: nome_orgao
+        type: string
+        title: "Órgão"
+      - name: uf
+        sql: uf
+        type: string
+      - name: municipio
+        sql: municipio
+        type: string
+      - name: ano
+        sql: ano
+        type: number
+      - name: mes
+        sql: mes
+        type: number
+      - name: nome_ultima_classe
+        sql: nome_ultima_classe
+        type: string
+        title: "Classe Processual"
+      - name: data_ajuizamento
+        sql: data_ajuizamento
+        type: time
+      - name: data_inicio
+        sql: data_inicio
+        type: time
+      - name: tipo_conclusao
+        sql: tipo_conclusao
+        type: string
+      - name: formato
+        sql: formato
+        type: string
+      - name: procedimento
+        sql: procedimento
+        type: string
+      - name: recurso_originario
+        sql: recurso_originario
+        type: string
+      - name: poder_publico
+        sql: poder_publico
+        type: string
+      - name: liquido
+        sql: liquido
+        type: string
+        title: "Líquido (S/N)"
+      - name: mais_15_anos
+        sql: mais_15_anos
+        type: string
+        title: "Mais de 15 anos (S/N)"
+
+    measures:
+      - name: count
+        type: count
+        title: "Total de Pendentes"
+      - name: dias_antiguidade_media
+        type: avg
+        sql: dias_antiguidade
+        title: "Antiguidade Média (dias)"
+      - name: casos_liquidos
+        type: count
+        title: "Casos Líquidos"
+        filters:
+          - sql: "{CUBE}.liquido = 'S'"
+      - name: casos_mais_15_anos
+        type: count
+        title: "Casos com +15 anos"
+        filters:
+          - sql: "{CUBE}.mais_15_anos = 'S'"
+
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata de Reunião de Trabalho</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1a6b65;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #1a6b65;
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .header .info {
+            color: #666;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            color: #1a6b65;
+            font-size: 18px;
+            font-weight: bold;
+            border-left: 4px solid #1a6b65;
+            padding-left: 15px;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section-content {
+            padding-left: 20px;
+            text-align: justify;
+        }
+        
+        .participants-list,
+        .decisions-list,
+        .actions-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .participants-list li,
+        .decisions-list li,
+        .actions-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .action-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #42a594;
+        }
+        
+        .action-item .responsible {
+            color: #1a6b65;
+            font-weight: bold;
+        }
+        
+        .action-item .deadline {
+            color: #dc3545;
+            font-style: italic;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #1a6b65;
+        }
+        
+        .signature-block {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .signature {
+            text-align: center;
+            min-width: 250px;
+            margin: 20px 0;
+        }
+        
+        .signature-line {
+            border-top: 2px solid #333;
+            margin: 50px 0 10px 0;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ata de Reunião de Trabalho</h1>
+        <div class="info">{{empresa}}</div>
+        <div class="info">Data: {{data}} | Hora: {{hora}}</div>
+        <div class="info">Local: {{local}}</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">1. PARTICIPANTES</h2>
+        <div class="section-content">
+            <ul class="participants-list">
+                {{participantes}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">2. PAUTA</h2>
+        <div class="section-content">
+            {{pauta}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">3. DISCUSSÕES</h2>
+        <div class="section-content">
+            {{discussoes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">4. DECISÕES TOMADAS</h2>
+        <div class="section-content">
+            <ol class="decisions-list">
+                {{decisoes}}
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">5. AÇÕES E RESPONSÁVEIS</h2>
+        <div class="section-content">
+            {{acoes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">6. PRÓXIMOS PASSOS</h2>
+        <div class="section-content">
+            {{proximos_passos}}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Encerramento:</strong> {{hora_encerramento}}</p>
+        
+        <div class="signature-block">
+            <div class="signature">
+                <div class="signature-line"></div>
+                <p>{{responsavel_ata}}<br>Responsável pela Ata</p>
+            </div>
+            <div class="signature">
+                <div class="signature-line"></div>
+                <p>{{aprovador}}<br>Aprovador</p>
+            </div>
+        </div>
+    </div>
+
+    <p style="text-align: center; color: #999; font-size: 12px; margin-top: 40px;">
+        Documento gerado automaticamente pelo Sistema Mosaiko em {{data_geracao}}
+    </p>
+</body>
+</html>

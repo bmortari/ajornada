@@ -1,0 +1,36 @@
+services:
+  # ==========================================
+  # AMBIENTE DE DESENVOLVIMENTO (Localhost)
+  # ==========================================
+#  auditoria_dev:
+#    build: .
+#    container_name: nativa_auditoria_app
+#    ports:
+#      - "8006:8006"
+#    volumes:
+#      - .:/code  # Monta sua pasta local dentro do container (Hot Reload)
+#    environment:
+#      - DEBUG=True
+#    # Sobrescreve o comando para ativar o --reload
+#    command: uvicorn app.main:app --host 0.0.0.0 --port 8006 --reload
+#    restart: unless-stopped
+#    networks:
+#      - nativa-net
+
+  # ==========================================
+  # AMBIENTE DE PRODUÇÃO (VPS)
+  # Descomente abaixo e comente o serviço acima quando for subir na VPS
+  # ==========================================
+  auditoria_prod:
+    build: .
+    container_name: auditoria
+    ports:
+      - "8006:8006"
+    # Em produção não usamos volumes de código, usamos o COPY do Dockerfile
+    restart: always
+    networks:
+      - nativa-net
+
+networks:
+  nativa-net:
+    external: true

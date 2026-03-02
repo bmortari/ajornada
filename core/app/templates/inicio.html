@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Visão Geral - Jornada Agêntica{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', path='scr/inicio.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-wrapper fade-in-entry">
+    
+    <section class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content-centered">
+            <h1>UMA JORNADA DE TRANSFORMAÇÃO DIGITAL NO SERVIÇO PÚBLICO: <br><span class="highlight-text">RUMO AO AGÊNTICO</span></h1>
+            <p class="hero-subtitle">
+                Uma pesquisa aplicada sobre a integração das LLMs nas rotinas administrativas do setor público brasileiro.
+                Migrando de uma era dos mapas digitais para a era dos <strong>sistemas autônomos</strong> que traçam rotas e executam tarefas.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item"><i class="uil uil-robot"></i> Agentes Autônomos</div>
+                <div class="stat-separator"></div>
+                <div class="stat-item"><i class="uil uil-file-shield-alt"></i> Resolução CNJ 615</div>
+                <div class="stat-separator"></div>
+                <div class="stat-item"><i class="uil uil-analytics"></i> Eficiência Operacional</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard-grid">
+        
+        <div class="dash-card">
+            <div class="card-header">
+                <div class="icon-box"><i class="uil uil-focus-target"></i></div>
+                <h3>O Desafio & Oportunidade</h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    A administração pública enfrenta demandas crescentes em um cenário de recursos limitados. 
+                    Identificamos processos rotineiros que consomem esforço humano em tarefas repetitivas e padronizadas.
+                </p>
+                <p>
+                    O estudo propõe que a IA não seja apenas um acessório, mas uma força de colaboração inteligente. 
+                    Validamos a hipótese de que o momento atual é ideal para a proliferação de serviços assistidos, 
+                    garantindo segurança jurídica e conformidade com o marco regulatório.
+                </p>
+                <div class="product-tag"><i class="uil uil-file-contract"></i> 
+                    <a href="{{ url_for('read_apresentacao') }}" class="btn-text-link">Ver Apresentação</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-card">
+            <div class="card-header">
+                <div class="icon-box"><i class="uil uil-flask"></i></div>
+                <h3>Produtos Desenvolvidos</h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Utilizando a metodologia de <strong>Design Thinking</strong> e <strong>Análise Cognitiva de Tarefas (ACT)</strong>, 
+                    desenvolvemos uma suíte de soluções funcionais para provar o conceito:
+                </p>
+                
+                <div class="products-showcase">
+                    <div class="product-tag"><i class="uil uil-file-contract"></i> LIA (Licitações)</div>
+                    <div class="product-tag"><i class="uil uil-search-alt"></i> Agente de Auditoria</div>
+                    <div class="product-tag"><i class="uil uil-notes"></i> IATA (Atas)</div>
+                    <div class="product-tag"><i class="uil uil-check-circle"></i> Checagem de Fatos</div>
+                    <div class="product-tag"><i class="uil uil-robot"></i> PalanqueIA</div>
+                    <div class="product-tag"><i class="uil uil-robot"></i> ChatNormas</div>
+                </div>
+
+                <div style="margin-top: auto;">
+                    <a href="{{ url_for('read_produtos') }}" class="btn-text-link">
+                        Explorar o Catálogo de Produtos <i class="uil uil-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-card highlight-card">
+            <div class="card-header">
+                <div class="icon-box"><i class="uil uil-trophy"></i></div>
+                <h3>Resultados e Publicação</h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Os resultados indicam ganhos significativos em eficiência e qualidade. 
+                    É possível desenvolver agentes eficazes mantendo o equilíbrio ético entre a 
+                    <strong>autonomia do sistema</strong> e a <strong>supervisão humana</strong> ("Human-in-the-loop").
+                </p>
+                
+                <div class="dissertation-actions">
+                    <span class="label-action">Acesse a Dissertação Completa:</span>
+                    <div class="btn-group">
+                        <a href="{{ url_for('read_tese') }}" class="btn-primary-soft">
+                            <i class="uil uil-monitor"></i> Versão Web
+                        </a>
+                        <a href="{{ url_for('read_tese_pdf') }}" class="btn-primary-soft">
+                            <i class="uil uil-monitor"></i> Versão PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+{% endblock %}

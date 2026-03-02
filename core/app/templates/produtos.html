@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block title %}Produtos - Jornada Agêntica{% endblock %}
+
+{# --- 1. CSS --- #}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', path='scr/produtos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    
+    <div style="text-align: center; margin-bottom: 25px; color: var(--text-primary);">
+        <h2 style="font-weight: 600; font-size: 2rem;">Produtos & Estudos</h2>
+    </div>
+
+    <div class="cards-container">
+        
+        <div class="card">
+            <div class="card-category">Ecossistema</div>
+            <a href="{{ url_for('read_nativa') }}" class="card-link">
+                <div class="card-title">Nativa IA</div>
+                <div class="card-description">Ecossistema de agentes de IA: Prototipação e Design Thinking</div>
+                <img src="{{ url_for('static', path='/img/nativa.png') }}" alt="Nativa" class="card-event-banner">
+                <img src="{{ url_for('static', path='/img/selo_inovacao.png') }}" alt="selo" style="width: 180px; margin-top: -5px;">
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('read_nativa') }}" class="action-link" title="Acessar"><i class="uil uil-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">ChatBot</div>
+            <a href="{{ url_app_8001 }}" class="card-link" target="_blank">
+                <i class="uil uil-comments-alt card-icon"></i>
+                <div class="card-title">Consulta Normativa</div>
+                <div class="card-description">Informações sobre normas e regulamentos de forma rápida.</div>
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8001') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8001 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/chatnormas" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_basenormas') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">ChatBot</div>
+            <a href="{{ url_app_8002 }}" class="card-link" target="_blank">
+                <div class="card-title">PalanqueIA</div>
+                <div class="card-description">ChatBot RAG para planos de governo eleitorais.</div>
+                <img src="{{ url_for('static', path='/img/ccs.jpg') }}" alt="CCS2025" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8002') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8002 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/palanqueia" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_palanqueia') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Agente de IA</div>
+            <a href="{{ url_app_8003 }}" class="card-link" target="_blank">
+                <i class="uil uil-create-dashboard card-icon"></i>
+                <div class="card-title">IATA</div>
+                <div class="card-description">Transcrição de áudio e geração de ata automática.</div>
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8003') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8003 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/iata" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Agente de IA</div>
+            <a href="{{ url_app_8006 }}" class="card-link" target="_blank">
+                <div class="card-title">Auditoria</div>
+                <div class="card-description">Ferramentas inteligentes para auxílio em auditoria.</div>
+                <div style="font-weight: bold; color: #2E7D32; font-size: 0.75rem; margin: 5px 0;">
+                    🏆 Prêmio Geração de Valor
+                </div>
+                <img src="{{ url_for('static', path='/img/agente_auditoria.jpg') }}" alt="auditoria" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8006') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8006 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/nativa-auditoria" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Agente de IA</div>
+            <a href="{{ url_app_8005 }}" class="card-link" target="_blank">
+                <i class="uil uil-create-dashboard card-icon"></i>
+                <div class="card-title">Licitações</div>
+                <div class="card-description">Gerencie processos licitatórios com IA.</div>
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8005') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8005 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/lia" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Agente de IA</div>
+            <a href="{{ url_app_8004 }}" class="card-link" target="_blank">
+                <i class="uil uil-file-import card-icon"></i>
+                <div class="card-title">Checagem de Fatos</div>
+                <div class="card-description">Extração de declarações, evidências e veredito.</div>
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8004') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8004 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/mosaiko" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_checagem') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Agente de IA</div>
+            <a href="{{ url_app_8007 }}" class="card-link" target="_blank">
+                <i class="uil uil-analytics card-icon"></i>
+                <div class="card-title">ChatDatajud</div>
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('embed_app_8007') }}" class="action-link" title="Ver embed"><i class="uil uil-window-maximize"></i></a>
+                <a href="{{ url_app_8007 }}" class="action-link" target="_blank" title="Abrir direto"><i class="uil uil-external-link-alt"></i></a>
+                <a href="https://github.com/bmortari/ChatDatajud" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Outros Estudos</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Aprendizado Federado</div>
+                <div class="card-description">Colaboração interinstitucional para treino de modelos.</div>
+                <img src="{{ url_for('static', path='/img/enmc.png') }}" alt="ENMC" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="https://github.com/brunomortari/SBRC_2025_Aprendizado_Federado" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_federado') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Outros Estudos</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Fine-Tuning: Detecção</div>
+                <div class="card-description">Detector de texto sintético para PTBR usando Transformers.</div>
+                <img src="{{ url_for('static', path='/img/ccs.jpg') }}" alt="CCS2025" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="https://huggingface.co/brunomortari/xlm-roberta-large-fn-ptbr-detect-ai" class="action-link" target="_blank"><i class="uil uil-arrow-right"></i></a>
+                <a href="https://github.com/bmortari/classificador" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_classificador') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Outros Estudos</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Democracia Inclusiva</div>
+                <div class="card-description">O voto de eleitores com deficiência e analfabetos.</div>
+                <img src="{{ url_for('static', path='/img/revistathemis.png') }}" alt="RT" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="https://github.com/bmortari/abstencao_eleitoral" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_inclusiva') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Outros Estudos</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Governança de IA</div>
+                <div class="card-description">Padrões internacionais para governança responsável.</div>
+                <img src="{{ url_for('static', path='/img/icse.jpg') }}" alt="ICSE" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('read_governanca') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Outros Estudos</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Resolução 615/2025 CNJ</div>
+                <div class="card-description">Impactos e Governança no judiciário.</div>
+                <img src="{{ url_for('static', path='/img/engec.png') }}" alt="ENGEC" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('read_engec') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Oficina</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Agentes de IA</div>
+                <img src="{{ url_for('static', path='/img/n8n.svg') }}" alt="n8n" class="card-event-banner">
+                <div class="card-description">Desenvolvendo agentes de IA com Python e n8n</div>
+            </a>
+            <div class="card-actions">
+                <a href="{{ url_for('read_oficina') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">BI</div>
+            <a href="#" class="card-link">
+                <i class="uil uil-chart-line card-icon"></i>
+                <div class="card-title">Modelagem Estatística</div>
+                <div class="card-description">Relação entre gastos e performance eleitoral.</div>
+            </a>
+            <div class="card-actions">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiODQ5MzNmZmQtMjUyYi00NGZlLTg5ZTctMjAzYmYwNGM1NDQxIiwidCI6IjI2ZjA4NzIyLTFjOWUtNGVkZS1iN2VkLThhMmI3N2ZmM2Q5YyJ9" class="action-link"><i class="uil uil-arrow-right"></i></a>
+                <a href="{{ url_for('read_gastos') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Conjunto de Dados</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Sintéticos vs Humanos</div>
+                <div class="card-description">Dataset de textos humanos e seu complementar sintético.</div>
+                <img src="{{ url_for('static', path='/img/huggingface_logo-noborder.svg') }}" alt="zenodo" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="https://huggingface.co/datasets/Monteiroo/Feijoada" class="action-link" target="_blank"><i class="uil uil-arrow-right"></i></a>
+                <a href="https://github.com/bmortari/classificador" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_classificador') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Conjunto de Dados</div>
+            <a href="#" class="card-link">
+                <div class="card-title">Planos de Governo</div>
+                <div class="card-description">Milhares de planos de governo vetorizados (Eleições 2024).</div>
+                <img src="{{ url_for('static', path='/img/huggingface_logo-noborder.svg') }}" alt="zenodo" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="https://huggingface.co/datasets/brunomortari/planos_de_governo_Goias_2024" class="action-link" target="_blank"><i class="uil uil-arrow-right"></i></a>
+                <a href="https://github.com/bmortari/planos_governo" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_palanqueia') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-category">Conjunto de Dados</div>
+            <a href="{{ url_for('read_basenormas') }}" class="card-link">
+                <div class="card-title">Normativos do CNJ</div>
+                <div class="card-description">Conjunto Universo dos atos normativos do CNJ.</div>
+                <img src="{{ url_for('static', path='/img/huggingface_logo-noborder.svg') }}" alt="zenodo" class="card-event-banner">
+            </a>
+            <div class="card-actions">
+                <a href="https://huggingface.co/datasets/brunomortari/normativos_cnj_2015_2025" class="action-link" target="_blank"><i class="uil uil-arrow-right"></i></a>
+                <a href="https://github.com/bmortari/normativos_cnj" class="action-link" target="_blank"><i class="uil uil-github"></i></a>
+                <a href="{{ url_for('read_basenormas') }}" class="action-link"><i class="uil uil-file-alt"></i></a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='scr/produtos.js') }}"></script>
+{% endblock %}

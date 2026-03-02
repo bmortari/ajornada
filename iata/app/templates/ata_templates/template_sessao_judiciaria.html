@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata de Sessão Judiciária</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            color: #000;
+            line-height: 2;
+        }
+        
+        .brasao {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px double #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .header .tribunal {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .processo-info {
+            background: #f5f5f5;
+            padding: 15px;
+            border: 2px solid #000;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 20px 0 10px 0;
+            text-decoration: underline;
+        }
+        
+        .composicao {
+            margin-left: 40px;
+        }
+        
+        .partes-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .partes-table th,
+        .partes-table td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .partes-table th {
+            background: #e0e0e0;
+            font-weight: bold;
+        }
+        
+        .voto {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #000;
+            background: #fafafa;
+        }
+        
+        .voto .magistrado {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .decisao {
+            background: #fff8dc;
+            border: 3px double #000;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .assinaturas {
+            margin-top: 60px;
+        }
+        
+        .assinatura-linha {
+            border-top: 1px solid #000;
+            width: 400px;
+            margin: 50px auto 10px auto;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brasao">
+        ⚖️
+    </div>
+    
+    <div class="header">
+        <div class="tribunal">{{tribunal}}</div>
+        <h1>Ata de Sessão Judiciária</h1>
+    </div>
+
+    <div class="processo-info">
+        <strong>Processo nº:</strong> {{numero_processo}}<br>
+        <strong>Data:</strong> {{data}} | <strong>Hora:</strong> {{hora}}<br>
+        <strong>Local:</strong> {{local}}
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">1. Composição</h2>
+        <div class="composicao">
+            <p><strong>Presidente:</strong> {{presidente}}</p>
+            {{desembargadores}}
+            <p><strong>Secretário:</strong> {{secretario}}</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">2. Partes e Advogados</h2>
+        <table class="partes-table">
+            <thead>
+                <tr>
+                    <th>Parte</th>
+                    <th>Nome</th>
+                    <th>Advogado(a)</th>
+                    <th>OAB</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{partes_advogados}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">3. Relatório</h2>
+        <p>{{relatorio}}</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">4. Sustentações Orais</h2>
+        {{sustentacoes}}
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">5. Votos</h2>
+        {{votos}}
+    </div>
+
+    <div class="decisao">
+        <h2 class="section-title">DECISÃO</h2>
+        <p>{{decisao}}</p>
+        <p><strong>Votação:</strong> {{votacao}}</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">6. Dispositivo</h2>
+        <p>{{dispositivo}}</p>
+    </div>
+
+    <div class="footer">
+        <p><strong>Data de Publicação:</strong> {{data_publicacao}}</p>
+        
+        <div class="assinaturas">
+            <div class="assinatura-linha"></div>
+            <p>{{presidente}}<br>Presidente</p>
+            
+            <div class="assinatura-linha"></div>
+            <p>{{secretario}}<br>Secretário(a)</p>
+        </div>
+    </div>
+
+    <p style="text-align: center; color: #666; font-size: 11px; margin-top: 40px;">
+        Ata lavrada em {{data_geracao}}
+    </p>
+</body>
+</html>

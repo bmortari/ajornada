@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}Nativa IA - O Futuro com Agentes Inteligentes{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', path='scr/nativa.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="landing-container">
+
+    <section class="hero-section">
+        <div class="awards-container">
+            <div class="award-badge">
+                <img src="{{ url_for('static', path='img/selo_inovacao.png') }}" alt="Prêmio Inovação">
+                <span>Inovação 2025</span>
+            </div>
+            <div class="award-badge">
+                <img src="{{ url_for('static', path='img/judex.jpeg') }}" alt="Prêmio Inovação 2">
+                <span>Finalista Judiciário Exponencial 2025</span>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">
+                O que é <span class="highlight-text">Nativa IA</span>?
+            </h1>
+            <p class="hero-subtitle">
+            É uma iniciativa para desenvolvimento de um ecossistema de <strong>agentes e soluções com uso de inteligência artificial</strong>, promovendo o debate de normas, técnicas e métodos em P&D na área.
+            </p>
+            <p class="hero-description">
+                O nome <strong>Nativa</strong> traduz a ideia de algo próprio, autêntico e concebido dentro de nossas instituições, enquanto a <strong>Folha Digital</strong> simboliza a renovação e o compromisso com a transformação tecnológica do serviço público brasileiro.
+            </p>
+        </div>
+        
+        <div class="hero-image">
+             <img src="{{ url_for('static', path='img/nativa.png') }}" alt="Ilustração de IA">
+        </div>
+    </section>
+
+    <div class="section-divider wave-gradient-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+
+    <section class="about-section">
+        <div class="section-number">01</div>
+        <h2 class="section-title-large">Quem Somos</h2>
+        <div class="about-content">
+            <p class="text-presentation">
+                Somos uma <strong>equipe multidisciplinar de laboratoristas</strong> representados por diversos Tribunais e instituições de ensino dispostos a discutir, testar, avaliar e validar soluções inovadoras com uso de IA.
+            </p>
+            
+            <h3 class="subsection-title" style="color: var(--nativa-green-mid); margin: 30px 0 20px;">Princípios</h3>
+            
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon"><i class="uil uil-shield-check"></i></div>
+                    <h3>Éticos</h3>
+                    <p>Justo, seguro, transparente e benéfico</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon"><i class="uil uil-balance-scale"></i></div>
+                    <h3>Legais</h3>
+                    <p>Conformidade jurídica (Res. 615 CNJ, NIST AI)</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon"><i class="uil uil-share-alt"></i></div>
+                    <h3>Compartilháveis</h3>
+                    <p>Criadas para múltiplas instituições</p>
+                </div>
+                <div class="principle-card">
+                    <div class="principle-icon"><i class="uil uil-award"></i></div>
+                    <h3>Qualificados</h3>
+                    <p>Processo de avaliação e auditoria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-integrated-section">
+        <div class="collaboration-banner">
+            <h3 class="collaboration-title">
+                <i class="uil uil-users-alt"></i> Desenvolvendo em Colaboração
+            </h3>
+            <p class="collaboration-text">
+                O ecossistema Nativa visa criar agentes colaborativos que transformem o serviço público brasileiro.
+            </p>
+        </div>
+        <div class="partners-grid">
+            <div class="partner-logo-box">
+                <img src="{{ url_for('static', path='img/logo_tre_go.png') }}" alt="TRE-GO">
+                <span class="partner-name">TRE-GO</span>
+            </div>
+            <div class="partner-logo-box">
+                <img src="{{ url_for('static', path='img/logo_tre_ac.png') }}" alt="TRE-AC">
+                <span class="partner-name">TRE-AC</span>
+            </div>
+            <div class="partner-logo-box">
+                <img src="{{ url_for('static', path='img/PPGGTD.jpeg') }}" alt="UFT">
+                <span class="partner-name">UFT</span>
+            </div>
+            <div class="partner-logo-box">
+                <img src="{{ url_for('static', path='img/TJAP.jpg') }}" alt="TJAP">
+                <span class="partner-name">TJAP</span>
+            </div>
+            <div class="partner-logo-box">
+                <img src="{{ url_for('static', path='img/logo_tre_ap.png') }}" alt="TRE-AP">
+                <span class="partner-name">TRE-AP</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="section-number">02</div>
+        <h2 class="section-title-large">Por Que Nativa IA?</h2>
+        
+        <div class="collaborative-message">
+            <div class="message-icon"><i class="uil uil-lightbulb"></i></div>
+            <p class="text-presentation" style="margin-bottom: 0;">
+                A <strong>necessidade de desenvolvimento colaborativo</strong> em IA não é apenas uma escolha estratégica, mas uma exigência da nossa realidade.
+            </p>
+        </div>
+
+        <h3 class="subsection-title" style="color: var(--nativa-green-mid); margin: 30px 0;">Pilares da Proposta</h3>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon"><i class="uil uil-users-alt"></i></div>
+                <h4>Inteligência Coletiva</h4>
+                <p>Unimos mentes de diversas instituições para criar soluções robustas.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon"><i class="uil uil-chart-pie-alt"></i></div>
+                <h4>Economia de Escala</h4>
+                <p>Evitamos a duplicação de custos com infraestrutura e P&D.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon"><i class="uil uil-shield-check"></i></div>
+                <h4>Qualidade</h4>
+                <p>Centralizamos a validação técnica, ética e jurídica.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon"><i class="uil uil-tachometer-fast-alt"></i></div>
+                <h4>Inovação Acelerada</h4>
+                <p>O compartilhamento de código acelera o ciclo de inovação.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="challenge-section">
+        <div class="section-number" style="color: rgba(255,255,255,0.7);">03</div>
+        <h2 class="section-title-large" style="color: #fff;">O Grande Desafio</h2>
+        
+        <div class="challenge-highlight">
+            <div class="challenge-icon" style="font-size: 3rem; color: #7fffcc;">
+                <i class="uil uil-mountain"></i>
+            </div>
+            <p class="text-presentation-emphasis" style="color: #fff; font-size: 1.1rem; line-height: 1.6;">
+                O desafio atual é <strong>transformar ideias em sistemas integrados</strong>. Não basta ter soluções em laboratório — precisamos levá-las para produção.
+            </p>
+        </div>
+
+        <div class="challenge-journey">
+            <div class="journey-card">
+                <div class="journey-status"><i class="uil uil-check"></i></div>
+                <h4>Prova de Conceito</h4>
+                <p>Validação técnica</p>
+            </div>
+            <div class="journey-arrow"><i class="uil uil-arrow-right"></i></div>
+            <div class="journey-card">
+                <div class="journey-status"><i class="uil uil-sync"></i></div>
+                <h4>Integração</h4>
+                <p>Sistemas multi-institucionais</p>
+            </div>
+            <div class="journey-arrow"><i class="uil uil-arrow-right"></i></div>
+            <div class="journey-card">
+                <div class="journey-status"><i class="uil uil-rocket"></i></div>
+                <h4>Produção</h4>
+                <p>Adoção ampla</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <h3 class="cta-title" style="color: var(--text-title); font-size: 2rem;">Explorar os agentes</h3>
+        <p class="cta-description" style="color: var(--text-body); margin-bottom: 20px;">
+            Acesse nossa plataforma e descubra como os agentes de IA podem transformar seu trabalho.
+        </p>
+        <a href="{{ url_for('read_produtos') }}" class="cta-button-large">
+            <i class="uil uil-rocket"></i> Acessar Produtos
+        </a>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='scr/nativa.js') }}"></script>
+{% endblock %}

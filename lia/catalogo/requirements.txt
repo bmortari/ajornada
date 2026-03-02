@@ -1,0 +1,22 @@
+# Catalogo - CATMAT/CATSERV
+# Scraper + Vetorizador + Busca Semântica
+
+# ── Scraper (scrapy.py) ──
+httpx
+sqlalchemy
+python-dotenv
+asyncpg
+aiosqlite
+
+# ── Vetorizador (vectorize.py) + Busca (search.py) ──
+sentence-transformers>=3.0.0
+torch
+psycopg2-binary
+pandas
+pyarrow
+
+# ── Modelo BGE-M3 (BAAI/bge-m3) ──
+# Baixado automaticamente pelo sentence-transformers
+# ~1.5GB no primeiro download
+# 100+ idiomas, 8192 tokens, Top 6 MTEB
+# Vetores salvos no PostgreSQL via pgvector

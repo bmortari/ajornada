@@ -1,0 +1,421 @@
+/**
+ * Sistema LIA - Manual do Usuário (React)
+ * =========================================
+ * Todas as variáveis CSS usam o sistema do globals.css (Shadcn/Tailwind):
+ *   --card, --border, --foreground, --muted, --muted-foreground,
+ *   --primary, --primary-foreground, --accent, --success, --info, --warning
+ */
+
+/* ====== Elegant Muted Palette ====== */
+:root {
+    --lia-slate: #64748b;
+    --lia-teal: #5eadb0;
+    --lia-amber: #d4a053;
+    --lia-rose: #c47a8a;
+    --lia-violet: #8b7ec8;
+    --lia-sage: #6b9a7d;
+    --lia-steel: #7889a0;
+    --lia-copper: #b8886f;
+    --lia-indigo: #7381c4;
+}
+
+/* ====== Page Header ====== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+}
+
+.page-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--muted);
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.page-icon:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.page-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted-foreground);
+    margin: 4px 0 0 0;
+}
+
+/* ====== Quick Navigation ====== */
+.quick-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.quick-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.625rem;
+    color: var(--foreground);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.quick-nav-item svg {
+    flex-shrink: 0;
+}
+
+.quick-nav-item:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ====== Manual Sections ====== */
+.manual-section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 100px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.section-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-foreground);
+    background: var(--primary);
+    flex-shrink: 0;
+}
+
+.section-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0 0 0.25rem 0;
+}
+
+.section-description {
+    font-size: 0.95rem;
+    color: var(--muted-foreground);
+    margin: 0;
+}
+
+/* ====== Content Cards ====== */
+.content-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    line-height: 1.8;
+}
+
+.content-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.content-card p {
+    color: var(--muted-foreground);
+    margin-bottom: 0.75rem;
+}
+
+.content-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-card li {
+    padding: 0.375rem 0;
+    color: var(--muted-foreground);
+}
+
+.highlight-box {
+    background: var(--muted);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.highlight-box h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+}
+
+/* ====== Artefatos Grid ====== */
+.artefatos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.artefato-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--lia-slate);
+    border-radius: 0.625rem;
+    padding: 1.5rem;
+    transition: all 0.25s ease;
+}
+
+.artefato-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+}
+
+.artefato-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.875rem;
+}
+
+.artefato-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: var(--lia-slate);
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+
+.artefato-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.artefato-card p {
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+    margin-bottom: 0.375rem;
+    line-height: 1.7;
+}
+
+/* Artefato color accents */
+.artefato-card[data-color="slate"]  { border-left-color: var(--lia-slate); }
+.artefato-card[data-color="slate"]  .artefato-icon { background: var(--lia-slate); }
+
+.artefato-card[data-color="rose"]   { border-left-color: var(--lia-rose); }
+.artefato-card[data-color="rose"]   .artefato-icon { background: var(--lia-rose); }
+
+.artefato-card[data-color="teal"]   { border-left-color: var(--lia-teal); }
+.artefato-card[data-color="teal"]   .artefato-icon { background: var(--lia-teal); }
+
+.artefato-card[data-color="sage"]   { border-left-color: var(--lia-sage); }
+.artefato-card[data-color="sage"]   .artefato-icon { background: var(--lia-sage); }
+
+.artefato-card[data-color="violet"] { border-left-color: var(--lia-violet); }
+.artefato-card[data-color="violet"] .artefato-icon { background: var(--lia-violet); }
+
+.artefato-card[data-color="amber"]  { border-left-color: var(--lia-amber); }
+.artefato-card[data-color="amber"]  .artefato-icon { background: var(--lia-amber); }
+
+.artefato-card[data-color="steel"]  { border-left-color: var(--lia-steel); }
+.artefato-card[data-color="steel"]  .artefato-icon { background: var(--lia-steel); }
+
+.artefato-card[data-color="copper"] { border-left-color: var(--lia-copper); }
+.artefato-card[data-color="copper"] .artefato-icon { background: var(--lia-copper); }
+
+.artefato-card[data-color="indigo"] { border-left-color: var(--lia-indigo); }
+.artefato-card[data-color="indigo"] .artefato-icon { background: var(--lia-indigo); }
+
+/* ====== Users Grid ====== */
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.user-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.user-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    background: var(--primary);
+}
+
+.user-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+}
+
+.user-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.user-card li {
+    padding: 0.25rem 0;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.user-card li::before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* ====== Tips Grid ====== */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: var(--card);
+    border: 2px solid;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.tip-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.tip-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tip-card p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+}
+
+.tip-success      { border-color: var(--success); }
+.tip-success h4   { color: var(--success); }
+.tip-info         { border-color: var(--info); }
+.tip-info h4      { color: var(--info); }
+.tip-warning      { border-color: var(--warning); }
+.tip-warning h4   { color: var(--warning); }
+.tip-primary      { border-color: var(--primary); }
+.tip-primary h4   { color: var(--primary); }
+
+/* ====== Manual Footer ====== */
+.manual-footer {
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    color: var(--foreground);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.footer-content p {
+    margin: 0;
+    opacity: 0.9;
+    color: var(--muted-foreground);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .quick-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .artefatos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}

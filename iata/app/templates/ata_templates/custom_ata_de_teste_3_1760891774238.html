@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata de Teste 3 - [NOME_DA_EMPRESA]</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            -webkit-print-color-adjust: exact; /* Ensures colors are printed as specified */
+            print-color-adjust: exact;
+        }
+
+        /* Container for the Ata */
+        .ata-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        /* Header */
+        .ata-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #1a6b65; /* Primary color for separator */
+        }
+        .ata-header h1 {
+            color: #1a6b65;
+            font-size: 2.2em;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        .ata-header h2 {
+            color: #42a594;
+            font-size: 1.4em;
+            margin: 0;
+            font-weight: normal;
+        }
+        .ata-header p {
+            font-size: 0.9em;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 25px;
+        }
+        .section h3 {
+            color: #1a6b65;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .section p {
+            margin: 0 0 10px 0;
+        }
+        .section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding: 0;
+        }
+        .section ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            padding: 0;
+        }
+        .section li {
+            margin-bottom: 5px;
+        }
+
+        /* Specific blocks */
+        .info-block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            border-top: 1px dashed #ccc;
+            border-bottom: 1px dashed #ccc;
+        }
+        .info-item {
+            flex: 1;
+            min-width: 48%; /* Adjust for 2 columns */
+            margin-bottom: 10px;
+        }
+        .info-item strong {
+            color: #42a594;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .signatures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #1a6b65;
+        }
+        .signature-block {
+            flex: 1;
+            min-width: 250px; /* Minimum width for signature block */
+            text-align: center;
+            margin: 0 15px 30px 15px;
+            padding-top: 40px;
+            position: relative;
+        }
+        .signature-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            border-top: 1px solid #333;
+        }
+        .signature-block p {
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+        }
+        .signature-block .name {
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+            display: block;
+        }
+        .signature-block .role {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Placeholder styles */
+        .placeholder {
+            color: #cc0000; /* Red for visibility */
+            font-weight: bold;
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            body {
+                padding: 0;
+                background-color: #fff;
+                font-size: 11pt;
+            }
+            .ata-container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 1cm; /* Standard margins for print */
+                max-width: none;
+                width: auto;
+            }
+            .ata-header {
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+            }
+            .ata-header h1 {
+                font-size: 1.8em;
+            }
+            .ata-header h2 {
+                font-size: 1.2em;
+            }
+            .section {
+                margin-bottom: 20px;
+                page-break-inside: avoid; /* Avoid breaking sections across pages */
+            }
+            .signatures {
+                margin-top: 40px;
+                page-break-before: auto; /* Allow page break before signatures if needed */
+            }
+            .signature-block {
+                min-width: unset;
+                flex: 1;
+                margin: 0 10px 20px 10px;
+                padding-top: 30px;
+            }
+            .info-block {
+                page-break-inside: avoid;
+                border-top: none;
+                border-bottom: none;
+            }
+            .info-item {
+                min-width: 45%;
+            }
+            .placeholder {
+                color: inherit; /* Don't print placeholders in red */
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .ata-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            .ata-header h1 {
+                font-size: 1.8em;
+            }
+            .ata-header h2 {
+                font-size: 1.2em;
+            }
+            .info-item {
+                min-width: 100%; /* Stack info items on small screens */
+            }
+            .signatures {
+                flex-direction: column;
+                align-items: center;
+            }
+            .signature-block {
+                width: 80%; /* Make signature block wider on small screens */
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ata-container">
+        <!-- Cabeçalho -->
+        <header class="ata-header">
+            <h1>ATA DE <span class="placeholder">[TIPO_DA_ATA]</span></h1>
+            <h2>NÚMERO <span class="placeholder">[NUMERO_DA_ATA]</span></h2>
+            <p class="placeholder">[NOME_DA_EMPRESA]</p>
+            <p><span class="placeholder">[LOCAL_DA_EMPRESA]</span></p>
+        </header>
+
+        <!-- Informações da Reunião -->
+        <div class="section">
+            <h3>Detalhes da Reunião</h3>
+            <div class="info-block">
+                <div class="info-item">
+                    <strong>Data:</strong> <span class="placeholder">[DATA_DA_REUNIAO]</span>
+                </div>
+                <div class="info-item">
+                    <strong>Horário de Início:</strong> <span class="placeholder">[HORA_INICIO]</span>
+                </div>
+                <div class="info-item">
+                    <strong>Horário de Término:</strong> <span class="placeholder">[HORA_FIM]</span>
+                </div>
+                <div class="info-item">
+                    <strong>Local:</strong> <span class="placeholder">[LOCAL_DA_REUNIAO]</span>
+                </div>
+            </div>
+            <div class="info-block">
+                <div class="info-item">
+                    <strong>Presidente da Reunião:</strong> <span class="placeholder">[PRESIDENTE_DA_REUNIAO]</span>
+                </div>
+                <div class="info-item">
+                    <strong>Secretário(a) da Reunião:</strong> <span class="placeholder">[SECRETARIO_DA_REUNIAO]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Participantes -->
+        <div class="section">
+            <h3>Participantes</h3>
+            <p><strong>Presentes:</strong></p>
+            <ul>
+                <li><span class="placeholder">[LISTA_DE_PRESENTES]</span></li>
+            </ul>
+            <p><strong>Ausentes (Justificados/Não Justificados):</strong></p>
+            <ul>
+                <li><span class="placeholder">[LISTA_DE_AUSENTES]</span></li>
+            </ul>
+        </div>
+
+        <!-- Pauta e Deliberações -->
+        <div class="section">
+            <h3>Pauta e Deliberações</h3>
+            <ol>
+                <li>
+                    <h4><span class="placeholder">[PONTO_PAUTA_1]</span></h4>
+                    <p><strong>Descrição:</strong> <span class="placeholder">[DESCRICAO_DO_PONTO_1]</span></p>
+                    <p><strong>Deliberações:</strong> <span class="placeholder">[DELIBERACOES_DO_PONTO_1]</span></p>
+                    <p><strong>Responsáveis:</strong> <span class="placeholder">[RESPONSAVEIS_PONTO_1]</span></p>
+                    <p><strong>Prazo:</strong> <span class="placeholder">[PRAZO_PONTO_1]</span></p>
+                </li>
+                <li>
+                    <h4><span class="placeholder">[PONTO_PAUTA_2]</span></h4>
+                    <p><strong>Descrição:</strong> <span class="placeholder">[DESCRICAO_DO_PONTO_2]</span></p>
+                    <p><strong>Deliberações:</strong> <span class="placeholder">[DELIBERACOES_DO_PONTO_2]</span></p>
+                    <p><strong>Responsáveis:</strong> <span class="placeholder">[RESPONSAVEIS_PONTO_2]</span></p>
+                    <p><strong>Prazo:</strong> <span class="placeholder">[PRAZO_PONTO_2]</span></p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Encerramento -->
+        <div class="section">
+            <h3>Encerramento</h3>
+            <p>Aos <span class="placeholder">[DIA_ENCERRAMENTO]</span> dias do mês de <span class="placeholder">[MES_ENCERRAMENTO]</span> do ano de <span class="placeholder">[ANO_ENCERRAMENTO]</span>, a reunião foi encerrada às <span class="placeholder">[HORA_FIM_ENCERRAMENTO]</span> horas, conforme o previsto, e a presente ata foi lavrada para todos os efeitos legais. Após lida e aprovada, será assinada pelos presentes.</p>
+            <p><span class="placeholder">[TEXTO_FINAL_LIVRE]</span></p>
+        </div>
+
+        <!-- Assinaturas -->
+        <div class="signatures">
+            <div class="signature-block">
+                <span class="name placeholder">[NOME_ASSINATURA_1]</span>
+                <span class="role placeholder">[CARGO_ASSINATURA_1]</span>
+            </div>
+            <div class="signature-block">
+                <span class="name placeholder">[NOME_ASSINATURA_2]</span>
+                <span class="role placeholder">[CARGO_ASSINATURA_2]</span>
+            </div>
+            <div class="signature-block">
+                <span class="name placeholder">[NOME_ASSINATURA_3]</span>
+                <span class="role placeholder">[CARGO_ASSINATURA_3]</span>
+            </div>
+        </div>
+
+        <!-- Rodapé opcional -->
+        <footer style="text-align: center; margin-top: 40px; font-size: 0.8em; color: #999;">
+            <p>Documento gerado em <span class="placeholder">[DATA_GERACAO_DOCUMENTO]</span></p>
+            <p>&copy; <span class="placeholder">[ANO_ATUAL]</span> <span class="placeholder">[NOME_DA_EMPRESA]</span>. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

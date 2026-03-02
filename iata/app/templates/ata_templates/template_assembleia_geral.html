@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata de Assembleia Geral</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            color: #000;
+            line-height: 1.9;
+        }
+        
+        .header {
+            text-align: center;
+            border: 4px double #1a1a1a;
+            padding: 25px;
+            margin-bottom: 35px;
+            background: #f9f9f9;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .header .empresa {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .header .cnpj {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .tipo-assembleia {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .convocacao-box {
+            background: #fffacd;
+            border: 2px solid #ffd700;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 8px;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section-content {
+            text-align: justify;
+            padding-left: 20px;
+        }
+        
+        .mesa-diretora {
+            background: #e8eaf6;
+            padding: 15px;
+            border-left: 5px solid #667eea;
+            margin: 15px 0;
+        }
+        
+        .capital-representado {
+            background: #e8f5e9;
+            border: 3px solid #4caf50;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .capital-representado .valor {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin: 10px 0;
+        }
+        
+        .deliberacao {
+            background: #fff;
+            border: 2px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .deliberacao-titulo {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .votacao-result {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .voto-box {
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .votos-favor {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+        
+        .votos-contra {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+        
+        .votos-abstencao {
+            background: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffc107;
+        }
+        
+        .eleitos {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            border-top: 3px double #1a1a1a;
+            padding-top: 25px;
+        }
+        
+        .assinaturas {
+            margin-top: 80px;
+        }
+        
+        .assinatura {
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .assinatura-linha {
+            border-top: 2px solid #000;
+            width: 450px;
+            margin: 0 auto 10px auto;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ata de Assembleia Geral</h1>
+        <div class="empresa">{{nome_empresa}}</div>
+        <div class="cnpj">CNPJ: {{cnpj}}</div>
+    </div>
+
+    <div class="tipo-assembleia">
+        {{tipo_assembleia}} <!-- AGO, AGE, AGO/AGE -->
+    </div>
+
+    <div class="convocacao-box">
+        <strong>CONVOCAÇÃO:</strong> {{convocacao}}
+    </div>
+
+    <div class="section">
+        <p><strong>Data:</strong> {{data}}</p>
+        <p><strong>Horário:</strong> {{hora}}</p>
+        <p><strong>Local:</strong> {{local}}</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">1. Composição da Mesa</h2>
+        <div class="mesa-diretora">
+            <p><strong>Presidente:</strong> {{presidente}}</p>
+            <p><strong>Secretário:</strong> {{secretario}}</p>
+            {{mesarios}}
+        </div>
+    </div>
+
+    <div class="capital-representado">
+        <p><strong>CAPITAL SOCIAL REPRESENTADO</strong></p>
+        <div class="valor">{{percentual_capital}}%</div>
+        <p>{{acionistas_presentes}} acionistas presentes</p>
+        <p>Quórum legal atingido ✓</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">2. Acionistas/Sócios Presentes</h2>
+        <div class="section-content">
+            {{acionistas}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">3. Ordem do Dia</h2>
+        <div class="section-content">
+            <ol>
+                {{ordem_dia}}
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">4. Deliberações</h2>
+        <div class="section-content">
+            {{deliberacoes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">5. Votações</h2>
+        <div class="section-content">
+            {{votacoes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">6. Decisões e Resoluções</h2>
+        <div class="section-content">
+            {{decisoes}}
+        </div>
+    </div>
+
+    <div class="section" id="eleicoes" style="display: none;">
+        <h2 class="section-title">7. Eleições</h2>
+        <div class="eleitos">
+            <h3>Membros Eleitos:</h3>
+            {{eleitos}}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Encerramento:</strong> {{hora_encerramento}}</p>
+        <p>Nada mais havendo a tratar, foi encerrada a sessão, da qual se lavrou a presente ata que, lida e aprovada, vai assinada por todos os presentes.</p>
+        
+        <div class="assinaturas">
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p><strong>{{presidente}}</strong><br>Presidente da Mesa</p>
+            </div>
+            
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p><strong>{{secretario}}</strong><br>Secretário da Mesa</p>
+            </div>
+            
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p>Acionista/Sócio</p>
+            </div>
+        </div>
+    </div>
+
+    <p style="text-align: center; color: #666; font-size: 11px; margin-top: 50px;">
+        Ata lavrada e registrada em {{data_geracao}}
+    </p>
+</body>
+</html>

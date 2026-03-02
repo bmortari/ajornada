@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Uso - Agente de Auditoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/static/css/output.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+
+    <!-- Cabeçalho -->
+    <header class="bg-gradient-to-br from-primary-600 to-primary-800 text-white text-center py-12">
+        <div class="container mx-auto px-4">
+            <a href="/" class="inline-block mb-4">
+                <img src="/static/assets/img/logo_nativa_svg.svg" alt="Logo Nativa" class="w-24 h-24 mx-auto" />
+            </a>
+            <h1 class="text-4xl font-bold">Manual de Uso</h1>
+            <p class="text-lg text-primary-100 mt-2">Entenda o que cada funcionalidade gera e quais documentos são necessários.</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo do Manual -->
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Bloco de Instruções Gerais -->
+        <div class="mb-12 p-6 bg-customBlue-light dark:bg-gray-800 border-l-4 border-customBlue rounded-r-lg">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Instruções Gerais de Uso</h2>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+                <p>A geração de todos os documentos começa com o anexo dos arquivos solicitados em cada funcionalidade. Para fazer o upload, você pode clicar no botão de seleção ou simplesmente arrastar e soltar os arquivos na área indicada.</p>
+                <p>O campo <strong>'Instruções para a IA'</strong> é opcional e permite que você adicione contextos, detalhes ou informações específicas para aprimorar a qualidade do documento gerado. Para dicas sobre como preencher estas instruções, passe o mouse sobre o ícone de informação (<i class="uil uil-info-circle text-customBlue"></i>) ao lado do título do campo.</p>
+            </div>
+            <!-- Imagem Explicativa -->
+            <div class="my-8">
+                <img src="/static/assets/img/tela_geracao_documento.png" alt="Tela de Geração de Documento" class="rounded-lg shadow-lg w-full">
+            </div>
+        </div>
+
+        <!-- Bloco de Curadoria e Download -->
+        <div class="mb-12 p-6 bg-customGreen-light dark:bg-gray-800 border-l-4 border-customGreen rounded-r-lg">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Curadoria e Download</h2>
+            <div class="prose prose-lg dark:prose-invert max-w-none">
+                <p>Após a geração do documento, clique no botão <strong>Visualizar</strong> para abrir a tela de curadoria. Nesta tela, você pode revisar e fazer as correções necessárias no texto gerado pela IA.</p>
+                <img src="/static/assets/img/curadoria.png" alt="Tela de Curadoria" class="rounded-lg shadow-lg w-full my-8">
+                <p>Depois de ajustar o conteúdo, clique no botão <strong>Salvar alterações</strong> no final da página para confirmar suas alterações. Para baixar o documento finalizado em formato PDF, clique no botão <strong>Download</strong>.</p>
+                <img src="/static/assets/img/salvar_alteracoes.png" alt="Botão Salvar Alterações" class="rounded-lg shadow-lg w-full my-8">
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-white text-center mb-8 mt-24">Serviços disponíveis</h2>
+
+        <div class="space-y-12">
+
+            <!-- Seção Matriz de Planejamento -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border-l-4 border-customRed">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 bg-customRed-light rounded-full mr-4">
+                        <i class="uil uil-file-contract text-3xl text-customRed"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Matriz de Planejamento</h2>
+                </div>
+                <div class="prose prose-lg dark:prose-invert max-w-none">
+                    <p>Esta funcionalidade traduz uma análise de riscos em um plano de auditoria testável, detalhando os riscos, procedimentos e testes a serem aplicados pela equipe.</p>
+                    <h4>O que gera?</h4>
+                    <ul>
+                        <li>Um documento contendo a <strong>Matriz de Planejamento</strong>, que serve como guia para a execução da auditoria.</li>
+                    </ul>
+                    <h4 class="mt-8">Documentos necessários:</h4>
+                    <ul>
+                        <li><strong>Matriz de Riscos e Controles:</strong> Planilha com a lista de riscos, causas, consequências e controles.</li>
+                        <li><strong>Plano de Auditoria de Longo Prazo (PALP):</strong> Documento com os temas de auditoria para um ciclo de quatro anos.</li>
+                        <li><strong>Plano Anual de Auditoria (PAA):</strong> Especifica quais temas serão auditados no ano corrente.</li>
+                        <li><strong>Plano de Trabalho da Auditoria:</strong> Detalha o escopo, objetivos e metodologia para a auditoria específica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Seção Plano de Trabalho -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border-l-4 border-customOrange">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 bg-customOrange-light rounded-full mr-4">
+                        <i class="uil uil-file-alt text-3xl text-customOrange"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Plano de Trabalho</h2>
+                </div>
+                <div class="prose prose-lg dark:prose-invert max-w-none">
+                    <p>Esta funcionalidade formaliza o escopo, a metodologia, o cronograma e os recursos para uma auditoria específica, transformando os objetivos estratégicos em um plano de trabalho executável.</p>
+                    <h4>O que gera?</h4>
+                    <ul>
+                        <li>Um documento contendo o <strong>Plano de Trabalho da Auditoria</strong>, que guia a execução dos trabalhos.</li>
+                    </ul>
+                    <h4 class="mt-8">Documentos necessários:</h4>
+                    <ul>
+                        <li><strong>Plano de Auditoria de Longo Prazo (PALP):</strong> Fornece o contexto estratégico.</li>
+                        <li><strong>Plano Anual de Auditoria (PAA):</strong> Autoriza e define a auditoria para o ano corrente.</li>
+                        <li><strong>Matriz de Riscos:</strong> Análise detalhada dos riscos associados ao objeto da auditoria.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Seção Matriz de Achados -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border-l-4 border-customBlue">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 bg-customBlue-light rounded-full mr-4">
+                        <i class="uil uil-file-search-alt text-3xl text-customBlue"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Matriz de Achados</h2>
+                </div>
+                <div class="prose prose-lg dark:prose-invert max-w-none">
+                    <p>Esta funcionalidade antecipa potenciais achados de auditoria a partir dos documentos de planejamento. Ela age como um auditor experiente, transformando riscos e procedimentos em um formato de "pré-achado".</p>
+                    <h4>O que gera?</h4>
+                    <ul>
+                        <li>Um documento contendo a <strong>Matriz de Achados Preliminares</strong>, que ajuda a focar a fase de execução da auditoria.</li>
+                    </ul>
+                    <h4 class="mt-8">Documentos necessários:</h4>
+                    <ul>
+                        <li><strong>Matriz de Planejamento:</strong> Contém os riscos, procedimentos e testes.</li>
+                        <li><strong>Plano de Trabalho da Auditoria:</strong> Fornece o contexto geral, objetivos e escopo.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Seção Plano de Ação -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border-l-4 border-customGreen">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 bg-customGreen-light rounded-full mr-4">
+                        <i class="uil uil-file-check-alt text-3xl text-customGreen"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Plano de Ação</h2>
+                </div>
+                <div class="prose prose-lg dark:prose-invert max-w-none">
+                    <p>O plano de ação descreve as ações específicas e concretas que precisam ser realizadas para implementar uma recomendação, resolver um problema ou alcançar um objetivo estratégico. O documento define prazos específicos para a realização de cada ação.</p>
+                    <h4>O que gera?</h4>
+                    <ul>
+                        <li>Um documento contendo um <strong>Plano de Ação</strong> detalhado em formato de tabela, com ações específicas, prazos e contextos para cada recomendação.</li>
+                    </ul>
+                    <h4 class="mt-8">Documentos necessários:</h4>
+                    <ul>
+                        <li><strong>Matriz de Achados (Obrigatório):</strong> Documento com a descrição de cada achado, causas, riscos, efeitos e recomendações.</li>
+                        <li><strong>Matriz de Planejamento (Opcional):</strong> Utilizada para enriquecer o contexto da IA.</li>
+                        <li><strong>Plano de Trabalho (Opcional):</strong> Utilizado para enriquecer o contexto da IA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Seção Relatório de Auditoria -->
+            <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border-l-4 border-customAmber">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 bg-customAmber-light rounded-full mr-4">
+                        <i class="uil uil-document-layout-left text-3xl text-customAmber"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Relatório de Auditoria</h2>
+                </div>
+                <div class="prose prose-lg dark:prose-invert max-w-none">
+                    <p>Esta é a funcionalidade central que consolida os resultados da auditoria em um relatório final coeso, preenchendo um modelo padrão com as informações dos documentos de planejamento e execução.</p>
+                    <h4>O que gera?</h4>
+                    <ul>
+                        <li>O <strong>Relatório Final de Auditoria</strong>, pronto para ser revisado e apresentado.</li>
+                    </ul>
+                    <h4 class="mt-8">Documentos necessários:</h4>
+                    <ul>
+                        <li><strong>Matriz de Planejamento:</strong> Contém o planejamento, objeto, escopo e objetivos.</li>
+                        <li><strong>Plano de Trabalho:</strong> Detalha a execução, cronograma e equipes.</li>
+                        <li><strong>Matriz de Achados:</strong> Documento crucial com a descrição de cada achado, causas, riscos, efeitos e recomendações.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="flex justify-center my-8">
+        <a href="/dashboard" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            Voltar ao Início
+        </a>
+    </div>
+
+</body>
+</html>

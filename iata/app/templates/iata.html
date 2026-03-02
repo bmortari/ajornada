@@ -1,0 +1,506 @@
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', path='/iata.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container-ata">
+    <div class="header-ata">
+        <h1>🎙️ Sistema de Transcrição e Geração de Atas</h1>
+        <p>Transcreva áudios e gere atas profissionais automaticamente com IA</p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- RECURSOS DO SISTEMA - CLEAN -->
+    <!-- ============================================ -->
+    <div class="recursos-sistema-clean">
+        <div class="recursos-wrapper">
+            <!-- FLUXO 1 → 2 -->
+            <div class="recurso-item" id="recurso-step-1" data-step="1">
+                <div class="recurso-circle">
+                    <span class="recurso-emoji">🎤</span>
+                    <span class="recurso-check">✓</span>
+                </div>
+                <span class="recurso-label">Transcrição</span>
+            </div>
+            
+            <div class="recurso-connector" id="connector-1-2">
+                <svg width="80" height="4" viewBox="0 0 80 4">
+                    <line x1="0" y1="2" x2="80" y2="2" stroke="currentColor" stroke-width="4"/>
+                </svg>
+            </div>
+            
+            <div class="recurso-item" id="recurso-step-2" data-step="2">
+                <div class="recurso-circle">
+                    <span class="recurso-emoji">📝</span>
+                    <span class="recurso-check">✓</span>
+                </div>
+                <span class="recurso-label">Gerar Ata</span>
+            </div>
+            
+            <!-- SEPARADOR -->
+            <div class="recurso-separator"></div>
+            
+            <!-- MÓDULO 3 INDEPENDENTE -->
+            <div class="recurso-item opcional" id="recurso-step-3" data-step="3">
+                <div class="recurso-circle">
+                    <span class="recurso-emoji">⚙️</span>
+                    <span class="recurso-check">✓</span>
+                </div>
+                <span class="recurso-label">Criar Modelo</span>
+                <span class="recurso-badge">Opcional</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- BIBLIOTECA DE MODELOS -->
+    <!-- ============================================ -->
+    <div class="biblioteca-modelos-section">
+        <button class="btn-toggle-biblioteca" onclick="toggleBibliotecaModelos()">
+            📚 Ver Biblioteca de Modelos
+            <span class="badge-modelos" id="badge-total-modelos">4</span>
+        </button>
+        
+        <div id="biblioteca-modelos-container" class="biblioteca-container" style="display: none;">
+            <div class="biblioteca-header">
+                <h3>📚 Biblioteca de Modelos de Atas</h3>
+                <p>Explore os modelos disponíveis antes de criar sua ata</p>
+                <button class="btn-close-biblioteca" onclick="toggleBibliotecaModelos()">✕</button>
+            </div>
+            
+            <div class="biblioteca-filters">
+                <button class="filter-btn active" onclick="filtrarModelos('todos')" data-filter="todos">
+                    Todos <span id="count-todos">4</span>
+                </button>
+                <button class="filter-btn" onclick="filtrarModelos('nativos')" data-filter="nativos">
+                    🏛️ Nativos <span id="count-nativos">4</span>
+                </button>
+                <button class="filter-btn" onclick="filtrarModelos('customizados')" data-filter="customizados">
+                    ⭐ Customizados <span id="count-customizados">0</span>
+                </button>
+            </div>
+            
+            <div id="biblioteca-grid" class="biblioteca-grid">
+                <!-- Modelos serão carregados aqui dinamicamente -->
+                <div class="loading-biblioteca">
+                    <div class="loader"></div>
+                    <p>Carregando modelos...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-ata">
+        <div class="input-section-ata">
+            <div class="input-form-ata">
+                <h2>🎙️ Nova Transcrição</h2>
+                <form id="transcriptionForm">
+                    <div class="form-group">
+                        <label for="tipo_entrada">Tipo de Entrada:</label>
+                        <select id="tipo_entrada" name="tipo_entrada" required onchange="toggleInputMethod()">
+                            <option value="">Selecione o tipo</option>
+                            <option value="arquivo">Upload de Arquivo</option>
+                            <option value="gravacao">Gravar Áudio</option>
+                        </select>
+                    </div>
+
+                    <!-- Input para Upload de Arquivo -->
+                    <div class="form-group" id="arquivo-input" style="display: none;">
+                        <label for="arquivo_audio">Enviar Áudio:</label>
+                        <input type="file" id="arquivo_audio" name="arquivo_audio" accept="audio/mpeg,audio/wav,audio/ogg,audio/m4a,audio/mp4,audio/webm,audio/flac,audio/aac,audio/x-m4a">
+                        <small>Formatos aceitos: MP3, WAV, OGG, M4A, WEBM, FLAC, AAC (máx. 50MB)</small>
+                    </div>
+
+                    <!-- Input para Gravação -->
+                    <div class="form-group" id="gravacao-input" style="display: none;">
+                        <label>Gravar Áudio:</label>
+                        <div class="recording-controls">
+                            <button type="button" id="btnStartRecord" class="btn-record" onclick="startRecording()">
+                                🔴 Iniciar Gravação
+                            </button>
+                            <button type="button" id="btnStopRecord" class="btn-record" onclick="stopRecording()" disabled style="display: none;">
+                                ⏹️ Parar Gravação
+                            </button>
+                            <div id="recording-status" style="display: none; margin-top: 10px;">
+                                <span class="recording-indicator">🔴 Gravando...</span>
+                                <span id="recording-time">00:00</span>
+                            </div>
+                        </div>
+                        <audio id="audioPreview" controls style="width: 100%; margin-top: 10px; display: none;"></audio>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="informacoes_adicionais">Informações Adicionais (opcional):</label>
+                        <textarea id="informacoes_adicionais" name="informacoes_adicionais" rows="3" placeholder="Ex: Nome da empresa, participantes, data da reunião, número do processo, etc."></textarea>
+                        <small>Essas informações ajudarão a personalizar a ata</small>
+                    </div>
+
+                    <button type="submit" class="btn-ata" id="submitBtn">
+                        Iniciar Transcrição
+                    </button>
+                </form>
+            </div>
+
+            <!-- Seleção de Tipo de Ata (Aparece APÓS transcrição) -->
+            <div class="input-form-ata" id="ata-type-selection" style="margin-top: 20px; display: none;">
+                <h3 style="margin-bottom: 15px; color: var(--theme-primary-color);">📝 Escolha o Tipo de Ata</h3>
+                
+                <div class="form-group">
+                    <label for="tipo_ata_escolha">Selecione o modelo de ata:</label>
+                    <select id="tipo_ata_escolha" name="tipo_ata_escolha" required>
+                        <option value="">Selecione o tipo de ata</option>
+                        <option value="reuniao_trabalho">📋 Ata de Reunião de Trabalho</option>
+                        <option value="sessao_judiciaria">⚖️ Ata de Sessão Judiciária</option>
+                        <option value="reuniao_condominio">🏢 Ata de Reunião de Condomínio</option>
+                        <option value="assembleia_geral">👥 Ata de Assembleia Geral</option>
+                        <option value="personalizado" disabled>⚙️ Modelo Personalizado (Em breve)</option>
+                    </select>
+                    <small>Escolha o formato mais adequado para sua necessidade</small>
+                </div>
+
+                <button class="btn-ata" onclick="gerarAtaComTipoEscolhido()" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    ✨ Gerar Ata com Modelo Selecionado
+                </button>
+            </div>
+
+            <!-- Controles Manuais dos Módulos -->
+            <div class="input-form-ata" id="module-controls" style="margin-top: 20px; display: none;">
+                <h3 style="margin-bottom: 15px; color: var(--theme-primary-color);">⚙️ Ações Disponíveis</h3>
+
+                <button class="btn-ata" id="btn-download-ata" onclick="downloadAta()" disabled style="margin-bottom: 10px; opacity: 0.5; background: linear-gradient(135deg, #28a745 0%, #34ce57 100%);">
+                    📥 Baixar Ata
+                    <span style="font-size: 0.85em; display: block; margin-top: 5px;">Formato HTML</span>
+                </button>
+                
+                <button class="btn-ata" onclick="resetarFormulario()" style="margin-bottom: 10px; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);">
+                    🔄 Nova Transcrição
+                    <span style="font-size: 0.85em; display: block; margin-top: 5px;">Começar do zero</span>
+                </button>
+            </div>
+
+            <div class="progress-bar-ata" style="display: none;" id="progressBar">
+                <div class="progress-fill-ata" id="progressFill" style="width: 0%">0%</div>
+            </div>
+
+            <div id="statusMessages"></div>
+        </div>
+
+        <div class="results-section-ata">
+            <div class="tabs-ata">
+                <button class="tab-ata active" onclick="openTab(event, 'modulo1')">
+                    🎤 Transcrever Áudio
+                </button>
+                <button class="tab-ata" onclick="openTab(event, 'modulo2')">
+                    📝 Gerar Ata
+                </button>
+                <button class="tab-ata" onclick="openTab(event, 'modulo3')">
+                    ⚙️ Gerar Novo Modelo de Ata
+                </button>
+            </div>
+
+            <div id="modulo1" class="tab-content-ata active">
+                <div class="result-card-ata">
+                    <h3>🎤 Módulo 1: Transcrição de Áudio</h3>
+                    <p>Este módulo processa o áudio e transcreve todo o conteúdo em texto usando IA de reconhecimento de voz.</p>
+                    <div id="modulo1-content">
+                        <p style="color: #999; text-align: center; padding: 40px;">
+                            Aguardando upload ou gravação de áudio...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modulo2" class="tab-content-ata">
+                <div class="result-card-ata">
+                    <h3>📝 Módulo 2: Geração de Ata</h3>
+                    <p>Gera uma ata estruturada e profissional baseada na transcrição e no tipo selecionado.</p>
+                    <div id="modulo2-content">
+                        <p style="color: #999; text-align: center; padding: 40px;">
+                            Aguardando processamento...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Substitua o conteúdo do Módulo 3 no seu iata.html por este -->
+
+            <div id="modulo3" class="tab-content-ata">
+                <div class="result-card-ata">
+                    <h3>⚙️ Módulo 3: Criar Novo Modelo de Ata</h3>
+                    <p style="color: #666; font-size: 1.05em; line-height: 1.6;">
+                        Crie modelos personalizados de atas usando IA. Escolha o método que preferir.
+                    </p>
+                    
+                    <!-- SELEÇÃO DO MÉTODO -->
+                    <div id="metodo-criacao-novo" class="metodo-selecao-novo">
+                        <div class="metodos-grid-novo">
+                            <!-- OPO 1: VIA PROMPT -->
+                            <div class="metodo-card-novo" onclick="selecionarMetodoNovo('prompt')">
+                                <div class="metodo-icon-novo">💬</div>
+                                <h4>Descrever com IA</h4>
+                                <p>Descreva o tipo de ata que você precisa e a IA criará o modelo completo</p>
+                                <div class="metodo-features">
+                                    <span>✨ Rápido</span>
+                                    <span>🎯 Personalizado</span>
+                                    <span>🤖 Inteligente</span>
+                                </div>
+                                <div class="metodo-cta">Começar →</div>
+                            </div>
+
+                            <!-- OPO 2: VIA PDF - ⚠️ FUNCIONALIDADE FUTURA -->
+                            <!-- TODO: Implementar workflow N8N para análise de PDF -->
+                            <!-- Webhook N8N necessário: http://157.173.125.173:5678/webhook/novo-modelo-pdf -->
+                            <div class="metodo-card-novo" onclick="selecionarMetodoNovo('pdf')" style="opacity: 0.6; cursor: not-allowed;" title="Funcionalidade em desenvolvimento">
+                                <div class="metodo-icon-novo">📄</div>
+                                <h4>Upload de Exemplo 🚧</h4>
+                                <p>Envie um PDF de ata existente e a IA extrairá toda a estrutura</p>
+                                <div class="metodo-features">
+                                    <span>📋 Baseado em exemplo</span>
+                                    <span>🔍 Análise automática</span>
+                                    <span>⚡ Preciso</span>
+                                </div>
+                                <div class="metodo-cta" style="background: #6c757d;">Em Breve →</div>
+                                <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 4px 10px; border-radius: 12px; font-size: 0.75em; font-weight: bold;">
+                                    EM BREVE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- FORMULÁRIO: CRIAÇÃO VIA PROMPT -->
+                    <div id="form-via-prompt-novo" class="form-criacao-novo" style="display: none;">
+                        <button onclick="voltarSelecaoMetodoNovo()" class="btn-voltar-novo">
+                            ← Voltar
+                        </button>
+                        
+                        <div class="form-header-novo">
+                            <div class="form-icon-novo">💬</div>
+                            <h3>Criar Modelo via Descrição</h3>
+                            <p>Descreva detalhadamente o tipo de ata que você precisa</p>
+                        </div>
+                        
+                        <form id="formPromptModeloNovo" onsubmit="processarPromptModeloNovo(event)">
+                            <div class="form-group-novo">
+                                <label>📝 Nome do Modelo</label>
+                                <input 
+                                    type="text" 
+                                    id="nome_modelo_prompt_novo" 
+                                    placeholder="Ex: Ata de Reunião Técnica, Ata de Diretoria..."
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group-novo">
+                                <label>📋 Descrição Completa do Modelo</label>
+                                <textarea 
+                                    id="descricao_modelo_novo" 
+                                    rows="8"
+                                    placeholder="Descreva detalhadamente:&#10;&#10;• Qual o contexto? (empresa, jurídico, condomínio, etc)&#10;• Quais seções deve ter?&#10;• Quais informações são essenciais?&#10;• Existe algum formato específico?&#10;• Como será usado?"
+                                    required
+                                ></textarea>
+                                <small>💡 Quanto mais detalhes você fornecer, melhor será o modelo gerado</small>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit-novo">
+                                <span>✨ Gerar Modelo com IA</span>
+                            </button>
+                        </form>
+                    </div>
+            
+                    <!-- FORMULÁRIO: CRIAÇÃO VIA PDF -->
+                    <div id="form-via-pdf-novo" class="form-criacao-novo" style="display: none;">
+                        <button onclick="voltarSelecaoMetodoNovo()" class="btn-voltar-novo">
+                            ← Voltar
+                        </button>
+                        
+                        <div class="form-header-novo">
+                            <div class="form-icon-novo">📄</div>
+                            <h3>Criar Modelo a partir de PDF</h3>
+                            <p>A IA analisará o documento e criará o modelo automaticamente</p>
+                        </div>
+                        
+                        <form id="formPDFModeloNovo" onsubmit="processarPDFModeloNovo(event)">
+                            <div class="form-group-novo">
+                                <label>📝 Nome do Modelo</label>
+                                <input 
+                                    type="text" 
+                                    id="nome_modelo_pdf_novo" 
+                                    placeholder="Ex: Modelo baseado em ata judicial..."
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="form-group-novo">
+                                <label>📄 Upload do PDF</label>
+                                <div class="upload-area-novo" id="pdf-upload-area-novo">
+                                    <input 
+                                        type="file" 
+                                        id="pdf_exemplo_novo" 
+                                        accept=".pdf" 
+                                        onchange="handlePDFUploadNovo(event)" 
+                                        required
+                                    >
+                                    <div class="upload-placeholder-novo">
+                                        <div class="upload-icon-novo">📤</div>
+                                        <p><strong>Clique para selecionar</strong> ou arraste o PDF aqui</p>
+                                        <small>Formato: PDF • Tamanho máximo: 10MB</small>
+                                    </div>
+                                    <div class="upload-preview-novo" id="pdf-preview-novo" style="display: none;">
+                                        <div class="preview-icon-novo">✅</div>
+                                        <div class="preview-info-novo">
+                                            <strong id="pdf-filename-novo"></strong>
+                                            <span id="pdf-size-novo"></span>
+                                        </div>
+                                        <button type="button" onclick="removerPDFNovo()" class="btn-remove-novo">✕</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="info-box-novo">
+                                <div class="info-icon-novo">ℹ️</div>
+                                <div>
+                                    <strong>O que acontecerá:</strong>
+                                    <ul>
+                                        <li>A IA analisará o PDF e extrairá a estrutura</li>
+                                        <li>Identificará seções, campos e formatação</li>
+                                        <li>Gerará um modelo HTML pronto para uso</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit-novo">
+                                <span>🔍 Analisar PDF com IA</span>
+                            </button>
+                        </form>
+                    </div>
+            
+                    <!-- RESULTADO DO MODELO -->
+                    <div id="resultado-modelo-novo" style="display: none;">
+                        <div class="resultado-header-novo">
+                            <div class="resultado-icon-novo">✅</div>
+                            <h3>Modelo Criado com Sucesso!</h3>
+                            <p>Seu modelo foi gerado e está pronto para uso</p>
+                        </div>
+                        
+                        <div id="modelo-info-novo"></div>
+                        
+                        <div class="resultado-actions-novo">
+                            <button onclick="voltarSelecaoMetodoNovo()" class="btn-secondary-novo">
+                                🔄 Criar Outro Modelo
+                            </button>
+                            <button onclick="usarModeloGerado()" class="btn-primary-novo">
+                                ✨ Usar Este Modelo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ============================================ -->
+                    <!-- TELA DE CURADORIA DO TEMPLATE -->
+                    <!-- ============================================ -->
+                    <div id="curadoria-template-novo" class="curadoria-container" style="display: none;">
+                        <div class="curadoria-header">
+                            <h3>🎨 Curadoria do Modelo</h3>
+                            <p>Revise e personalize seu modelo antes de salvar</p>
+                        </div>
+                        
+                        <div class="curadoria-content">
+                            <!-- COLUNA ESQUERDA: PREVIEW -->
+                            <div class="curadoria-preview">
+                                <div class="preview-header">
+                                    <h4>👁️ Preview do Template</h4>
+                                    <button class="btn-refresh-preview" onclick="atualizarPreviewCuradoria()">
+                                        🔄 Atualizar Preview
+                                    </button>
+                                </div>
+                                <div class="preview-frame-wrapper">
+                                    <iframe id="curadoria-preview-frame" sandbox="allow-same-origin"></iframe>
+                                </div>
+                            </div>
+                            
+                            <!-- COLUNA DIREITA: EDITOR -->
+                            <div class="curadoria-editor">
+                                <h4>✏️ Informações do Modelo</h4>
+                                
+                                <div class="form-group-curadoria">
+                                    <label>📝 Nome do Modelo</label>
+                                    <input 
+                                        type="text" 
+                                        id="curadoria-nome-modelo" 
+                                        class="input-curadoria"
+                                        placeholder="Ex: Ata de Reunião Técnica"
+                                    >
+                                </div>
+                                
+                                <div class="form-group-curadoria">
+                                    <label>📋 Descrição (opcional)</label>
+                                    <textarea 
+                                        id="curadoria-descricao" 
+                                        class="input-curadoria"
+                                        rows="2"
+                                        placeholder="Breve descrição do modelo"
+                                    ></textarea>
+                                </div>
+                                
+                                <div class="form-group-curadoria">
+                                    <label>🏷️ Campos Detectados no Template</label>
+                                    <div class="campos-badges" id="curadoria-campos-badges">
+                                        <!-- Badges dos campos serão inseridos aqui -->
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group-curadoria">
+                                    <label>✏️ Editar Campos (opcional)</label>
+                                    <small>Personalize os placeholders do template</small>
+                                    <div class="campos-curadoria" id="curadoria-campos-editaveis">
+                                        <!-- Campos editáveis serão inseridos aqui -->
+                                    </div>
+                                </div>
+                                
+                                <div class="curadoria-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-icon">📊</span>
+                                        <div>
+                                            <strong id="stat-campos-total">0</strong>
+                                            <small>Campos</small>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-icon">📄</span>
+                                        <div>
+                                            <strong id="stat-html-size">0</strong>
+                                            <small>KB HTML</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="curadoria-actions">
+                            <button onclick="cancelarCuradoria()" class="btn-secondary">
+                                ❌ Cancelar
+                            </button>
+                            <button onclick="voltarParaResultado()" class="btn-secondary">
+                                ⬅️ Voltar
+                            </button>
+                            <button onclick="salvarTemplateNoServidor()" class="btn-primary" id="btn-salvar-template">
+                                💾 Salvar Template no Servidor
+                            </button>
+                        </div>
+                    </div>
+            
+                    <!-- LOADING STATE -->
+                    <div id="loading-modulo3-novo" class="loading-state-novo" style="display: none;">
+                        <div class="loader-novo"></div>
+                        <p id="loading-message-novo">Processando...</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', path='/iata.js') }}"></script>
+{% endblock %}

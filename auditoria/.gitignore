@@ -1,0 +1,11 @@
+frontend/node_modules
+
+.env
+
+/venv
+
+__pycache__
+
+app/static/docs
+
+frontend/static/css/output.css

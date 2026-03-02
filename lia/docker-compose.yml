@@ -1,0 +1,96 @@
+# Sistema LIA - Docker Compose (Producao)
+# =========================================
+# Usa postgres-pgvector e nativa-net existentes
+
+services:
+  # Redis - Cache e Sessions
+  redis:
+    image: redis:7-alpine
+    container_name: lia-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    networks:
+      - nativa-net
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # Aplicacao Principal (Backend FastAPI)
+  lia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lia-app
+    ports:
+      - "8005:8000"
+    env_file:
+      - .env
+    environment:
+      - APP_NAME=Sistema LIA
+      - DEBUG=${DEBUG}
+      - DATABASE_URL=${DATABASE_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - REDIS_URL=redis://lia-redis:6379/0
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_DEFAULT_MODEL=${OPENROUTER_DEFAULT_MODEL}
+      - PAC_CSV_PATH=/app/app/data/DETALHAMENTOS.csv
+    volumes:
+      - ./app:/app/app
+      - ./alembic:/app/alembic
+      - ./alembic.ini:/app/alembic.ini
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - nativa-net
+
+  # Frontend React (Next.js)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: production
+      args:
+        - NEXT_PUBLIC_API_URL=https://lia.ajornada.top
+        - API_PROXY_URL=http://lia:8000
+    container_name: lia-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - API_PROXY_URL=http://lia:8000
+    depends_on:
+      - lia
+    restart: unless-stopped
+    networks:
+      - nativa-net
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: lia-nginx
+    ports:
+      - "8009:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - lia
+      - frontend
+    restart: unless-stopped
+    networks:
+      - nativa-net
+
+volumes:
+  redis-data:
+    name: lia-redis-data
+
+networks:
+  nativa-net:
+    external: true

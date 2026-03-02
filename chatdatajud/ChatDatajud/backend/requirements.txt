@@ -1,0 +1,14 @@
+fastapi==0.115.*
+uvicorn[standard]==0.34.*
+httpx==0.28.*
+openai>=1.0
+pydantic-settings==2.*
+python-dotenv==1.*
+sse-starlette==2.*
+PyJWT==2.*
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+statsmodels>=0.14
+scikit-learn>=1.5
+asyncpg>=0.29

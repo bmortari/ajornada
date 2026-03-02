@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geração de Plano de Ação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="/static/css/output.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-primary-100">
+
+    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+        <div class="w-full max-w-7xl bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xl p-6 md:p-10 flex flex-col">
+            
+            <header class="flex-shrink-0 mb-8">
+                <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-white flex items-center justify-center gap-3">
+                    <i class="uil uil-file-check-alt text-primary-600"></i>
+                    Geração de Plano de Ação
+                </h1>
+                <p class="text-center text-gray-500 dark:text-gray-400 mt-2">Envie os documentos e instruções para gerar o Plano de Ação com IA.</p>
+            </header>
+
+            <main id="container-upload" class="flex-grow flex flex-col justify-center space-y-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <label for="instrucoes" class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                            <i class="uil uil-comment-alt-notes text-xl text-gray-600 dark:text-gray-300"></i>
+                            1. Instruções para a IA
+                        </label>
+                        <button data-tooltip-target="tooltip-info-instrucoes" type="button" class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                            </svg>
+                            <span class="sr-only">Info</span>
+                        </button>
+                        <div id="tooltip-info-instrucoes" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700 max-w-xs">
+                            <h3 class="font-semibold text-white mb-2">Dicas para Boas Instruções:</h3>
+                            <ol class="list-decimal list-inside space-y-1">
+                                <li>Seja claro sobre o objetivo do plano de ação.</li>
+                                <li>Especifique prazos, responsáveis e prioridades.</li>
+                                <li>Mencione o nível de detalhe esperado.</li>
+                            </ol>
+                            <p class="mt-2 text-xs">Instruções bem elaboradas geram resultados mais precisos.</p>
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </div>
+                    <textarea id="instrucoes" class="block p-4 w-full h-32 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Ex: 'Gere um plano de ação detalhado com prazos de 30, 60 e 90 dias para os achados de risco alto.'"></textarea>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                        <i class="uil uil-file-upload-alt text-xl text-gray-600 dark:text-gray-300"></i>
+                        2. Upload dos Documentos
+                    </h2>
+    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 dark:bg-blue-900/20 dark:border-blue-800">
+        <p class="text-sm text-blue-800 dark:text-blue-200 flex items-center gap-2">
+            <i class="uil uil-info-circle text-blue-600 dark:text-blue-400"></i>
+            <span><strong>Aviso:</strong> O único documento obrigatório para anexação é a <strong>Matriz de Achados</strong>. Os demais documentos são opcionais e podem ser incluídos para maior precisão na geração do plano.</span>
+        </p>
+    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label for="upload-matriz-achados" class="flex flex-col items-center justify-center w-full h-full p-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 transition-colors">
+                                <div class="flex flex-col items-center justify-center text-center">
+                                    <i class="uil uil-file-check-alt text-4xl text-primary-600 mb-3"></i>
+                                    <p class="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200">Matriz de Achados <span class="text-red-500">*</span></p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Clique ou arraste (.pdf, .docx, .odt)</p>
+                                </div>
+                                <input name="matriz_achados" id="upload-matriz-achados" type="file" class="file-input" accept=".pdf,.docx,.odt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.oasis.opendocument.text">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="upload-matriz-planejamento" class="flex flex-col items-center justify-center w-full h-full p-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 transition-colors">
+                                <div class="flex flex-col items-center justify-center text-center">
+                                    <i class="uil uil-file-alt text-4xl text-primary-600 mb-3"></i>
+                                    <p class="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200">Matriz de Planejamento</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Clique ou arraste (.pdf, .docx, .odt)</p>
+                                </div>
+                                <input name="matriz_planejamento" id="upload-matriz-planejamento" type="file" class="file-input" accept=".pdf,.docx,.odt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.oasis.opendocument.text">
+                            </label>
+                        </div>
+                        <div>
+                            <label for="upload-plano-trabalho" class="flex flex-col items-center justify-center w-full h-full p-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-500 transition-colors">
+                                <div class="flex flex-col items-center justify-center text-center">
+                                    <i class="uil uil-file-bookmark-alt text-4xl text-primary-600 mb-3"></i>
+                                    <p class="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-200">Plano de Trabalho</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Clique ou arraste (.pdf, .docx, .odt)</p>
+                                </div>
+                                <input name="plano_trabalho" id="upload-plano-trabalho" type="file" class="file-input" accept=".pdf,.docx,.odt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.oasis.opendocument.text">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="main-action-area" class="flex justify-center pt-6">
+                    <button id="btn-gerar-plano-acao" type="button" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-500/30 font-medium rounded-lg text-base px-12 py-3.5 focus:outline-none dark:focus:ring-primary-800 w-full md:w-auto flex items-center justify-center gap-2 transition-transform transform hover:scale-105">
+                        <i class="uil uil-arrow-right text-lg"></i>
+                        Gerar Plano de Ação
+                    </button>
+                    
+                    <div id="btn-container-visualizar" class="hidden w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex justify-center">
+                            <button id="btn-visualizar-plano-acao" type="button" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-500/30 font-medium rounded-lg text-sm px-10 py-3 focus:outline-none dark:focus:ring-primary-800 w-full flex items-center justify-center gap-2">
+                                <i class="uil uil-eye"></i> Visualizar Plano de Ação
+                            </button>
+                        </div>
+                        <div class="flex justify-center">
+                            <button id="btn-gerar-novo" type="button" class="text-gray-900 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-10 py-3 focus:outline-none dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500 dark:focus:ring-gray-700 w-full flex items-center justify-center gap-2">
+                                <i class="uil uil-redo"></i> Gerar Novo Documento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+   <div class="flex justify-center mt-6">
+        <a href="/dashboard" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500 transition-colors">
+            <i class="uil uil-arrow-left"></i>
+            Voltar ao Início
+        </a>
+   </div>
+    </div>
+
+    <div id="modal-previa-plano-acao" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-4xl max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                        <i class="uil uil-file-check-alt text-primary-600"></i>
+                        Pré-visualização do Plano de Ação
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-previa-plano-acao">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+                        <span class="sr-only">Fechar</span>
+                    </button>
+                </div>
+                <div id="conteudo-previa-plano-acao" class="p-4 md:p-5 modal-body-full conteudo-renderizado"></div>
+                <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 gap-3">
+                    <button data-modal-hide="modal-previa-plano-acao" type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Fechar</button>
+                    <button id="btn-download-plano-acao" type="button" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center gap-2">
+                        <i class="uil uil-download-alt"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-curadoria" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-7xl max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 flex flex-col h-[90vh]">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                        <i class="uil uil-pen text-primary-600"></i>
+                        Tela de Curadoria
+                    </h3>
+                    <div class="flex items-center gap-4">
+                         <button id="btn-editar-curadoria" type="button" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center gap-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                            <i class="uil uil-edit-alt"></i> Habilitar Edição
+                        </button>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="modal-curadoria">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/></svg>
+                            <span class="sr-only">Fechar</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-4 md:p-5 flex-grow bg-white dark:bg-gray-800 overflow-y-auto">
+                    <div id="editor-curadoria" class="wysiwyg-editor bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200" contenteditable="false"></div>
+                </div>
+                <div class="flex items-center justify-end p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600 gap-3">
+                    <button data-modal-hide="modal-curadoria" type="button" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Cancelar</button>
+                    <button id="btn-salvar-curadoria" type="button" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center gap-2">
+                        <i class="uil uil-save"></i> Salvar Alterações e Visualizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="hidden fixed inset-0 z-[100] bg-gray-900/60 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm w-full dark:bg-gray-800">
+            <div class="mb-4">
+                <i class="uil uil-cog text-primary-600 text-5xl animate-spin-icon"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2 dark:text-white">Processando sua solicitação...</h3>
+            <p class="text-gray-600 mb-6 dark:text-gray-300">Por favor, aguarde...</p>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div id="progress-bar" class="bg-primary-600 h-2.5 rounded-full" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notificacao-toast" class="fixed top-5 right-5 z-[110]"></div>
+
+    <div id="chatbot-container" class="fixed bottom-0 right-0 z-50 pr-4">
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-toggle" class="absolute bottom-5 right-5 bg-primary-600 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-primary-700 transition-transform transform hover:scale-110">
+            <i class="uil uil-comments-alt text-3xl"></i>
+        </button>
+    
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="hidden absolute bottom-0 right-4 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col" style="height: 500px;">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                    <i class="uil uil-robot text-primary-600"></i>
+                    Assistente Virtual
+                </h3>
+                <button id="chatbot-minimize" class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                    <i class="uil uil-angle-down text-2xl"></i>
+                </button>
+            </div>
+    
+            <!-- Messages -->
+            <div id="chatbot-messages" class="flex-grow p-4 overflow-y-auto">
+                <!-- Example Message -->
+                <div class="flex items-start gap-2.5 mb-4">
+                    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+                        <p class="text-sm font-normal text-gray-900 dark:text-white">Olá! Como posso te ajudar hoje?</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Input -->
+            <div class="p-4 border-t border-gray-200 dark:border-gray-600">
+                <div class="flex items-center gap-2">
+                    <input type="text" id="chatbot-input" class="block w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="Digite sua mensagem...">
+                    <button id="chatbot-attach" class="text-gray-400 hover:text-gray-600 dark:hover:text-white p-2.5 rounded-lg border border-gray-300 dark:border-gray-600">
+                        <i class="uil uil-paperclip text-sm"></i>
+                    </button>
+                    <input type="file" id="chatbot-file" class="hidden" multiple accept=".pdf,.doc,.docx,.txt,.xlsx,.xls">
+                    <button id="chatbot-send" class="bg-primary-600 text-white p-2.5 rounded-lg hover:bg-primary-700">
+                        <i class="uil uil-message"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/flowbite.min.js"></script>
+    <script src="/static/js/plano_de_acao.js"></script>
+    <script src="/static/js/chatbot.js"></script>
+</body>
+</html>

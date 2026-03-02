@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata de Reunião de Condomínio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .header {
+            text-align: center;
+            border: 3px solid #2c3e50;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: #ecf0f1;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 26px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        
+        .header .condominio {
+            font-size: 18px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        
+        .tipo-reuniao {
+            background: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section-content {
+            padding-left: 15px;
+            text-align: justify;
+        }
+        
+        .quorum {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #155724;
+        }
+        
+        .votacao {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .votacao .resultado {
+            font-weight: bold;
+            font-size: 16px;
+            color: #856404;
+        }
+        
+        .aprovado {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .reprovado {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .decisao-item {
+            background: #e8f4f8;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #2c3e50;
+        }
+        
+        .assinaturas-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .assinatura {
+            text-align: center;
+        }
+        
+        .assinatura-linha {
+            border-top: 2px solid #333;
+            margin: 50px 0 10px 0;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Ata de Reunião de Condomínio</h1>
+        <div class="condominio">{{nome_condominio}}</div>
+        <div>CNPJ: {{cnpj}}</div>
+    </div>
+
+    <div class="tipo-reuniao">
+        {{tipo_reuniao}} <!-- ORDINÁRIA ou EXTRAORDINÁRIA -->
+    </div>
+
+    <div class="info-box">
+        <strong>Data:</strong> {{data}}<br>
+        <strong>Horário:</strong> {{hora_inicio}} às {{hora_termino}}<br>
+        <strong>Local:</strong> {{local}}
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">1. CONVOCAÇÃO</h2>
+        <div class="section-content">
+            <p>{{convocacao}}</p>
+        </div>
+    </div>
+
+    <div class="quorum">
+        <p>QUÓRUM DE INSTALAÇÃO</p>
+        <p style="font-size: 24px; margin: 10px 0;">{{percentual_quorum}}%</p>
+        <p>{{frações_presentes}} de {{frações_totais}} frações presentes</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">2. COMPOSIÇÃO</h2>
+        <div class="section-content">
+            <p><strong>Síndico:</strong> {{sindico}}</p>
+            <p><strong>Subsíndico:</strong> {{subsindico}}</p>
+            <p><strong>Conselho Fiscal:</strong></p>
+            <ul>
+                {{conselho_fiscal}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">3. CONDÔMINOS PRESENTES</h2>
+        <div class="section-content">
+            {{condominos_presentes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">4. ORDEM DO DIA</h2>
+        <div class="section-content">
+            <ol>
+                {{ordem_dia}}
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">5. DISCUSSÕES E DELIBERAÇÕES</h2>
+        <div class="section-content">
+            {{discussoes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">6. VOTAÇÕES</h2>
+        <div class="section-content">
+            {{votacoes}}
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">7. DECISÕES APROVADAS</h2>
+        <div class="section-content">
+            {{decisoes}}
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>Encerramento:</strong> {{hora_encerramento}}</p>
+        
+        <div class="assinaturas-grid">
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p>{{sindico}}<br>Síndico</p>
+            </div>
+            <div class="assinatura">
+                <div class="assinatura-linha"></div>
+                <p>{{secretario}}<br>Secretário da Reunião</p>
+            </div>
+        </div>
+    </div>
+
+    <p style="text-align: center; color: #999; font-size: 12px; margin-top: 40px;">
+        Ata lavrada em {{data_geracao}}
+    </p>
+</body>
+</html>

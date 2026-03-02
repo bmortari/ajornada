@@ -1,0 +1,56 @@
+cubes:
+  - name: casos_novos
+    sql_table: public.cn
+    title: "Casos Novos"
+    description: "Processos novos registrados no sistema Datajud (TRE-GO)"
+
+    dimensions:
+      - name: tribunal
+        sql: tribunal
+        type: string
+      - name: grau
+        sql: grau
+        type: string
+      - name: nome_orgao
+        sql: nome_orgao
+        type: string
+        title: "Órgão"
+      - name: uf
+        sql: uf
+        type: string
+      - name: municipio
+        sql: municipio
+        type: string
+      - name: ano
+        sql: ano
+        type: number
+      - name: mes
+        sql: mes
+        type: number
+      - name: nome_ultima_classe
+        sql: nome_ultima_classe
+        type: string
+        title: "Classe Processual"
+      - name: data_referencia
+        sql: data_referencia
+        type: time
+      - name: formato
+        sql: formato
+        type: string
+      - name: procedimento
+        sql: procedimento
+        type: string
+      - name: poder_publico
+        sql: poder_publico
+        type: string
+
+    measures:
+      - name: count
+        type: count
+        title: "Total de Casos"
+      - name: processos_distintos
+        sql: processo
+        type: count_distinct
+        title: "Processos Distintos"
+
+

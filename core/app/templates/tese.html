@@ -1,0 +1,2141 @@
+{% extends "base.html" %}
+
+{% block title %}Leitura da Dissertação - Jornada Agêntica{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', path='scr/tese.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="tese-container">
+
+    <nav class="chapters-nav">
+        <button class="tab-btn active" data-target="capa">Capa</button>
+        <button class="tab-btn" data-target="folha-rosto">Folha de Rosto</button>
+        <button class="tab-btn" data-target="banca">Banca</button>
+        <button class="tab-btn" data-target="resumo">Resumo</button>
+        <button class="tab-btn" data-target="abstract">Abstract</button>
+        <button class="tab-btn" data-target="siglas">Siglas</button>
+        <button class="tab-btn" data-target="cap1">Introdução</button>
+        <button class="tab-btn" data-target="cap2">Delimitação do Problema</button>
+        <button class="tab-btn" data-target="cap2.1">Justificativa</button>
+        <button class="tab-btn" data-target="cap2.2">Objetivos</button>
+        <button class="tab-btn" data-target="cap2.3">Metodologia</button>
+        <button class="tab-btn" data-target="cap3">Fundamentação Teórica</button>
+        <button class="tab-btn" data-target="cap4">Transformação Digital: Rumo ao agêntico</button>
+        <button class="tab-btn" data-target="cap4.1">Discussão</button>
+        <button class="tab-btn" data-target="cap5">Conclusão</button>
+        <button class="tab-btn" data-target="cap6">Referências</button>
+    </nav>
+
+    <article id="capa" class="chapter-content academic-page active">
+        <div class="capa-wrapper">
+            <header class="academic-header">
+                <div class="logos-container">
+                    <img src="{{ url_for('static', path='img/uft.png') }}" alt="Logo UFT" class="academic-logo">
+                    <img src="{{ url_for('static', path='img/logo_tre_go.png') }}" alt="Logo TRE-GO"
+                        class="academic-logo">
+                </div>
+
+                <div class="institution-text">
+                    <p>UNIVERSIDADE FEDERAL DO TOCANTINS</p>
+                    <p>PROGRAMA DE PÓS-GRADUAÇÃO EM GOVERNANÇA E TRANSFORMAÇÃO DIGITAL</p>
+                </div>
+            </header>
+
+            <section class="academic-author">
+                <h3>BRUNO MORTARI</h3>
+            </section>
+
+            <section class="academic-title">
+                <h1>UMA JORNADA DE TRANSFORMAÇÃO DIGITAL NO SERVIÇO PÚBLICO: RUMO AO AGÊNTICO</h1>
+                <p class="subtitle">Uma pesquisa aplicada focada na otimização de processos de trabalho</p>
+            </section>
+
+            <footer class="academic-footer">
+                <p>PALMAS - TOCANTINS</p>
+                <p>2025</p>
+            </footer>
+        </div>
+    </article>
+
+    <article id="folha-rosto" class="chapter-content academic-page">
+        <section class="academic-author">
+            <h3>BRUNO MORTARI</h3>
+        </section>
+
+        <section class="academic-title">
+            <h1>UMA JORNADA DE TRANSFORMAÇÃO DIGITAL NO SERVIÇO PÚBLICO: RUMO AO AGÊNTICO</h1>
+            <p>Uma pesquisa aplicada focada na otimização de processos de trabalho</p>
+        </section>
+
+        <section class="thesis-note">
+            <p>
+                Dissertação apresentada ao Programa de Pós-Graduação em Governança e Transformação Digital da
+                Universidade Federal do Tocantins, como requisito parcial para obtenção do título de Mestre.
+            </p>
+            <p><strong>Orientador:</strong> Prof. Gentil Veloso Barbosa, Dr. </p>
+        </section>
+
+        <footer class="academic-footer">
+            <p>Palmas, Tocantins</p>
+            <p>2025</p>
+        </footer>
+    </article>
+
+    <article id="banca" class="chapter-content">
+        <section class="academic-author">
+            <h3>BRUNO MORTARI</h3>
+        </section>
+
+        <section class="academic-title" style="margin-bottom: 50px;">
+            <h1>UMA JORNADA DE TRANSFORMAÇÃO DIGITAL NO SERVIÇO PÚBLICO: RUMO AO AGÊNTICO</h1>
+        </section>
+
+        <h3>BANCA EXAMINADORA:</h3>
+        <p style="margin-top: 30px;">
+            <strong>Prof. Gentil Veloso Barbosa, Dr. </strong><br>
+            Orientador - Universidade Federal do Tocantins
+        </p>
+        <p>
+            <strong>Prof. Sergio Manoel Serra da Cruz, Dr.</strong><br>
+            UFRJ
+        </p>
+        <p>
+            <strong>Prof. Marluce Evangelista Carvalho Zacariotti, Dra. </strong><br>
+            UFT
+        </p>
+    </article>
+
+    <article id="resumo" class="chapter-content">
+        <h2>Resumo</h2>
+
+        <p class="resumo-referencia">
+            MORTARI, Bruno. Uma Jornada de transformação digital no serviço público: rumo ao agêntico: Uma pesquisa
+            aplicada focada na otimização de processos de trabalho. 2025. Dissertação (Mestrado) - Universidade Federal
+            do Tocantins, Goiânia, 2025.
+        </p>
+        <p>
+            Este trabalho apresenta uma pesquisa sobre a implementação de soluções com uso de
+            Inteligência Artificial no contexto do serviço público brasileiro, como força motriz da trans
+            formação digital. A partir da convergência entre a disponibilidade de grandes volumes
+            de dados, poder computacional acessível e modelos de linguagem avançados, acreditamos
+            que o momento atual é o cenário ideal para a proliferação de serviços assistidos por IA.
+            Comoformato de pesquisa aplicada, foram desenvolvidos protótipos funcionais, incluindo
+            sistemas para apoio à licitação, auditoria, geração de atas, checagem de fatos, além de
+            chatbots especializados, com o objetivo de provar conceitos. Em complemento, foi desen
+            volvido um classificador para textos sintéticos a partir da técnica de ajuste fino, criação e
+            compartilhamento de bancos de dados e estudos teóricos voltados ao campo de estudo. A
+            pesquisa demonstra a viabilidade técnica e o valor potencial desses sistemas, corroborando
+            a ideia de que é possível desenvolver agentes inteligentes eficazes em conformidade com
+            o marco regulatório proposto pelo CNJ. Os resultados indicam ganhos significativos em
+            eficiência operacional e qualidade dos serviços, mantendo o equilíbrio entre a autonomia
+            dos agentes e a supervisão humana, constituindo ferramenta poderosa para otimizar atos
+            administrativos e judiciais.
+        </p>
+        <p>
+            <strong>Palavras-chave:</strong> Inteligência Artificial; Agentes de IA; Transformação Digital; Serviço
+            Público; Justiça Eleitoral; Automação de Processos.
+        </p>
+    </article>
+
+    <article id="abstract" class="chapter-content">
+        <h2>Abstract</h2>
+        <p class="resumo-referencia">
+            MORTARI, Bruno. AI Agents at the Center of Digital Transformation: An applied research focused on work
+            process optimization. 2025. Dissertation (Master's Degree) - Universidade Federal do Tocantins, Goiânia,
+            2025.
+        </p>
+        <p>
+            This work presents research on the implementation of solutions using Artificial In
+            telligence in the context of the Brazilian public service, as a driving force for digital
+            transformation. Based on the convergence of the availability of large volumes of data, ac
+            cessible computing power, and advanced language models, we conclude that the current
+            moment is the ideal scenario for the regulation of AI-assisted services. Using an applied
+            research format, functional prototypes were developed, including systems to support bid
+            ding processes, audits, minutes generation, fact-checking, and specialized chatbots, with
+            the aim of proving concepts. In addition, a classifieds system for synthetic texts was deve
+            loped using fine-tuning techniques, along with the creation and sharing of databases and
+            theoretical studies focused on the field of study. The research demonstrates the planned
+            technique and the potential value of these systems, corroborating the idea that intelligent
+            agents can develop intelligent solutions in accordance with the regulatory framework pro
+            posed by the CNJ (National Council of Justice). The results indicate significant gains in
+            operational efficiency and service quality, maintaining a balance between agent autonomy
+            and human supervision, constituting a powerful tool for optimizing administrative and
+            judicial acts.
+        </p>
+        <p>
+            <strong>Keywords:</strong> Artificial Intelligence; AI Agents; Digital Transformation; Public Service;
+            Electoral Justice; Process Automation.
+        </p>
+    </article>
+
+    <article id="siglas" class="chapter-content">
+        <h2>Lista de Abreviaturas e Siglas</h2>
+        <table class="siglas-table">
+            <tr>
+                <td>IA</td>
+                <td>Inteligência Artificial</td>
+            </tr>
+            <tr>
+                <td>LLM</td>
+                <td>Large Language Model (Modelo de Linguagem de Grande Escala)</td>
+            </tr>
+            <tr>
+                <td>CNJ</td>
+                <td>Conselho Nacional de Justiça</td>
+            </tr>
+            <tr>
+                <td>TRE-GO</td>
+                <td>Tribunal Regional Eleitoral de Goiás</td>
+            </tr>
+            <tr>
+                <td>TSE</td>
+                <td>Tribunal Superior Eleitoral</td>
+            </tr>
+            <tr>
+                <td>RPA</td>
+                <td>Robotic Process Automation</td>
+            </tr>
+            <tr>
+                <td>RAG</td>
+                <td>Retrieval-Augmented Generation</td>
+            </tr>
+
+            <tr>
+                <td>PEP-8</td>
+                <td>Python Enhancement Proposal 8</td>
+            </tr>
+            <tr>
+                <td>ISO/IEC</td>
+                <td>International Organization for Standardization / International Electrotechnical Commission</td>
+            </tr>
+            <tr>
+                <td>LGPD</td>
+                <td>Lei Geral de Proteção de Dados</td>
+            </tr>
+            <tr>
+                <td>ODS</td>
+                <td>Objetivos de Desenvolvimento Sustentável</td>
+            </tr>
+            <tr>
+                <td>PCA</td>
+                <td>Plano de Contratações Anual</td>
+            </tr>
+            <tr>
+                <td>SPAR</td>
+                <td>Sense, Plan, Act, Reflect</td>
+            </tr>
+            <tr>
+                <td>CoT</td>
+                <td>Chain of Thought</td>
+            </tr>
+            <tr>
+                <td>ToT</td>
+                <td>Tree of Thoughts</td>
+            </tr>
+            <tr>
+                <td>CoVe</td>
+                <td>Chain of Verification</td>
+            </tr>
+            <tr>
+                <td>MoE</td>
+                <td>Mixture of Experts</td>
+            </tr>
+            <tr>
+                <td>ACT</td>
+                <td>Análise Cognitiva de Tarefas</td>
+            </tr>
+            <tr>
+                <td>A2A</td>
+                <td>Agent-to-Agent</td>
+            </tr>
+            <tr>
+                <td>PBIA</td>
+                <td>Plano Brasileiro de Inteligência Artificial</td>
+            </tr>
+            <tr>
+                <td>EFGD</td>
+                <td>Estratégia Federal de Governo Digital</td>
+            </tr>
+            <tr>
+                <td>FAIR</td>
+                <td>Facebook AI Research</td>
+            </tr>
+            <tr>
+                <td>PoC</td>
+                <td>Proof of Concept (Prova de Conceito)</td>
+            </tr>
+            <tr>
+                <td>NIST</td>
+                <td>National Institute of Standards and Technology</td>
+            </tr>
+            <tr>
+                <td>ONU</td>
+                <td>Organização das Nações Unidas</td>
+            </tr>
+        </table>
+    </article>
+
+
+
+
+
+    <article id="cap1" class="chapter-content">
+        <h2>Capítulo 1: Introdução</h2>
+
+        <p>A admnistração pública brasileira está diante de uma fase preparatória de uma grande
+            transformação: seus processos de trabalho, hoje fortemente dependente do esforço hu
+            mano; para uma gestão apoiada por agentes inteligentes. Com o avanço da inteligência
+            artificial (IA), o processo produtivo deverá ser migrado para o sistema agêntico, em que
+            os sistemas percebem seu ambiente, planejam ações, executam tarefas e avaliam seu re
+            sultado, em um ciclo interrompido ao alcance de seu objetivo. </p>
+        <p>Essa transformação representa o surgimento de uma nova era para a produtividade
+            institucional. A tecnologia deixa de ser uma ferramenta auxiliar e secundária, e passa
+            para uma posição de proatividade dentro da rotina de trabalho: a junção entre pessoas
+            e máquinas, onde os programas de computador são integrados aos processos de traba
+            lho, com determinado nível de autonomia, articulando planos e executando ações, e os
+            humanos passam a ter uma papel de supervisão, e das principais decisões estratégicas.</p>
+        <p>Para compreender essa mudança, podemos pensar na transformação de materiais, onde
+            a reação química depende da presença de alguns fatores ajustados: reagentes, temperatura
+            e um catalisador. O resultado não é um acidente, mas uma consequência das leis da
+            natureza.</p>
+        <p>Essa analogia reflete uma grande mudança nos dias atuais. A transformação digital
+            segue uma reação em que convergem quatro fatores: a alta padronização dos processos
+            de trabalho, a disponibilidade massiva de dados institucionais, o poder computacional
+            acessível e o avanço dos modelos de linguagem em grande escala (LLMs).</p>
+        <p>Nestes anos de emprego público, atuando como analista de dados e estatístico do
+            quadro da Justiça Eleitoral, pude observar processos rotineiros que consomem demasiado
+            tempo e esforço humano: tarefas repetitivas, elaboração de relatórios burocráticos, preen
+            chimento de formulários desnecessários. Esses fatores criam um ambiente ideal para que
+            o uso da IA impacte a organização: ao automatizar tarefas, apoiar decisões e liberar força
+            de trabalho para atividades de maior valor público.</p>
+        <p>Amaneira que os modelos de IAagregam valor em umainstituição é por meio dos agen
+            tes. Enquanto tais modelos são capazes de solucionar problemas, os agentes o integram
+            em nossas atividades: percebem o ambiente, escolhem caminhos, acionam ferramentas e
+            acompanham o processo até que a tarefa esteja concluída.</p>
+        <p>Esta dissertação é o meu esforço para documentar, analisar e desenvolver a natureza desse novo paradigma,
+            investigando como os funcionários públicos podem manusear esta nova
+            tecnologia com sabedoria, responsabilidade e propósito.</p>
+
+        <div class="infographic-container">
+            <div class="info-card">
+                <h4>Crescimento 2035</h4>
+                <span class="info-value">US$ 101,8 bi</span>
+                <small>(Prophecy Market Insights, 2025)</small>
+            </div>
+
+            <div class="info-card">
+                <h4>Adoção Global</h4>
+                <span class="info-value">> 50%</span>
+                <small>das empresas usam agentes (LangChain, 2024)</small>
+            </div>
+
+            <div class="info-card">
+                <h4>3 Catalisadores</h4>
+                <p style="font-size: 0.8rem; margin:0;">Dados, Computação e LLMs</p>
+                <small>Tripé para evolução agêntica</small>
+            </div>
+        </div>
+
+        <p>Aideia central do estudo é a de que agentes inteligentes bem projetados, considerando
+            sua arquitetura, a lógica de trabalho em que se insere, as ferramentas disponíveis, sua
+            memória, e demais componentes, devem contribuir para a eficiência pública e celeridade
+            processual, sem comprometer a conformidade e ética legal.</p>
+        <p>O mercado de agentes de IA autônomos deixou de ser um sonho distante. Segundo o
+            estudo (Prophecy Market Insights, 2025), estamos no início de uma curva de crescimento
+            agressiva: avaliado em cerca de US$ 6,9 bilhões em 2024, o setor deve atingir US$ 101,8
+            bilhões até 2035. As empresas buscam autonomia capaz de operar 24/7, tomando decisões
+            em tempo real e liberando o potencial humano para tarefas mais estratégicas.</p>
+        <p>Emrelação à parte técnica, essa transformação já está acontecendo dentro de algumas
+            organizações. Relatório realizado pela Langchain (LangChain, 2024), pouco mais de 50%
+            das organizações entrevistadas já utilizam agentes de IA em ambiente de produção. Essa
+            constatação marca uma evolução dos antigos chatbots para sistemas agênticos capazes de
+            executar tarefas. A tendência atual é de supervisão humana e sistemas multi-agentes,
+            onde o usuário permanece no controle das principais decisões e múltiplos agentes atuam
+            em conjunto e colaborativamente para aperfeiçoar o sistema.</p>
+        <p>Essa aceleração fica visualmente evidente ao analisarmos a trajetória de crescimento
+            do mercado. O gráfico da Grand View Research ilustra um comportamento exponencial:
+            após um período de crescimento lento entre 2018 e 2023, vemos uma inflexão acentuada a
+            partir de 2024. As projeções indicam que o mercado atingirá a marca de US$ 50 bilhões
+            já em 2030, sugerindo que estamos saindo da fase de experimentação para a adoção em
+            massa (Grand View Research, 2024).</p>
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/imagem_introducao.png') }}" alt="Gráfico da Grand View Research">
+            <span class="fig-caption">Figura 1.1: Evolução do mercado de agentes de IA (Grand View Research,
+                2024).</span>
+        </div>
+        <p></p>
+
+        <p>Este estudo inicia-se com a delimitação do problema, relatando que o serviço público
+            é marcado por tarefas que demandam demasiado tempo e esforço humano. Segue com
+            uma justificativa, descrevendo o uso dos sistemas agênticos como parte da solução para
+            otimizar recursos e aperfeiçoar a eficiência operacional; quanto aos objetivos da pesquisa, os mesmos se
+            relacionam com o desenvolvimento e avaliação na produção de agentes de
+            ia.</p>
+        <p>A seção de Metodologia descreve os passos práticos que seguimos, incorporando a
+            técnica do Design Thinking e análise cognitiva de tarefas (ACT) em uma metodologia em
+            desenvolvimento de agentes de IA.</p>
+        <p>
+            Em outro capítulo, segue a Fundamentação Teórica da pesquisa, na qual se detalham
+            o que são os agentes de IA, sua arquitetura, engenharia de prompt e de contexto. Nesse
+            escopo, é feita a diferenciação entre sistemas com uso de IA de sistemas agênticos, os
+            quais são proativos, autônomos e autodidatas. Por fim, é considerado um estudo sobre
+            governança de IA, analisando o marco regulatório de IA no Poder Judiciário Brasileiro.</p>
+        <p>ADiscussão dos Resultados analisa criticamente o desempenho desses protótipos, ava
+            liando a precisão alcançada, e sua real vantagem à luz do interesse da administração. Por
+            fim, a Conclusão sintetiza os achados, oferece uma reflexão sobre algumas implicações
+            deste trabalho e um cenário sobre o futuro da colaboração entre humanos e IA, sob a
+            perspectiva de um serviço público mais eficiente.</p>
+    </article>
+
+    <article id="cap2" class="chapter-content">
+        <h2>Capítulo 2: Delimitação do Problema</h2>
+
+        <p>
+            Ocotidiano do serviço público brasileiro é marcado por atividades repetitivas operacionais
+            que demandam tempo e esforço humano. Tais atividades variam desde tarefas simples até
+            com alto grau de complexidade, incluindo análise de documentos, formulários, cliques em
+            sistemas, relatórios padronizados, e outros. Apesar dos avanços tecnológicos, os processos
+            de trabalho ainda permanecem manuais, exigindo sobremodo esforço humano.
+        </p>
+        <p>
+            Apesar da administração pública apresentar avanços na área de gestão de processos e
+            desburocratização do serviço público, mapeando e melhorando os processos, e por mais
+            que sistemas de informação auxiliem a prestação de tais processos, ainda assim observa
+            se uma alta dependência do fator humano, uma vez que grande parte das atividades
+            permanece centrada em análises manuais, conferências repetitivas, produção textual e
+            tomada de decisões operacionais de baixa complexidade, mas de alto volume.
+        </p>
+        <p>
+            Por outro lado, o campo da IA apresentou evolução quando se trata de execução de
+            diversas tarefas, desde as mais simples até raciocínio matemático a nível olímpico. O
+            treinamento de modelos específicos para raciocício profundo e planejamento de tarefas,
+            os conhecidos modos thinking, tem permitido realizar exercícios de planejamento no con
+            texto dos agentes. Além disso, a abundância de dados voltados à programação refinou a
+            capacidade dessas ferramentas de gerar e executar códigos, tornando-as aptas a manipular
+            sistemas e bases de dados com precisão.
+        </p>
+        <p>
+            Esse cenário mostra um diferencial de duas forças, sugerindo uma ruptura no modelo
+            antigo para um novo paradigma no serviço público: o uso de agentes inteligentes para
+            compor os recursos tecnológicos da instituição, e apoiar a força de trabalho na execução
+            de suas rotinas.
+        </p>
+
+    </article>
+
+    <article id="cap2.1" class="chapter-content">
+        <h2>Justificativa</h2>
+
+        <p>O desenvolvimento de sistemas agênticos no serviço público brasileiro ganha tração com
+            as atuais diretrizes nacionais, fundamentado pelo Decreto nº 12.198/2024 (Brasil, 2024),
+            que institui a Estratégia Federal de Governo Digital (EFGD 2024-2027) e define como
+            princípio um "Governo inteligente e inovador", baseado no uso de dados e tecnologia
+            visando a desburocratização.
+        </p>
+        <p>A convergência tecnológica citada preliminarmente neste trabalho alinha-se à vontade governamental em
+            implantar núcleos e laboratórios para soluções com IA aplicada a
+            políticas públicas, além da disponibilização de infraestrutura adequada.
+        </p>
+        <p>Omovimento ganha ainda mais força com o Plano Brasileiro de Inteligência Artificial
+            (PBIA), que prevê investimentos na ordem de R$ 1,76 bilhão especificamente para a me
+            lhoria dos serviços públicos, validando a ideia de que o momento é ideal para a proliferação
+            de serviços assistidos por IA. (Ministério da Ciência, Tecnologia e Inovação, 2024)
+        </p>
+        <p>Naseara da Justiça, o uso dessa tecnologia recebeu o aval da recente Resolução CNJ nº
+            615/2025 (Conselho Nacional de Justiça, 2025), que institucionaliza seu uso para promover
+            a inovação tecnológica e a eficiência dos serviços, desde que observados os princípios de
+            transparência, ética e supervisão humana. A regulamentação valida expressamente o uso
+            de modelos de linguagem como ferramentas auxiliares de apoio à gestão e à decisão,
+            auxiliando magistrados e servidores na utilização de tais tecnologias.
+        </p>
+
+        <div class="infographic-container">
+            <div class="info-card">
+                <h4>Software Antigo</h4>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; text-align: left;">
+                    <li>❌ Estático e rígido</li>
+                    <li>❌ Apenas prevê palavras</li>
+                    <li>❌ Dependência humana total</li>
+                </ul>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; font-size: 2rem;">➡️</div>
+            <div class="info-card" style="border: 2px solid var(--accent-green);">
+                <h4>Agentes de IA</h4>
+                <ul style="list-style: none; padding: 0; font-size: 0.85rem; text-align: left;">
+                    <li>✅ Percebem o ambiente</li>
+                    <li>✅ Raciocínio deliberado</li>
+                    <li>✅ Execução de missões complexas</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>A confiança nesses agentes são reforçados pela exigência de normas técnicas, como
+            auditabilidade e explicabilidade, essenciais tanto na norma ISO/IEC 42001 (Internatio
+            nal Organization for Standardization & International Electrotechnical Commission, 2023)
+            quanto na resolução nacional do CNJ para mitigar vieses e garantir a precisão dos resul
+            tados. Dessa forma, a transformação digital impulsionada por agentes de IA não apenas
+            acelera a burocracia da "papelada", mas também reforça a segurança jurídica ao operar
+            dentro de um ciclo de vida controlado.
+        </p>
+        <p>Aentrada na era dos agentes representa um salto evolutivo em comparação aos softwa
+            res antigos. Não estamos mais lidando apenas com modelos que preveem a próxima pala
+            vra, mas com arquiteturas projetadas para alcançar missões complexas em ambientes que
+            alteram constantemente. Ao contrário dos softwares convencionais, os agentes possuem a
+            habilidade de perceber o ambiente, raciocinar sobre ele e agir de forma deliberada para
+            alterar seu estado. (bornet2025)(biswas2025)
+        </p>
+        <p>Nesta perspectiva, conceitos como "planejamento"e "raciocínio"estabelecem um novo
+            paradigma de computação. Os agentes conseguem quebrar problemas em etapas execu
+            táveis, avaliando caminhos alternativos e refletindo sobre erros antes de prosseguir. Tais
+            sistemas ultrapassam os limites de dados estáticos ao se conectarem a APIs, bancos de
+            dados e navegadores web, desbloqueando uma grande classe de tarefas, anteriormente
+            exclusivas ao humano, como a execução de um código ou agendamento de uma reunião.
+            (huyen2025; grootendorst2027)
+        </p>
+
+    </article>
+
+    <article id="cap2.2" class="chapter-content">
+        <h2>Capítulo 4: Objetivos</h2>
+
+        <h3>Objetivo Principal</h3>
+        <p>Analisar e propor uma metodologia para o desenvolvimento e implementação de sistemas
+            e agentes de IA como ferramenta de transformação digital no âmbito da administração pública, com foco na
+            otimização de processos e na eficiência do serviço público, em con
+            formidade com os preceitos éticos e normativos estabelecidos pela Resolução nº 615/2025
+            do Conselho Nacional de Justiça.
+        </p>
+
+        <h3>Objetivos Secundários</h3>
+
+        <div class="objectives-grid">
+            <div class="info-card">
+                <b>1. Construir o alicerce do conhecimento sobre agentes:</b>
+                <p>Nesta fase, o foco é mergulhar na teoria sobre agentes inteligentes, definir conceitos de agência e
+                    autonomia e descrever sua arquitetura. Ao final, desenhar um mapa mental sobre todos os assuntos que
+                    diz respeito a sistemas agênticos.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <b>2. Compilar normas e diretrizes:</b>
+                <p>A ideia deste objetivo é buscar as principais normas, diretrizes e outras legislações e realizar uma
+                    leitura minuciosa com o propósito de entender onde estão as zonas verdes e as limitações.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <b>3. Identificar gargalos na rotina administrativa e judicial:</b>
+                <p>O trabalho se resume a voltar os olhos para o dia a dia no serviço público, suas rotinas, e
+                    identificar onde o trabalho emperra. Para isso, é preciso rastrear tarefas repetitivas e cansativas
+                    que consomem tempo humano desnecessariamente.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <b>4. Planejar soluções e idealizar produtos:</b>
+                <p>Projetar a estrutura dos agentes. Os desafios identificados no objetivo anterior são utilizados para
+                    criar possíveis soluções. A meta é criar uma construção que funcione de forma modular e a solução
+                    precisa ser escalável.
+                </p>
+            </div>
+
+
+            <div class="info-card">
+                <b>5. Desenvolver soluções e avaliar performance:</b>
+                <p>Nesta etapa, se resume a executar o planejamento e construir versões funcionais dos agentes. O
+                    intuito é lapidar a ferramenta através de tentativa e erro controlado. Avaliar esses produtos,
+                    ajustar a rota, corrigir falhas, e deixá-la pronta para entrar em produção.
+                </p>
+            </div>
+
+        </div>
+    </article>
+
+    <article id="cap2.3" class="chapter-content">
+        <h2>Capítulo 5: Metodologia</h2>
+
+        <p>O estudo pode ser classificado como <b>Pesquisa Aplicada</b>. Além da pesquisa teórica sobre os assuntos
+            pertinentes à sistemas agênticos, o trabalho se concentra no desenvolvimento de produtos
+            técnicos-tecnológicos para a solução de problemas enfrentados pela administração pública.</p>
+        <p>O objetivo se concentra no desenvolvimento e avaliação de <b>provas de conceitos (PoCs) e protótipos
+                funcionais</b>. A abordagem é orientada por artefatos, onde o desenvolvimento faz parte da investigação.
+            Ao
+            longo da pesquisa, algumas parcerias foram realizadas em outros órgãos além do TRE-GO (TRE-AC, TRE-AP, TJAP)
+            como laboratório de inovação.</p>
+        <p>Depois de inúmeras tentativas, erros e acertos, convergimos em uma metodologia que reduziu o tempo de criação
+            e trouxe mais atenção à necessidade e experiência do usuário. Importante ressaltar que tais técnicas foram
+            incorporadas no processo de desenvolvimento de agentes com muito sucesso, permitindo que produzíssemos
+            sistemas focados nas necessidades reais do serviço público. </p>
+
+        <h3>5.1 Modelo Design thinking</h3>
+
+        <p>O método <b>Design Thinking</b> se constitui a abordagem metodológica central para garantir que as soluções
+            tecnológicas fizessem sentido no ponto de vista do usuário. No serviço público, as pessoas costumam resistir
+            a mudanças, e a burocracia é bem rígida. Então, incluir os servidores no processo desde o começo foi
+            essencial.</p>
+        <p>A etapa de Empatia foi operacionalizada por meio de entrevistas semi-estruturadas e sessões de observação
+            direta nos locais de trabalho. O objetivo metodológico foi mapear a participação do servidor em seus
+            processos diários. Diferente da análise de processos tradicional, que foca no fluxo de documentos, esta
+            abordagem focou na experiência cognitiva e emocional do servidor.</p>
+        <p>Com base nos dados qualitativos coletados, procedeu-se ao reenquadramento dos problemas identificados sob a
+            perspectiva da IA Agêntica. A metodologia de definição do problema envolveu a análise de viabilidade técnica
+            frente ao estado da arte dos LLMs. Questionou-se metodologicamente para cada tarefa candidata:</p>
+
+        <ul>
+            <li><b>Complexidade do Raciocínio:</b> A tarefa exige criatividade genuína ou segue regras lógicas complexas
+                mas mapeáveis?</li>
+            <li><b>Disponibilidade de Contexto:</b> As informações necessárias para a decisão estão digitalizadas ou
+                acessíveis via API?</li>
+            <li><b>Tolerância ao Erro:</b> Qual o impacto de uma eventual alucinação do modelo neste processo
+                específico?</li>
+        </ul>
+
+        <p>A fase de ideação utilizou workshops colaborativos com partes interessadas. Aplicaram-se técnicas de
+            <i>Brainwriting</i> e Matrizes de Priorização para selecionar as funcionalidades a serem implementadas nos
+            protótipos. Funcionalidades que implicassem em tomada de decisão autônoma sem supervisão humana foram
+            descartadas metodologicamente na fase de concepção, priorizando-se sistemas de suporte à decisão e automação
+            de tarefas preparatórias.
+        </p>
+        <p>O ciclo de prototipagem seguiu a filosofia do Produto Mínimo Viável (MVP). Inicialmente, testes eram
+            realizados em IAs comerciais com os usuários para ajustar as expectativas. Posteriormente, protótipos
+            funcionais foram desenvolvidos utilizando <i>FastAPI</i> para validação rápida de conceitos e, na sequência,
+            aplicações web completas para testes de usabilidade e integração. O <i>feedback</i> dos usuários
+            durante a interação com os protótipos foi coletado sistematicamente e tratado como dado de pesquisa,
+            alimentando os ciclos subsequentes de refinamento dos prompts e da arquitetura dos agentes.</p>
+
+
+        <h3>5.0.2 Análise Cognitiva de Tarefas - ACT</h3>
+
+        <p>Um dos pilares metodológicos mais distintos deste trabalho é a aplicação formal da ACT para a extração e
+            codificação da expertise humana. Reconhecendo que os manuais de procedimentos muitas vezes não capturam a
+            complexidade real da tomada de decisão no serviço público, a ACT serviu como ferramenta para acessar esse
+            conhecimento. (cognitive2023cognitive)</p>
+        <p>A metodologia de ACT baseou-se em entrevistas e sessões para uma explicação detalhada do processo lógico da
+            tarefa, constituindo o mapa mental da atividade. Durante as sessões, solicitou-se aos especialistas que
+            executassem tarefas típicas ou narrassem casos complexos recentes, verbalizando seu fluxo de pensamento. O
+            pesquisador atuou como mediador, indagando sobre os "porquês" de cada decisão.</p>
+        <p>A ponte metodológica entre a ACT e o sistema agêntico se deu através da Engenharia de Prompt. Os modelos
+            mentais mapeados foram traduzidos em prompts de sistemas. A Persona do agente foi definida por instruções
+            comportamentais precisas oriundas da ACT.</p>
+        <p>A Figura 5.1 ilustra a metodologia utilizada (cognitive2023cognitive}.</p>
+
+
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/metodologia-agente.png') }}"
+                alt="Metodologia de prototipação de agentes de IA">
+            <span class="fig-caption">Figura 5.1: Metodologia de prototipação de agentes de IA (CognitiveGroup,
+                2023)</span>
+        </div>
+        <p></p>
+
+
+
+        <div class="objectives-grid">
+            <div class="info-card">
+                <b>1. Mapeamento do processo e identificação da tarefa:</b>
+                <p>Nesta etapa, reunimos com a unidade interessada na criação do agente e mapeamos o fluxo do processo
+                    de trabalho. Dentro do processo de trabalho, identificamos a tarefa a ser agenciada, levantando
+                    informações básicas: insumos, fluxo, produto, prazos e demais informações úteis, e principalmente,
+                    qual é a tarefa humana, passo a passo, e como o responsável pela tarefa pensa e realiza tal
+                    atividade.</p>
+                <p>O grande avanço que percebemos na criação dos prompts e da persona do agente se deu ao buscarmos
+                    representar o jeito de pensar humano, a expertise, para fundamentar a persona e os prompts de
+                    sistema. Assim, conseguimos retornar resultados mais próximos da realidade.</p>
+            </div>
+
+
+
+            <div class="info-card">
+                <b>2. Planejamento:</b>
+                <p>A partir do conhecimento profundo da tarefa, identificamos os requisitos funcionais, não funcionais e
+                    as regras de negócio. Uma informação importante é saber como será medido o sucesso da tarefa, para
+                    uma posterior avaliação. A partir destas informações, criamos a arquitetura do agente a ser
+                    desenvolvido e os recursos necessários. Definimos o modelo de linguagem, a memória do agente e suas
+                    ferramentas utilizadas, internas e externas.</p>
+            </div>
+
+
+
+            <div class="info-card">
+                <b>3. Desenvolvimento:</b>
+                <p>Nesta etapa, realizamos o desenvolvimento do agente. Geralmente, a equipe de desenvolvimento é
+                    composta por um engenheiro de dados, engenheiro de IA, especialista no assunto, e um desenvolvedor
+                    de interfaces. Esses quatro papéis são fundamentais para o sucesso do projeto.</p>
+            </div>
+
+
+
+            <div class="info-card">
+                <b>4. Avaliação:</b>
+                <p>Por fim, realizamos a avaliação do agente e medimos acurácia, precisão, e outras medidas que avaliam
+                    o grau de acertos do agente. Um agente é considerado satisfatório caso tenha um desempenho igual ao
+                    humano, e estado da arte, caso tenha desempenhos excepcionais, acima de um humano comum.</p>
+            </div>
+
+
+        </div>
+
+        <h3>5.0.3 Outras técnicas</h3>
+
+        <p>A confiabilidade dos sistemas agênticos no setor público depende criticamente da precisão das informações
+            utilizadas. Para garantir a assertividade e precisão nas respostas,a pesquisa adotou três padrões no
+            desenvolvimento dos agentes: engenharia de prompt, engenharia de contexto através do RAG e elaboração de
+            <b>guardrails</b>.
+        </p>
+        <p>Acerca do processo de avaliação, utilizaram-se métricas padrão de Aprendizado de Máquina: Acurácia, Precisão,
+            Revocação e F1-Score. As Matrizes de Confusão foram analisadas para entender os tipos de erro.</p>
+        <p>Para cada agente e <b>chatbot</b>, criou-se um conjunto de dados de respostas esperadas. Foram analisadas
+            as respostas em relação à resposta esperada, e mediu-se a precisão de cada agente. O processo de avaliação
+            completo está disponível em cada trabalho separadamente.</p>
+
+        <h3>5.0.4 Ferramentas computacionais e uso de IA</h3>
+
+        <p>Para a implementação dos protótipos e sistemas inteligentes desenvolvidos nesta pesquisa, adotou-se uma
+            arquitetura de software baseada na linguagem Python. O desenvolvimento do <b>backend</b> foi realizado
+            utilizando o framework <b>FastAPI</b>, enquanto a interface de usuário (<b>frontend</b>) foi estruturada
+            através de <b>Jinja2 e JavaScript</b>. A camada de inteligência e a orquestração dos fluxos de dados foram
+            implementadas utilizando a plataforma de automação de fluxos de trabalho n8n.</p>
+        <p>Durante o processo de desenvolvimento, modelos de Inteligência Artificial Generativa — especificamente
+            Claude (Anthropic) e Gemini (Google) — foram utilizados como ferramentas de apoio à programação. O auxílio
+            destas ferramentas concentrou-se na geração de scripts auxiliares, otimização de sintaxe, documentação de
+            código e identificação de erros dentro da arquitetura supracitado.</p>
+        <p>Adicionalmente, recursos de IA foram empregados para a revisão gramatical e o aprimoramento da fluidez
+            textual desta dissertação. Ressalta-se, contudo, que o uso dessas ferramentas foi estritamente
+            supervisionado e revisado pelo autor. Todas as concepções teóricas, a arquitetura da solução, as
+            interpretações dos dados, discussões e conclusões apresentadas neste trabalho são de autoria intelectual
+            exclusiva do autor. A IA não foi utilizada para a geração de ideias originais ou para a redação de conteúdo
+            científico sem a devida verificação humana.</p>
+    </article>
+
+
+
+    <article id="cap3" class="chapter-content">
+        <h2>Capítulo 3: Fundamentação Teórica</h2>
+
+        <p>Durante o processo de ideação e desenvolvimento dos agentes de IA, ocorreram inúmeros debates interessantes
+            acerca de sua natureza. A exemplo do que ocorre em outras tecnologias emergentes e disruptivas, há certa
+            confusão em torno de seus conceitos. A IA tem se consolidado como uma tecnologia transformadora,
+            solucionando inúmeros problemas complexos. No entanto, é essencial estabelecer uma compreensão realista
+            sobre o que são esses sistemas, como funcionam e quais são seus fundamentos conceituais e arquitetônicos, e
+            suas limitações.</p>
+        <p>Nesta seção, apresentamos os principais conceitos, técnicas, arquiteturas e métodos, a partir de uma pesquisa
+            bibliográfica em bases de dados acadêmicas e obras de referência sobre o tema. Um fato interessante
+            relacionado a este trabalho é que quase a totalidade das referências data do início do ano de 2024, o que
+            demonstra o caráter inovador desse campo de estudo. A aceleração das publicações e o interesse global em
+            "Agentes de IA" e "IA Agêntica" tornaram-se particularmente significativos após o lançamento do ChatGPT em
+            novembro de 2022. (xing2025financial)</p>
+
+        <h3>2.1 Definição e Evolução dos Agentes de IA</h3>
+
+        <p>Um agente de IA é fundamentalmente definido como uma entidade baseada em software capaz de perceber seu
+            ambiente, raciocinar sobre seus objetivos, tomar decisões e executar ações, frequentemente de forma
+            autônoma, por meio da interação com sistemas externos. Trata-se de entidades complexas e autogovernadas que
+            percebem seu ambiente e agem para atingir determinados objetivos. (Alto2025AIAgents)</p>
+        <p>A evolução dos agentes teve origem nos sistemas de Automação de Processos Robóticos (RPA), que se limitavam a
+            fluxos de trabalho predefinidos. Com o avanço da IA, surgiram automações baseadas em Aprendizado de Máquina
+            (ML) e Aprendizado por reforço (RL), que podiam aprender com dados e otimizar ações por tentativa e erro,
+            embora sofressem de generalização.</p>
+        <p>O surgimento dos LLMs, escalas de mais de 2 bilhões de parâmetros, foi um marco para a linha de pesquisa. Os
+            agentes modernos podem ser vistos como uma extensão destes modelos, elevando-os de simples modelos
+            estatísticos a sistemas que possuem capacidades de autonomia, reatividade, proatividade e habilidade social.
+            As aplicações são agora capazes de raciocínio e planejamento, integrando-se em ambientes externos.
+            (Raieli2025BuildingAIAgents)</p>
+
+        <h3>2.2 Ciclo de Vida SPAR</h3>
+
+        <p>Um agente de IA opera através de um ciclo iterativo, buscando maximizar o sucesso na conclusão de uma tarefa.
+            Este processo é frequentemente ilustrado pelo framework SPAR, cuja lógica é semelhante ao raciocínio humano.
+            A figura 2.1 descreve o ciclo. (Bornet2025AgenticAI)</p>
+
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/imagem_SPAR.png') }}" alt="Ciclo de vida SPAR">
+            <span class="fig-caption">Figura 2.1: Ciclo de vida SPAR (Bornet et al., 2025).</span>
+        </div>
+        <p></p>
+
+        <p>O estágio inicial é o de <b>Sentir</b>, atua como a percepção do sistema. Nesta fase, o sistema absorve
+            tudo ao seu redor, buscando informações relevantes para a tarefa; coleta dados de diversas fontes,
+            utilizando sensores (APIs, busca na internet, câmeras), e mantém uma memória de curto prazo.</p>
+        <p>Após a leitura de seu ambiente, inicia-se a etapa de <b>Planejar e raciocinar</b>. O agente, então,
+            correlaciona seu objetivo final definido previamente e as informações adquiridas, e a partir disso, projeta
+            inúmeros caminhos para alcance de suas metas. Por fim, decompõe a tarefa complexa em subtarefas
+            gerenciáveis, e decide a melhor estratégia.</p>
+        <p>O <b>Agir</b> é o estágio em que o agente, considerando suas possibilidades e limitações, executa a melhor
+            estratégia decidida. Nesta etapa, ações de monitoramento acompanham a tarefa principal para garantir o
+            efetivo cumprimento da meta. A depender da autonomia do agente, é crucial a possibilidade da intervenção
+            humana, especialmente em agentes de alto risco.</p>
+        <p>E por fim, o <b>Refletir</b>. A partir dos dados coletados nas etapas anteriores, o agente avalia sua
+            performance e o atingimento de seus objetivos e metas. Essas informações são armazenadas em sua memória de
+            longo prazo. O agente avalia esse resultado e evolui sua abordagem para tarefas futuras.</p>
+
+        <h3>2.3 Arquitetura e Componentes Essenciais</h3>
+
+        <p>Um agente funcional é composto por módulos que trabalham colaborativamente, orquestrados por um mecanismo de
+            planejamento que transforma intenções em ações concretas (Raieli2025BuildingAIAgents). A Figura 2.2
+            apresenta os elementos principais que compõe tipicamente esta arquitetura.</p>
+
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/imagem_arquitetura.png') }}" alt="Arquitetura dos Agentes">
+            <span class="fig-caption">Figura 2.2: Arquitetura típica de um Agente de IA (Raieli e Iuculano,
+                2025)</span>
+        </div>
+        <p></p>
+
+        <ul>
+            <li><b>Cérebro - LLM:</b> Atua como o núcleo cognitivo principal, fornecendo compreensão da linguagem
+                natural e geração de respostas. É o componente responsável por simular o raciocínio lógico e o
+                planejamento das tarefas. (Alto2025AI)</li>
+            <li><b>Persona:</b> Instrução primária que define a identidade e o propósito do agente. Ela orienta o perfil
+                do agente, estabelecendo o papel, o tom de voz, a personalidade e quaisquer restrições éticas ou
+                funcionais que o agente deve seguir. </li>
+            <li><b>Orquestrador:</b> funciona como uma camada que governa o fluxo de execução, garantindo a coordenação
+                entre o LLM, as ferramentas e a memória. </li>
+            <li><b>Memória:</b> Base de dados responsável pelo armazenamento do contexto ao longo do tempo. Isso inclui
+                Memória de Curto Prazo, adquirida no processo de recuperação da informação e Memória de Longo Prazo,
+                armazenada ao final do ciclo SPAR, utilizada para adaptar o agente nas próximas tarefas.</li>
+            <li><b>Ferramentas:</b> Representam as extensões externas da camada de inteligência do agente,
+                permitindo-lhe interagir com o mundo exterior. Isso inclui APIs, bases de dados, mecanismos de busca ou
+                scripts de automação.</li>
+        </ul>
+
+        <h3>2.4 Conceitos Fundamentais</h3>
+
+        <h4>Autonomia: O Grau de independência</h4>
+
+        <p>O nível de autonomia concedido a um agente é uma escolha a ser definida com base nos requisitos funcionais, a
+            avaliação dos riscos e a necessidade de supervisão humana. A literatura classifica em três níveis
+            principais: (Lipenkova2025AIProduct)</p>
+
+        <ul>
+            <li><b>Humano no Circuito:</b> Exige a aprovação humana para autorizar as decisões;</li>
+            <li><b>Humano no Monitoramento:</b> O agente atua de forma autônoma, mas um supervisor humano monitora e
+                pode intervir, se necessário;</li>
+            <li><b>Humano Fora do Circuito:</b> Autonomia total do agente de IA sem supervisão humana em tempo real.
+            </li>
+        </ul>
+
+        <h4>Agência: Intencionalidade e Poder de Escolha</h4>
+
+        <p>A agência, por sua vez, diz respeito a capacidade de um sistema agêntico agir de forma proativa, dentro de
+            suas capacidades e limitações, visando atingir objetivos específicos. O agenciamento adiciona uma camada de
+            liberdade ao agente, caso seja necessário. Busca responder a pergunta: Qual é a melhor ação para atingir o
+            objetivo? (Bornet2025AgenticAI)</p>
+
+        <p>A agência em sistemas de IA é composta por três elementos:</p>
+
+        <ul>
+            <li><b>Autoridade Decisória:</b> O poder de atuar e executar ações de acordo com uma alternativa escolhida.
+                Os sistemas com agência avaliam diferentes opções e selecionam a ação mais apropriada com base em seus
+                processos internos de tomada de decisão;</li>
+            <li><b>Intencionalidade:</b> Implica a existência de intenções, objetivos ou metas que guiam o comportamento
+                e as ações do sistema. Agentes devem se ajustar para alcançá-las;</li>
+            <li><b>Responsabilidade:</b> Refere-se à responsabilização pelos resultados e consequências das ações
+                tomadas.</li>
+        </ul>
+
+        <p>Em síntese, enquanto a agência é a capacidade de agir, a autonomia mede o nível de independência com que essa
+            capacidade é exercida.</p>
+
+        <h4>Auto-Governança: Controle e Adaptação</h4>
+
+        <p>A auto-governança representa o nível mais avançado, medindo o poder que um agente possui de se evoluir. Este
+            conceito desdobra-se nas seguintes competências:</p>
+
+        <p>A agência em sistemas de IA é composta por três elementos:</p>
+
+        <ul>
+            <li><b>Auto-Organização:</b> É a capacidade do sistema de estruturar e organizar os seus próprios processos
+                internos;</li>
+            <li><b>Auto-Regulamentação:</b> Envolve a monitorização e o ajuste das suas próprias saídas com base em
+                feedback;</li>
+            <li><b>Auto-Adaptação:</b> É a habilidade de modificar suas próprias estratégias em resposta a mudanças nas
+                suas condições internas ou no ambiente, de modo a atingir seus objetivos de forma mais eficiente;</li>
+            <li><b>Auto-Otimização:</b> É a melhoria contínua do seu desempenho, eficiência ou capacidades de tomada de
+                decisão através de processos evolutivos, aprendizado e experiência;</li>
+            <li><b>Auto-Determinação:</b> É a capacidade de estabelecer os seus próprios cursos de ação, prioridades e
+                objetivos com base nos seus processos internos de tomada de decisão, em vez de ser totalmente controlado
+                por forças externas.</li>
+        </ul>
+
+
+        <h3>2.5 Classificação dos Agentes de IA</h3>
+        <p>Os agentes de IA podem ser classificados em diversos aspectos. Neste trabalho, vamos classificar em três
+            perspectivas: por arquitetura, por capacidade e por raciocínio. (Davies2025AIEngineeringPractice)</p>
+
+        <h3>por arquitetura</h3>
+
+        <ul>
+            <li>simples: são sistemas de agente único;</li>
+            <li>multi-agente: são sistemas em que vários agentes de IA colaboram para resolver problemas, podendo haver
+                comunicação A2A entre os agentes ou não.</li>
+        </ul>
+
+        <h3>por capacidade</h3>
+
+        <ul>
+            <li>recuperação de informação: se baseiam no método RAG (Geração Aumentada por Recuperação) e servem para
+                buscar informações relevantes em bases de dados externas;</li>
+            <li>tarefas de automação: foram feitos para automatizar rotinas de trabalho e executar ações em resposta a
+                comandos ou gatilhos externos, como substituir tarefas repetitivas;</li>
+            <li>autônomos: combinam a busca de informações com a automação. Eles conseguem orquestrar várias tarefas,
+                planejar, se ajustar sozinhos e tomar decisões em tempo real com pouca ajuda humana.</li>
+        </ul>
+
+        <h3>por raciocínio</h3>
+
+        <ul>
+            <li>reativo: percebem um estímulo do ambiente e fornecem uma resposta imediata, seguindo regras simples de
+                ação-reação;</li>
+            <li>deliberativo: seguem um ciclo de sentir-planejar-agir e são muito bons para tarefas que exigem
+                planejamento e solução de problemas;</li>
+            <li>híbrido: Eles usam uma camada reativa para as respostas muito rápidas e uma camada deliberativa para o
+                raciocínio mais profundo e o planejamento de alto níve.</li>
+        </ul>
+
+        <h3>2.6 Engenharia de Prompt para agentes de IA</h3>
+
+        <p>O prompt pode ser entendido como o comando incluído pelo usuário na LLM, na expectativa de um retorno útil. O
+            que chamamos de prompt não é apenas uma pergunta; é, na verdade, uma ponte, ele atua como o elo de conexão
+            entre a intenção humana e o resultado da máquina.</p>
+        <p>A engenharia de prompt, portanto, é a ciência — e também um pouco de arte — de estruturar seus pensamentos e
+            instruções para reduzir a ambiguidade e garantir que leve exatamente ao lugar desejado. Os LLMs funcionam
+            como motores estatísticos; eles preveem a próxima sequência de palavras baseados no contexto que você
+            fornece. Se o contexto for ruim, a previsão será ruim.</p>
+        <p>Para entender por que escrever bem é importante, precisamos olhar para como os modelos modernos funcionam.
+            Eles não são apenas um bloco maciço de conhecimento. A estrutura atual, conhecida como <b>Mixture of
+                Experts (MoE)</b>, sugere que o modelo é composto por várias sub-redes especialistas — imagine que há um
+            especialista em matemática, outro em poesia, outro em código Python.</p>
+        <p>O comando funciona, então, como um roteador. Se você faz uma pergunta vaga como "arrume meu código", o
+            roteador pode acionar um especialista genérico. Mas, se você diz "Atue como um Engenheiro Sênior de Python e
+            refatore este código seguindo as normas PEP-8", você obriga o roteador a chamar o especialista certo para o
+            trabalho. Usar o vocabulário correto é como dar coordenadas de GPS precisas dentro do vasto oceano de dados
+            do modelo.</p>
+
+        <h4>Componentes do prompt</h4>
+
+        <p>Um prompt robusto geralmente segue uma estrutura que podemos chamar de CPRF: Contexto, Papel, Restrição e
+            Formato.</p>
+
+        <ul>
+            <li>Contexto: É o cenário. Em vez de pedir "escreva um e-mail", você diz "estamos analisando os resultados
+                de vendas do terceiro trimestre e precisamos reportar uma queda".</li>
+            <li>Papel (Role): É a persona. "Você é um gerente de marketing B2B experiente". Isso ajusta o tom e o
+                vocabulário.</li>
+            <li>Restrição: O que não fazer ou limites. "Não use jargões técnicos" ou "máximo de 500 palavras". Isso é
+                vital porque modelos tendem a ser verborrágicos.</li>
+            <li>Formato: Como você quer a entrega? Uma tabela, um JSON, um poema ou uma lista em markdown?</li>
+        </ul>
+
+        <h4>Técnicas de prompt</h4>
+
+        <p>1. <i>Zero-Shot e Few-Shot</i>: Às vezes, instrução direta funciona (Zero-Shot). Mas modelos aprendem muito
+            melhor por analogia. A técnica Few-Shot consiste em dar exemplos de "entrada e saída" ideais.
+            (pisarevskaya2025zeroshot)</p>
+        <p>2. Cadeia de Pensamento (<i>Chain of Thought - CoT</i>): A técnica CoT força o modelo a "pensar em voz alta"
+            antes de responder. Ao instruir "pense passo a passo" ou pedir para gerar o raciocínio antes da resposta
+            final, você pode aumentar drasticamente a precisão em matemática e lógica, pois o modelo gera passos
+            intermediários que auxiliam no resultado final. (wei2022chainofthought)</p>
+        <p>3. Árvore de Pensamento (<i>Tree of Thoughts - ToT</i>): Para problemas que não são lineares, como
+            estratégias jurídicas ou de negócios, o CoT pode não bastar. O ToT estimula a IA a explorar múltiplos
+            caminhos possíveis, avaliar cada um e descartar os ruins. (yao2023treeofthoughts)</p>
+        <p>4. Encadeamento de Prompt: : A saída de um prompt vira a entrada do próximo prompt, orquestrado por algum
+            controlador. </p>
+        <p>5. Cadeia de verificação (<i>Chain of Verification - CoVe</i>): O modelo gera uma resposta, depois cria
+            perguntas para verificar se o que ele mesmo disse é verdade, responde a essas perguntas e corrige a resposta
+            final. É excelente para precisão factual. (dhuliawala2023chainofverification)</p>
+        <p>6. Reflexão: É a técnica de "pensar antes de falar". O modelo gera um rascunho, depois assume o papel de um
+            crítico para apontar erros ou tons inadequados nesse rascunho e, por fim, reescreve a versão melhorada.
+            (shinn2023reflexion)</p>
+        <p>6. Prompt de Recuo: Diante de uma pergunta muito específica, pedimos para a IA primeiro listar os princípios
+            gerais e só depois responder ao caso concreto. (zheng2023stepbackprompting)</p>
+        <p>7. <i>System 2 Attention</i> (S2A): Se o texto de entrada está "sujo" com opiniões inúteis, pedimos para a IA
+            reescrever o contexto deixando apenas os fatos relevantes, limpando o ruído antes de processar a resposta.
+            (weston2023system2attention)</p>
+        <p>8. Esqueleto de Pensamento: Para textos longos, peça para a IA gerar um índice (esqueleto) primeiro. Depois,
+            peça para ela preencher cada tópico. Isso garante que o texto final tenha começo, meio e fim organizados.
+            (ning2024skeletonofthought)</p>
+        <p>9. Debate MultiAgente: Consenso através da colaboração e conflito de múltiplas personas. Simula uma discussão
+            entre diferentes agentes (ex: um Otimista e um Pessimista, ou um Cientista e um Ético). Eles propõem
+            respostas e criticam as respostas uns dos outros até chegarem a um consenso comum.
+            (liang2023encouraging)</p>
+
+        <h3>2.7 Engenharia de Contexto: Geração aumentada por recuperação (RAG)</h3>
+
+        <p>A concepção do RAG não surgiu em um vácuo, mas como resposta direta às limitações observadas nos modelos,
+            tais como: </p>
+
+        <ul>
+            <li>Informações desatualizadas: os LLMs tradicionais foram treinados em um conjunto de dados disponíveis até
+                a data de corte, sendo incapaz de responder problemas atuais;</li>
+            <li>Alucinações: sem acesso a fontes externas, os modelos preenchiam as lacunas com informações erradas;
+            </li>
+            <li>Conhecimento privado: treinar uma LLM desde o início com dados particulares é extremamante caro;</li>
+            <li>Janela de contexto limitada: LLMs possuem limite de entrada de tokens.</li>
+        </ul>
+
+        <p>O marco definitivo que formalizou e batizou a técnica é o artigo <i>"Retrieval-Augmented Generation for
+                Knowledge-Intensive NLP Tasks"</i> (lewis2020retrievalaugmented). Este trabalho, desenvolvido por
+            pesquisadores do Facebook AI Research, University College London e New York University, propôs uma mudança
+            arquitetônica onde o modelo de linguagem deixa de ser apenas um "enciclopedista" para se tornar um
+            "pesquisador".</p>
+        <p>Em vez de gerar uma resposta baseada apenas no que aprendeu durante o treinamento, o modelo primeiro converte
+            a pergunta do usuário em um vetor, busca documentos relevantes em outra base externa, e utiliza tais
+            documentos como contexto para gerar a resposta final. É como permitir que um estudante faça uma prova com
+            consulta ao livro, em vez de depender apenas da memória.</p>
+
+        <h3>Técnicas RAG</h3>
+
+        <h4>RAG Clássico (<i>Naive RAG</i>)</h4>
+
+        <p>O RAG Clássico descreve a implementação padrão que se tornou onipresente em frameworks de desenvolvimento
+            como <i>LangChain e LlamaIndex</i>. O processo é linear: </p>
+
+        <ul>
+            <li>Indexação: Seus documentos são quebrados em pedaços menores (chunks), convertidos em vetores que
+                representam seu significado e armazenado em um banco de dados vetorial;</li>
+            <li>Recuperação: Quando você faz uma pergunta, o sistema busca os pedaços mais similares com a sua pergunta
+                nesse banco, utilizando distância vetorial;</li>
+            <li>Geração: Esses pedaços são enviados junto com o prompt inicial e enviados para o LLM, que escreve a
+                resposta final baseada neles.</li>
+        </ul>
+
+        <h4>GraphRAG</h4>
+
+        <p>Desenvolvido pela Microsoft Research (larson2024graphrag), o GraphRAG representa um salto qualitativo ao
+            integrar a natureza não estruturada dos LLMs com a estrutura rígida e relacional dos grafos de conhecimento.
+        </p>
+        <p>Esta técnica, antes de responder a qualquer pergunta, lê todos os documentos e cria um um grafo,
+            identificando quem são as entidades (nós) e como eles se conectam (arestas). Então agrupa esses conceitos e
+            gera textos para cada grupo. Quando você faz uma pergunta complexa, ele usa esse mapa organizado e os
+            resumos para construir uma resposta completa.</p>
+
+        <h4>RAG Híbrido</h4>
+
+        <p>A busca vetorial entende o significado das palavras, mas às vezes ignora a palavra exata. A busca antiga por
+            palavras-chave encontra a palavra exata, mas não entende o significado. O RAG Híbrido usa as duas ao mesmo
+            tempo: ele faz uma busca pelo significado e outra pela palavra-chave, e depois combina os resultados. É como
+            ter um bibliotecário que entende o tema do livro e outro que sabe exatamente onde está o título específico
+            que você pediu. (mandikal2024sparsemeetsdense)</p>
+
+        <h4>RAG Corretivo (CRAG)</h4>
+
+        <p>O CRAG adiciona uma camada de conferência que verifica a qualidade dos documentos encontrados antes de
+            enviá-los para a geração da resposta. Se o corretor achar que a informação é boa, ele a refina. Se achar que
+            é ruim ou não tem nada a ver, ele joga fora e faz uma nova busca para encontrar a resposta certa.
+            (yan2024corrective)</p>
+
+        <h4>RAG Adaptativo</h4>
+
+        <p>Nem toda pergunta precisa de uma pesquisa complexa. Perguntar "Qual a capital do Brasil?" é fácil para a IA;
+            perguntar "Compare a economia de Tocantins e Goiás nos últimos 10 anos" é difícil. O RAG Adaptativo usa um
+            roteador inteligente que analisa a dificuldade da pergunta. Se for fácil, a IA responde prontamente. Se for
+            média, faz uma pesquisa simples. Se for difícil, faz uma pesquisa complexa de vários passos.</p>
+
+        <h4>RAG Fusion</h4>
+
+        <p>O RAG Fusion identifica a pergunta inicial e encaminha para a IA reescrevê-la de várias formas diferentes,
+            cobrindo vários ângulos. Depois, ele faz pesquisas para todas essas variações. No final, ele organiza todos
+            os documentos encontrados e ordena eles, dando preferência para os documentos que apareceram em várias das
+            pesquisas. É como pedir a opinião de cinco especialistas diferentes e confiar mais na resposta que todos
+            eles concordam. (rackauckas2024ragfusion)</p>
+
+        <h4>Hypothetical Document Embedding (HyDE)</h4>
+
+        <p>Em vez de usar o prompt inicial para recuperar documentos, o HyDE pede IA "alucinar" uma resposta ideal,
+            mesmo que sem precisão. Ele então transforma essa resposta inicial em um vetor e usa isso para buscar
+            documentos reais. A ideia é que a resposta imaginada, mesmo com fatos errados, tem o vocabulário e a
+            estrutura muito mais parecidos com o documento real que você quer encontrar do que a sua pergunta original.
+            (gao2023precise)</p>
+
+
+        <div class="infographic-container">
+            <div class="info-card">
+                <h4>RAG Clássico</h4>
+                <p>Indexação, recuperação e geração em bancos vetoriais.</p>
+            </div>
+            <div class="info-card">
+                <h4>GraphRAG</h4>
+                <p>Usa grafos de conhecimento para conectar entidades (Larson e Truitt, 2024).</p>
+            </div>
+            <div class="info-card">
+                <h4>RAG Híbrido</h4>
+                <p>Junção do RAG clássicom com busca por palavras-chave.</p>
+            </div>
+            <div class="info-card">
+                <h4>CRAG</h4>
+                <p>Camada de conferência na geração de contexto.</p>
+            </div>
+            <div class="info-card">
+                <h4>RAG Adaptativo</h4>
+                <p>Simplificação na pergunta do usuário.</p>
+            </div>
+            <div class="info-card">
+                <h4>RAG Fusion</h4>
+                <p>Reescreve a pergunta em vários ângulos para buscas mais ricas (Rackauckas, 2024).</p>
+            </div>
+            <div class="info-card">
+                <h4>HyDE</h4>
+                <p>Gera uma resposta hipotética para melhorar a busca vetorial (L. Gao et al., 2023).</p>
+            </div>
+        </div>
+
+        <h3>2.8 Resolução 615/CNJ e o Marco Regulatório</h3>
+
+        <p>A Resolução nº 615/2025 do CNJ é considerada o marco regulatório do âmbito do Poder Judiciário a respeito do
+            uso de IA. O ponto principal é que a IA deve ser usada apenas como ferramenta auxiliar e complementar para
+            dar suporte à decisão, sendo proibido que ela tome decisões judiciais de forma autônoma. O magistrado deve
+            sempre revisar, sendo responsável integral por suas decisões.</p>
+        <p>Considerando o caráter de controle administrativo, a norma pode ser classificada como progressista em sua
+            abordagem de governança e ética, entretanto conservadora no grau de autonomia concedida aos sistemas de IA
+            em funções judiciais. A Tabela 1 resume a postura da resolução em diferentes
+            aspectos.</p>
+
+        <table border="1" style="border-collapse: collapse; width: 100%;">
+            <caption>Tabela 1 - Postura da Resolução 615/CNJ em diferentes aspectos</caption>
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th style="padding: 8px; text-align: left;"><b>Aspecto</b></th>
+                    <th style="padding: 8px; text-align: left;"><b>Postura</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 8px;">Governança e risco</td>
+                    <td style="padding: 8px;">Progressista: adota estrutura de risco e cria Comitê supervisor.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Autonomia</td>
+                    <td style="padding: 8px;">Conservadora: Proíbe autonomia decisória judicial e exige supervisão
+                        humana.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Ética e vieses</td>
+                    <td style="padding: 8px;">Progressista: Exige mitigação contínua.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px;">Transparência</td>
+                    <td style="padding: 8px;">Progressista: Exige explicabilidade, auditabilidade e publicidade de
+                        impacto algorítmico.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Apesar de citar apenas uma vez o termo agente de IA em um contexto secundário, o agente pode ser entendido
+            como sistema de IA no âmbito da Resolução. A maioria das aplicações permitidas na categoria de Baixo Risco
+            se enquadra nessa definição. Exemplos de baixo risco incluem: execução de atos processuais ordinatórios,
+            extração, classificação e agrupamento de dados e processos, sumarização de documentos e transcrição de
+            áudio.</p>
+        <p><b>O CNJ proíbe explicitamente o uso autônomo para a tomada de decisões judiciais</b>. O sistema de IA deve
+            ser de caráter auxiliar e complementar e não pode restringir ou substituir a autoridade final dos usuários
+            internos.</p>
+        <p>Quanto às formas de controle, podemos citar:</p>
+
+        <ul>
+            <li><b>Transparência e Explicabilidade:</b> São princípios centrais. A Resolução exige que os resultados
+                sejam compreensíveis e que os sistemas possuam explicabilidade sempre que tecnicamente possível;</li>
+            <li><b>Auditabilidade e Contestabilidade:</b> O Judiciário deve garantir que os sistemas sejam auditáveis,
+                com registro automático das operações, e que os resultados possam ser questionados e revisados;</li>
+            <li><b>Mitigação de Vieses:</b> A Resolução é rigorosa ao exigir a prevenção e mitigação de vieses
+                discriminatórios ilegais ou abusivos. Mais notavelmente, exige medidas corretivas e, se o viés for
+                impossível de eliminar, a solução de IA deverá ser descontinuada;</li>
+            <li><b>Privacidade:</b> A Resolução adota os conceitos de <i>Privacy by Design e Privacy by Default</i>.
+            </li>
+        </ul>
+
+        <p>Segue abaixo um mapa mental contendo os principais tópicos de um agente de IA.</p>
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/mapa_mental.png') }}" alt="Mapa Mental Agente de IA">
+            <span class="fig-caption">Figura 2.3: Mapa Mental Agente de IA</span>
+        </div>
+        <p></p>
+
+    </article>
+
+
+
+    <article id="cap4" class="chapter-content">
+        <h2>Capítulo 4: Transformação Digital: Rumo ao agêntico</h2>
+
+        <p>Os resultados desta pesquisa aplicada consistem em uma coleção de artefatos tecnológicos desenvolvidos
+            durante o programa de mestrado. O escopo dos entregáveis abrange agentes de IA, chatbots, painéis
+            gerenciais, conjuntos de dados e estudos complementares.</p>
+        <p>Adicionalmente, elaborou-se um manual prático contendo uma série de boas práticas para o desenvolvimento de
+            sistemas agênticos, fundamentado na experiência prática adquirida. Por fim, a pesquisa culminou na
+            idealização do Ecossistema Nativa IA, uma proposta conceitual para o serviço público brasileiro que visa
+            fomentar o desenvolvimento colaborativo, pautado em normas padronizadas e focado na escalabilidade das
+            soluções.</p>
+        <p>Segue um resumo extendido de cada produto abaixo. Para mais detalhes, cada produto tem um artigo referente à
+            produção tecnológica.</p>
+
+
+        <div class="results-dashboard">
+            <div class="info-card">
+                <h4>Sistemas Agênticos</h4>
+                <h3 class="info-value">4 Agentes</h3>
+                <small>LIA, Auditoria, IATA e Checagem de Fatos</small>
+            </div>
+            <div class="info-card">
+                <h4>ChatBots</h4>
+                <h3 class="info-value">2 assistentes conversacionais</h3>
+                <small>LIA, Auditoria, IATA e Checagem[cite: 612].</small>
+            </div>
+            <div class="info-card">
+                <h4>Bases de Dados</h4>
+                <h3 class="info-value">+170.000</h3>
+                <small>Textos para classificação sintética, planos de governo e normativos</small>
+            </div>
+            <div class="info-card">
+                <h4>Estudos</h4>
+                <h3 class="info-value">5 Artigos</h3>
+                <small>IA Federada, Eleições e Governança</small>
+            </div>
+            <div class="info-card">
+                <h4>Oficina Prática</h4>
+                <h3 class="info-value">Desenvolvendo agentes de IA</h3>
+                <small>Projeto Educacional</small>
+            </div>
+        </div>
+
+        <h3>Ecossistema Nativa</h3>
+
+        <p>O ecossistema Nativa IA pode ser representado pela consolidação prática da proposta
+            desta pesquisa. Indo além da criação de ferramentas, a proposta é formar uma rede de
+            colaboração para o desenvolvimento de soluções de IA no âmbito do Poder Judiciário.
+            Na prática, funciona como a junção de diversos laboratórios de inovação, onde é possível
+            testarmos normas, técnicas e métodos para prototipação e futura produção.
+        </p>
+        <p>A institucionalização desta união foi formalizada por meio do Acordo de Cooperação
+            Técnica nº 09/2025, celebrado entre os Tribunais Regionais Eleitorais do Acre, Amapá
+            e Goiás, o Tribunal de Justiça do Amapá e a Universidade Federal do Tocantins, com
+            o TRE-GO no centro da negociação. Este termo, objetivando o cumprimento da Meta
+            9 do CNJ que fomenta a atuação em rede, estabelece um fluxo de trabalho onde há
+            o intercâmbio de experiência na área de inovação, envolvendo a academia com suporte
+            infraestrutural e validação científica.
+        </p>
+        <p>Cabe destacar que o Nativa IA foi destaque no prêmio Justiça Exponencial 2025 (J.
+            Ex.), sendo laureado em primeiro lugar na categoria Laboratórios de Inovação (J.Ex,
+            2025). Ainda alcançou o Selo Judiciário Inovador 2025 do CNJ na categoria Gestão
+            Judicial Inovadora, subcategoria Ideias Inovadoras (Conselho Nacional de Justiça (CNJ),2025).
+        </p>
+
+        <h3>Sistemas Agênticos</h3>
+
+        <h4>LIA: Licitação com IA</h4>
+
+        <p>O processo de contratações públicas no Brasil, instituído pela Lei nº 14.133/2021 (Nova Lei de Licitações e
+            Contratos Administrativos), exige rigoroso planejamento e documentação detalhada. Alguns documentos
+            principais desse processo incluem: DFD - Documento de Formalização da demanda, PP - Pesquisa de preço, MR -
+            Matriz de riscos, ETP - Estudo técnico preliminar, TR - Termo de referência e o ED - Edital.</p>
+        <p>A elaboração manual destes documentos demanda tempo e recurso consideráveis dos funcionários envolvidos,
+            envolvendo análise de dados históricos, consulta ao Plano de Contratações anual (PCA), alinhamento ao plano
+            estratégico, dentre outros estudos.</p>
+        <p>O objetivo do trabalho é desenvolver e implementar um agente de inteligência artificial capaz de gerar
+            automaticamente documentos licitatórios estruturados, em conformidade com a legislação de contratações
+            públicas, reduzindo significativamente o tempo de elaboração e padronizando a qualidade dos documentos
+            produzidos.</p>
+        <p>Considerando esse desafio, desenvolveu-se um agente de inteligência artificial especializado para automatizar
+            a geração de documentos, integrando-se a uma aplicação web construída com FastAPI e utilizando a API do
+            Google Gemini para processamento de linguagem natural e geração estruturada de documentos. O agente foi
+            projetado especificamente para a Justiça eleitoral, considerando suas particularidades, estrutura e
+            requisitos, podendo ser extendido para outros órgãos públicos da administração.</p>
+        <p>A aplicação implementa uma arquitetura assíncrona, com banco de dados PostgreSQL, sistema de autenticação e
+            interface web responsiva. O DFD é o primeiro artefato gerado, estabelecendo as bases para os documentos
+            subsequentes.</p>
+        <p>A implementação deste agente de IA justifica-se por múltiplos aspectos técnicos, operacionais e estratégicos:
+            eficiência operacional, padronização e qualidade, conformidade legal, integração de dados, escalabilidade e
+            contexto tecnológico.</p>
+        <p>Como destaque, foi produzido um algoritmo de pesquisa de preço automatizada no PNCC - Portal Nacional de
+            Contratação Pública. O algoritmo automatiza o processo de busca de itens de interesse recentemente
+            contratados ou levantados e recupera informações úteis para apoiar o estudo técnico comparativo,
+            possibilitando a construção de um valor médio, gerando uma economia de horas de pesquisa manual.</p>
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/fluxograma-LIA.png') }}" alt="Fluxograma LIA">
+            <span class="fig-caption">Figura 6.1: Fluxograma do sistema agêntico LIA</span>
+        </div>
+        <p></p>
+
+
+        <h4>Agente de Auditoria</h4>
+
+        <p>A administração pública enfrenta hoje um grande desafio: realizar auditorias cada vez mais complexas e
+            detalhadas com equipes reduzidas e prazos apertados. Para resolver esse problema, foi criado o "Agente de
+            Auditoria", uma solução tecnológica que funciona como uma plataforma web. O objetivo principal dessa
+            ferramenta é usar a IA generativa para ajudar os auditores em todas as etapas do seu trabalho, desde o
+            planejamento inicial até a entrega dos relatórios finais e planos de ação.</p>
+        <p>A ideia central não é substituir o auditor, mas retirar dele o peso das tarefas repetitivas e manuais. O
+            sistema aceita arquivos em vários formatos, como PDF, Word e Excel. Ele processa essas informações e gera
+            rascunhos de documentos em formato HTML, que podem ser convertidos para PDF com um clique.</p>
+
+        <p>Os objetivos específicos do projeto incluem:</p>
+
+        <div class="objectives-grid">
+            <div class="info-card">
+                <b>Padronizar documentos:</b>
+                <p>Garantir que todos os relatórios sigam o mesmo modelo e qualidade.</p>
+            </div>
+            <div class="info-card">
+                <b>Cruzar informações:</b>
+                <p>A IA consegue ler o plano anual, a matriz de riscos e outros documentos ao mesmo tempo para encontrar
+                    conexões importantes.</p>
+            </div>
+            <div class="info-card">
+                <b>Melhorar a comunicação:</b>
+                <p>O sistema cria um canal formal onde a equipe de auditoria envia perguntas e recebe respostas e
+                    documentos das unidades auditadas, tudo organizado em um só lugar.</p>
+            </div>
+            <div class="info-card">
+                <b>Revisão humana:</b>
+                <p>Antes de qualquer documento ficar pronto, o auditor pode editar o texto em uma tela parecida com um
+                    editor de texto comum. Isso garante que a responsabilidade final seja sempre de uma pessoa.</p>
+            </div>
+        </div>
+
+        <p>O desenvolvimento do Agente de Auditoria não foi apenas escrever código de computador; envolveu entender a
+            fundo como os auditores trabalham. O processo foi dividido em etapas:</p>
+        <p>Primeiro, foi feito um estudo dos requisitos. A equipe analisou documentos reais de auditorias passadas para
+            entender a linguagem técnica e as regras que precisavam ser seguidas. Também conversaram com auditores
+            experientes para descobrir onde eles perdiam mais tempo.</p>
+        <p>Em seguida, veio a engenharia de prompts. Para cada tipo de documento, foi criada uma instrução específica e
+            detalhada. Por exemplo, para criar uma "Matriz de Planejamento", o sistema não pede apenas para a IA "fazer
+            uma tabela". Ele instrui a IA a agir como um especialista, ler os riscos listados em um documento,
+            transformá-los em procedimentos de auditoria e sugerir testes específicos baseados nos controles que já
+            existem.</p>
+        <p>Na fase de implementação, foram criadas funcionalidades extras. Além de gerar textos, o sistema tem um
+            assistente virtual com quem o auditor pode conversar. Esse assistente lembra do contexto da conversa,
+            servindo para tirar dúvidas ou ajudar a encontrar informações nos documentos carregados.</p>
+        <p>O <i>backend</i> foi construído utilizando o framework FastAPI. A camada de inteligência do sistema vem da
+            integração com o Google Gemini. A escolha por essa tecnologia específica se deu porque ela consegue ler e
+            analisar grandes quantidades de texto (janela de entrada) e tem um custo acessível.</p>
+        <p>Para o usuário, a experiência é simples e intuitiva. A interface visual foi feita para funcionar bem em
+            qualquer tamanho de tela. A aplicação cobre nove tarefas essenciais do dia a dia de um auditor: criar o
+            Plano de Trabalho, montar a Matriz de Planejamento, fazer requisições de Documentos, gerenciar as respostas
+            de quem está sendo auditado, acompanhar o progresso, organizar a Matriz de Achados e redigir o Relatório de
+            Auditoria, o Parecer e o Plano de Ação.</p>
+        <p>Isso significa que, em vez de passar dias copiando e colando informações de um documento para outro, o
+            auditor pode focar no que realmente importa: analisar os dados, verificar se as leis estão sendo cumpridas e
+            sugerir melhorias para a gestão pública.</p>
+        <p>O sistema também promove transparência. As áreas de "Resposta do Auditado" e "Acompanhamento do Auditor"
+            permitem que ambas as partes vejam o andamento das solicitações, prazos e entregas de documentos de forma
+            clara.</p>
+        <p>Por fim, importante ressaltar que o sistema está em fase de finalização. O projeto tem um apoio efetivo da
+            Secretaria de Administração do TRE-AP e TRE-GO.</p>
+
+        <h4>IATA: Geração de Atas</h4>
+
+        <p>Registrar o que acontece conforme a rotina é uma tarefa obrigatória, mas muitas vezes cansativa.
+            Tradicionalmente, o trabalho de gravar a reunião ou sessão, para posteriomente ouvir o áudio pausadamente, e
+            preparar documentos a partir destes textos exige um tempo e esforço incomum. O resultado, muitas vezes, são
+            documentos despadronizados e incompletos.</p>
+        <p>Este trabalho apresenta uma solução prática para esse problema: uma aplicação web criada para automatizar e
+            padronizar a criação dessas atas. A ideia é simples: usar a tecnologia para que qualquer pessoa, mesmo sem
+            conhecimentos técnicos avançados, consiga produzir documentos formais, bonitos e padronizados em poucos
+            minutos.</p>
+        <p>Por que criar isso? Porque fazer atas manualmente no editor de texto tem dois grandes problemas. Primeiro, a
+            transcrição do áudio. A tarefa de gravar para posteriormente ouvir e transcrever o texto duplica o tempo
+            gasto com a reunião. Segundo, a falta de padrão: cada secretário faz a ata do seu jeito, o que gera uma
+            bagunça visual na documentação da empresa ou órgão público.</p>
+        <p>Do outro lado, existem softwares corporativos gigantescos que fazem isso, mas eles costumam ser caros e muito
+            difíceis de aprender. Este projeto se posiciona no meio do caminho: é uma ferramenta focada e fácil de usar,
+            que oferece a estrutura necessária para manter a qualidade, mas sem a complexidade de sistemas empresariais
+            pesados.</p>
+        <p>O objetivo principal é criar um sistema inteligente que realize a tarefa de transcrição de áudio e formatação
+            do documento, deixando o usuário livre para focar apenas na revisão do conteúdo do texto. Para isso, o
+            sistema busca:</p>
+
+        <div class="objectives-grid">
+            <div class="info-card">
+                <b>Facilitar a vida do usuário:</b>
+                <p>Oferecer modelos prontos para situações comuns, como reuniões de trabalho, assembleias de condomínio
+                    ou sessões de tribunais.</p>
+            </div>
+            <div class="info-card">
+                <b>Dar autonomia:</b>
+                <p>Permitir que o próprio usuário crie ou altere os modelos visualmente, sem precisar ser um
+                    programador. O sistema usa um método simples de preenchimento.</p>
+            </div>
+            <div class="info-card">
+                <b>Garantir o padrão:</b>
+                <p>Assegurar que o documento final saia padronizado, conforme formatação pré-definida.</p>
+            </div>
+            <div class="info-card">
+                <b>Visualização instantânea:</b>
+                <p>Permitir que a pessoa veja como o documento está ficando em tempo real, enquanto edita, antes de
+                    salvar a versão final.</p>
+            </div>
+        </div>
+
+        <p>O desenvolvimento do sistema foi feito pensando na facilidade de uso, mas com uma base tecnológica moderna e
+            robusta nos bastidores. O <i>backend</i> do sistema foi feita em Python. É esse motor que recebe os dados
+            digitados pelo usuário e os encaixa nos lugares certos dentro do documento.</p>
+        <p>Para o usuário, o sistema oferece duas áreas principais:</p>
+        <p><b>O Transcritor e Gerador de Atas:</b> É a tela do dia a dia. Aqui, o usuário escolhe um modelo e preenche
+            um formulário simples. O sistema transcreve o áudio, pega essas respostas e monta o documento final
+            automaticamente.</p>
+        <p><b>O Editor Visual de Modelos:</b> Esta é a grande inovação do projeto. É uma tela onde o usuário pode criar
+            novos modelos de documentos. O sistema é inteligente o suficiente para ler o texto que o usuário está
+            escrevendo e detectar automaticamente os "campos em branco" (como data, participantes, pauta).</p>
+        <p>Em suma, esta aplicação mostra como os sistemas agênticos podem resolver problemas reais e cotidianos. Ao
+            transformar um processo manual e repetitivo em um fluxo automatizado, a ferramenta não apenas economiza
+            tempo, mas também eleva a qualidade da documentação oficial nas organizações.</p>
+
+
+        <h4>Checagem de Fatos</h4>
+
+        <p>Vivemos a era da "pós-verdade", onde boatos, sátiras mal compreendidas, <i>clickbaits</i> e teorias da
+            conspiração se misturam ao jornalismo sério, criando um ambiente de insegurança. O problema não é apenas o
+            texto falso, mas a sofisticação da fraude: vídeos manipulados, áudios tirados de contexto e imagens geradas
+            por computador. Diante desse cenário, o trabalho propõe uma solução técnica robusta: um framework que
+            utiliza IA para automatizar a árdua tarefa de separar o joio do trigo, ajudando a restaurar a confiança no
+            ecossistema informacional.</p>
+        <p>A justificativa para este estudo reside na urgência e na escala. O volume de dados gerado diariamente é
+            humanamente impossível de ser verificado apenas por checadores manuais. Enquanto um jornalista investiga uma
+            única alegação, milhares de novas mentiras são publicadas. Esse desequilíbrio favorece a desordem
+            informacional, que corroi democracias, interfere em eleições e pode até custar vidas em crises de saúde
+            pública.</p>
+        <p>Além disso, as fake news evoluíram. Elas exploram vieses cognitivos e apelam para a emoção. Portanto,
+            justifica-se a criação de um sistema que não apenas desmistifique, mas que entenda o contexto, analise
+            múltiplas mídias e explique o raciocínio por trás da decisão, servindo como um braço direito escalável para
+            jornalistas e plataformas digitais.</p>
+        <p>A meta central desta pesquisa não é substituir o julgamento humano, mas apoia-lo com uma ferramenta. O
+            objetivo é desenvolver e validar um framework baseado em IA capaz de realizar a checagem de fatos de ponta a
+            ponta.</p>
+        <p>A abordagem metodológica escolhida é a construção prática de uma "Prova de Conceito", ou seja, colocar a
+            teoria para rodar no mundo real. O autor desenhou uma arquitetura modular, onde cada peça do sistema realiza
+            uma função vital, imitando o raciocínio de um checador profissional. O processo é dividido em quatro grandes
+            módulos:</p>
+
+        <div class="fact-check-process">
+            <div class="process-step">
+                <div class="step-number">I</div>
+                <div class="step-content">
+                    <b>Módulo I: Extração de recursos</b>
+                    <p>Aqui é a porta de entrada. Se a notícia é um vídeo, o sistema transcreve o áudio e descreve as
+                        cenas
+                        visuais. Se é uma imagem, ele usa Visão Computacional para entender o cenário e ler textos
+                        contidos
+                        na foto. O objetivo é transformar qualquer formato de mídia em dados textuais ricos e
+                        contextualizados que a IA possa processar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fact-check-process">
+            <div class="process-step">
+                <div class="step-number">II</div>
+                <div class="step-content">
+                    <b>Módulo II: Mineração de argumento</b>
+                    <p>Com os dados brutos em mãos, entram em cena os Grandes Modelos de Linguagem (LLMs). O sistema
+                        analisa
+                        o conteúdo para identificar quais frases são afirmações factuais que merecem verificação.
+                        Ele filtra
+                        opiniões e futilidades, focando no que é passível de prova. Além disso, ele gera "consultas
+                        de
+                        busca" otimizadas, preparando o terreno para a próxima fase.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fact-check-process">
+            <div class="process-step">
+                <div class="step-number">III</div>
+                <div class="step-content">
+                    <b>Módulo III: Recuperação e Refinamento</b>
+                    <p>Utilizando a técnica de Retrieval-Augmented Generation (RAG), o sistema vai à internet
+                        (usando
+                        ferramentas como a busca do DuckDuckGo) para encontrar evidências. Ele não aceita
+                        qualquer coisa: há
+                        uma triagem para garantir que as fontes sejam relevantes e contradigam ou confirmem a
+                        alegação
+                        original. Se a evidência for fraca, o sistema refina a busca e tenta de novo, num ciclo
+                        de melhoria
+                        contínua.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fact-check-process">
+            <div class="process-step">
+                <div class="step-number">IV</div>
+                <div class="step-content">
+                    <b>Módulo IV: Classificação</b>
+                    <p>No estágio final, o framework age como um juiz. Ele cruza a alegação original com o
+                        dossiê de
+                        evidências coletado. Usando técnicas de aprendizado chamadas Few-Shot Learning (onde
+                        se dá alguns
+                        exemplos para a IA entender o padrão), o modelo classifica a notícia em categorias
+                        como
+                        "Verdadeiro", "Falso", "Sátira" ou "Fora de Contexto". O produto final é um
+                        relatório legível que
+                        justifica a decisão, fechando o ciclo da checagem.</p>
+                </div>
+            </div>
+        </div>
+
+        <p>Segue o fluxo de checagem de fatos detalhando cada módulo:</p>
+
+        <div class="infographic-box">
+            <img src="{{ url_for('static', path='img/Mosaico.png') }}"
+                alt="Fluxograma Checagem de Fatos">
+            <span class="fig-caption">Figura 6.2: Fluxograma Checagem de Fatos</span>
+        </div>
+        <p></p>
+
+
+        <h4>Normativos do CNJ</h4>
+
+        <p>Em um dos encontros junto a pareceristas e analistas judiciários, na busca de oportunidades
+            para automação
+            com IA, foi identificado que buscar atos normativos demanda muito tempo, além de um
+            desgaste. Tendo em vista
+            que essa tarefa se repete ao longo do tempo, foi criado um assistente conversacional com o
+            propósito de
+            buscar atos normativos do Conselho Nacional de Justiça e responder perguntas baseadas nesse
+            contexto.</p>
+
+        <h4>PalanqueIA</h4>
+
+        <p>Esse <b>chatbot</b> foi desenvolvido para auxiliar pesquisadores políticos, candidatos e a
+            sociedade civil
+            como um todo na busca de planos de governo de candidatos políticos e na criação de propostas
+            políticas. O
+            agente possui dois modos de funcionamento: o modo consulta, onde o chatbot retorna planos de
+            governo
+            cadastrados no TSE na ocasião do registro de candidatura a partir de uma consulta inicial do
+            usuário; e o
+            modo criação, onde o agente, a partir de um tema definido pelo usuário, busca alguns
+            resultados mais
+            similares da base, e retorna um plano de governo em determinado tema.</p>
+
+
+        <h3>Oficina Prática</h3>
+
+        <p>Esta oficina tem como foco ensinar e desenvolver habilidades práticas com LLMs e sua
+            aplicação em sistemas
+            agênticos. O programa cobre desde os conceitos iniciais, engenharia de Prompt e diferentes
+            arquiteturas de
+            recuperação de informação até a parte prática utilizando ferramentas como n8n e Python.</p>
+        <p>Apesar do acesso facilitado aos modelos de linguagem, criar sistemas que integrem memória,
+            ferramentas
+            externas e raciocínio complexo demanda uma nova forma de pensar a engenharia de software. A
+            oficina procura
+            resolver este problema ao transformar conceitos como embeddings, busca vetorial e frameworks
+            aplicados em
+            práticas de programação concretas.</p>
+        <p>Nesse contexto, os objetivos da oficina concentram-se na aplicação prática do conhecimento
+            para a
+            prototipagem de novos agentes. O intuito é habilitar os participantes a se aprofundarem na
+            concepção
+            teórica, utilizando abordagens de <i>Design Thinking</i>, até a construção efetiva de
+            soluções funcionais.
+            Busca-se que, ao final do processo, os desenvolvedores sejam capazes de arquitetar e
+            implementar protótipos
+            de agentes que resolvam problemas reais.</p>
+        <p>Por fim, este trabalho pode ser considerado um Produto Técnico-Tecnológico, considerando suas
+            características: é inovador, ao introduzir metodologias de limite; é replicável, pois seu
+            material didático
+            permite a reprodução do treinamento em diferentes contextos; possui alto impacto, ao elevar
+            significativamente a maturidade tecnológica das equipes envolvidas; e demonstra elevada
+            aplicabilidade,
+            entregando ferramentas e conhecimentos que podem ser imediatamente convertidos em soluções
+            de software para
+            modernização institucional.</p>
+
+        <h3>Ajuste Fino</h3>
+
+        <p>Este estudo apresenta um novo classificador de texto sintético para português brasileiro,
+            utilizando
+            a arquitetura Transformers e aprendizado por transferência. Dada a limitada disponibilidade
+            de
+            modelos PT-BR, os autores desenvolveram um dataset misto, "Database", composto por textos
+            humanos de
+            diversas fontes (Wikipédia, poemas, notícias, comentários) e textos sintéticos gerados por
+            vários
+            LLMs como Meta-Llama, Mistral e Gemma. O processo de criação do dataset envolveu uma
+            cuidadosa
+            seleção para garantir a diversidade de estilos e a relevância para a língua portuguesa,
+            evitando
+            textos traduzidos por IA.</p>
+        <p>Os modelos pré-treinados FacebookAI/xlm-roberta-base e neuralmind/bert-large-portuguese-cased
+            (BERTimbau)
+            foram ajustados e avaliados. Ambos demonstraram alta precisão na detecção de textos
+            sintéticos, com o modelo
+            FacebookAI/xlm-roberta-base sendo o de melhor desempenho. Em contraste, o detector
+            openai-community/roberta-base-openai-detector teve um desempenho próximo ao aleatório para o
+            português
+            brasileiro. Os resultados ressaltam a importância de desenvolver LLMs específicos para a
+            língua portuguesa,
+            capazes de capturar suas nuances linguísticas e idiomáticas, e abrem caminho para futuros
+            trabalhos focados
+            na ampliação do corpus e na avaliação da robustez dos modelos contra ataques de ofuscação.
+        </p>
+
+        <h3>Bases de Dados</h3>
+
+        <p></p>
+        <h3 id="subsec:dataset-cnj">Banco de Normativos do CNJ</h3>
+
+
+        <p>Coleção de todos os atos normativos publicados disponibilizados na Internet. Todos os
+            documentos foram
+            incorporados, fragmentados e indexados em um banco vetorial para possibilitar a recuperação
+            semântica da
+            informação. Para a produção do trabalho, foram avaliados três modelos de incorporação
+            distintos em três
+            estratégias de fragmentação diferentes.</p>
+
+
+        <p></p>
+        <h3 id="subsec:dataset-planos">Banco de Planos de Governo</h3>
+
+
+        <p>Coleção de planos de governo dos candidatos a cargos majoritários quando registram suas
+            candidaturas. Os
+            planos de governo estão disponíveis no site do TSE.</p>
+
+
+        <p></p>
+        <h3 id="subsec:dataset-sinteticos">Banco de Dados Sintéticos versus Humanos</h3>
+
+
+        <p>Com o propósito de realizar de treinar um modelo de IA com o propósito de distinguir a
+            natureza de textos
+            em produção humana e sintética, criamos um conjunto de dados de aproximadamente 85.000
+            textos humanos e
+            85.000 textos com seus complementos sintéticos.</p>
+
+
+        <h3>Outros Estudos</h3>
+
+        <h3 id="subsec:classificador-federado">Classificador Federado para Classes Judiciais</h3>
+
+        <div class="info-card">
+            <p>O artigo propõe uma abordagem colaborativa para o treinamento de modelos de IA no Poder
+                Judiciário
+                brasileiro por meio do aprendizado federado, técnica que permite o desenvolvimento
+                conjunto de modelos
+                sem a necessidade de compartilhamento de dados sensíveis. O estudo destaca os desafios
+                enfrentados
+                atualmente, como altos custos operacionais, fragmentação de iniciativas, vieses
+                regionais e riscos à
+                privacidade previstos na LGPD. O aprendizado federado surge como alternativa viável,
+                promovendo maior
+                eficiência, proteção de dados e padronização entre os tribunais, além de possibilitar a
+                criação de
+                modelos mais representativos e generalizáveis.</p>
+
+            <p>A pesquisa experimental comparou o desempenho de modelos treinados de forma centralizada
+                e federada,
+                utilizando o modelo Longformer aplicado à classificação de documentos judiciais. Os
+                resultados indicaram
+                que o aprendizado federado apresentou desempenho similar ou superior, especialmente em
+                cenários com
+                dados balanceados, demonstrando seu potencial técnico e jurídico. Conclui-se que a
+                adoção dessa
+                abordagem pode impulsionar a modernização do Judiciário, conciliando inovação
+                tecnológica com segurança
+                e ética no uso da IA, ainda que sua implementação demande superar desafios de
+                infraestrutura,
+                interoperabilidade e governança interinstitucional.</p>
+        </div>
+
+
+
+        <h3 id="subsec:bi-despesas">Despesas de Campanha e Resultado das Eleições</h3>
+
+        <div class="info-card">
+            <p>O artigo investiga a relação entre gastos de campanha e desempenho eleitoral nas eleições
+                de 2022 para o
+                cargo de governador no Brasil, utilizando análise de correlação de Spearman e modelagem
+                de regressão
+                ridge. Os resultados apontam uma forte correlação positiva (r = 0,86) entre as despesas
+                de campanha e a
+                quantidade de votos válidos, indicando que candidatos que mais investem em suas
+                campanhas tendem a obter
+                maior sucesso eleitoral. Foi também desenvolvido o Indicador de Gasto Médio por Voto
+                (IGMV), que
+                permitiu comparar o custo médio do voto entre cargos e estados, revelando que o Acre
+                apresentou o maior
+                valor (R$ 37,79 por voto) e o Paraná o menor (R$ 3,74).</p>
+
+            <p>A modelagem preditiva demonstrou que o gasto eleitoral é a variável mais significativa
+                para explicar a
+                performance dos candidatos, seguido pela condição de reeleição, que favorece os
+                incumbentes. O estudo
+                destaca ainda o desenvolvimento de um painel interativo de inteligência de negócios para
+                análise de
+                diferentes eleições e cargos. Conclui-se que o financiamento de campanha é um fator
+                determinante no
+                desempenho eleitoral no Brasil, reforçando a necessidade de políticas públicas que
+                promovam maior
+                equidade financeira entre os candidatos e assegurem a transparência e a competitividade
+                democrática.</p>
+        </div>
+
+
+
+        <h3 id="subsec:bi-inclusiva">Democracia Inclusiva: Votos dos Eleitores Analfabetos e com
+            Mobilidade Reduzida
+        </h3>
+
+        <div class="info-card">
+            <p>O estudo "Democracia Inclusiva: Os Votos de Eleitores com Deficiências e Analfabetos no
+                Brasil
+                (1998-2024)" analisa as taxas de abstenção em eleições brasileiras, focando em eleitores
+                com deficiência
+                e analfabetos. A pesquisa quantitativa utilizou dados do Tribunal Superior Eleitoral
+                (TSE) e do
+                Instituto Brasileiro de Geografia e Estatística (IBGE) para identificar tendências,
+                padrões espaciais e
+                fatores contextuais. Os resultados indicam um crescimento contínuo do eleitorado geral
+                no Brasil, com as
+                taxas de abstenção entre eleitores com deficiência e analfabetos sendo
+                significativamente maiores do que
+                as do eleitorado geral. Além disso, as regiões Sudeste e Nordeste registraram as maiores
+                médias de
+                eleitores aptos a votar, bem como as maiores quantidades de abstenções.</p>
+
+            <p>A análise temporal revelou um aumento nas taxas de abstenção para eleitores com
+                deficiência, atingindo um
+                pico em 2020 (39,21%), e para eleitores analfabetos, que subiram de 40,09% em 2012 para
+                52,08% em 2022.
+                A análise espacial identificou padrões regionais significativos, com o Nordeste
+                apresentando a maior
+                concentração de eleitores analfabetos e o Sudeste e Sul predominando na correlação de
+                alta-alta para
+                este grupo em 2024. Para eleitores com deficiência, a distribuição espacial foi menos
+                uniforme, com
+                correlações de baixa-alta no estado de São Paulo em 2022. Em geral, a pesquisa conclui
+                que o crescimento
+                da abstenção não é casual, mas sim uma tendência real, impulsionada por fatores como
+                desinteresse
+                político, desinformação e dificuldades logísticas, o que exige políticas públicas
+                regionalizadas e
+                estratégias de comunicação e inclusão para garantir a participação de todos os
+                eleitores.</p>
+        </div>
+
+
+
+        <h3 id="subsec:estudo-agenda2030">Resolução 615/2025 do CNJ e Agenda 2030</h3>
+
+        <div class="info-card">
+            <p>O estudo analisa os impactos da Resolução nº 615/2025 do CNJ sobre a governança e o
+                desenvolvimento de
+                soluções de IA no Poder Judiciário brasileiro, à luz da Agenda 2030 da ONU. Por meio de
+                uma pesquisa
+                qualitativa documental, o trabalho identifica como a norma contribui para a modernização
+                do Judiciário
+                ao estabelecer diretrizes éticas, de transparência e responsabilidade no uso da IA,
+                promovendo inovação
+                sustentável e alinhada aos Objetivos de Desenvolvimento Sustentável (ODS). Os principais
+                ODS impactados
+                são o 16 (Paz, Justiça e Instituições Eficazes) e o 9 (Indústria, Inovação e
+                Infraestrutura), com
+                reflexos positivos também nos ODS 4, 8, 10 e 17. Conclui-se que a Resolução 615/2025
+                representa um marco
+                na consolidação de uma governança tecnológica ética e inclusiva, fortalecendo a
+                eficiência, a
+                transparência e o compromisso social do Poder Judiciário.</p>
+        </div>
+
+
+
+        <h3 id="subsec:estudo-crossworking">A Study of International Standards for Safe and Responsible
+            AI Governance in
+            Organizations</h3>
+
+        <div class="info-card">
+            <p>O avanço acelerado da IA, especialmente dos LLMs, tem gerado preocupações significativas
+                quanto à
+                segurança e à responsabilidade em seu uso. Governos e organizações, como o Poder
+                Judiciário brasileiro,
+                têm respondido com regulamentações específicas. Este artigo examina os controles de uso
+                seguro e
+                responsável da IA estabelecidos pela Resolução nº 615/2025 do CNJ e os correlaciona com
+                frameworks
+                internacionais de gestão e gerenciamento de riscos, notadamente a norma ISO/IEC
+                42001:2023 da
+                Organização Internacional de Normalização e Comissão Eletrotécnica Internacional, e o
+                Artificial
+                Intelligence Risk Management Framework (AI RMF) 1.0 do Instituto Nacional de Padrões e
+                Tecnologia
+                (NIST). O estudo demonstra como as diretrizes normativas do Judiciário podem ser
+                operacionalizadas e
+                auditadas por meio da adoção e adaptação de práticas globais, com foco em aspectos
+                críticos como
+                avaliação de impacto algorítmico, governança de dados, transparência e mitigação de
+                vieses.</p>
+        </div>
+
+
+
+    </article>
+
+    <article id="cap4.1" class="chapter-content">
+        <h2>Discussão</h2>
+
+        <p>O presente trabalho partiu da ideia de que a disponibilidade de grandes conjuntos de dados, o poder
+            computacional acessível e a maturidade dos modelos de linguagem criariam as condições favoráveis para uma
+            transformação digital no serviço público. Partindo desta hipótese, iniciamos uma pesquisa aplicada em
+            diversos agentes e outros estudos complementares com o propósito de validar esta questão.</p>
+        <p>O principal achado deste estudo é a demonstração prática de que é possível desenvolver e implementar agentes
+            de IA eficazes no contexto do serviço público brasileiro. Os resultados apresentados sob a forma de um
+            conjunto de produtos funcionais e artefatos tecnológicos, não apenas validam essa hipótese, mas também
+            oferecem um panorama claro das oportunidades e desafios inerentes a essa transição. No geral, os resultados
+            foram muito promissores. Houve um retorno muito positivo dos usuários ao verem suas longas tarefas serem
+            desempenhadas com sucesso por uma IA.</p>
+        <p>O fato da engenharia de IA ser uma área emergente, tivemos muitas mudanças radicais no processo. Ao longo do
+            projeto, novas ferramentas foram surgindo, frameworks foram sendo desenvolvidos, e praticamente, toda a
+            referência utilizada está concentrada a partir do ano de 2024. Os próprios modelos de linguagem, a espinha
+            dorsal dos agentes, tiveram evoluções consideráveis desde o início dos estudos, porém, sempre positivas.</p>
+        <p>A metodologia de quatro etapas para criação de agentes de IA, melhorada ao longo do projeto, emergiu como um
+            resultado tão relevante quanto os próprios agentes. A incorporação de técnicas de <i>Design Thinking</i> na
+            fase de mapeamento foi crucial para garantir que as soluções fossem desenvolvidas a partir das dores reais
+            dos usuários, e não de abstrações tecnológicas. Isso mitiga o risco de criar ferramentas tecnicamente
+            impressionantes, mas funcionalmente inúteis.</p>
+        <p>De forma geral, os resultados foram bem promissores. Em um curto espaço de tempo, o processo de criação de um
+            agente de IA saiu de muito complexo para muito simples. </p>
+
+        <h2 id="sec:limitacoes">Limitações e Trabalhos Futuros</h2>
+
+        <p>Em contrapartida, é importante reconhecer as limitações impostas a este estudo. O projeto possui inúmeras, de
+            naturezas diversas. Neste trabalho, citamos as mais relevantes:</p>
+
+        <div class="objectives-grid">
+            <div class="info-card">
+                <b>1. Técnicas:</b>
+                <p>Os agentes desenvolvidos são altamente dependentes de LLMs comerciais. Nos testes realizados, os
+                    melhores resultados foram obtidos a partir dos modelos de última geração de empresas privadas.
+                    Comparativamente, os modelos de código aberto não possuem a precisão e a flexibilidade técnica para
+                    desempenhar inúmeras tarefas. Outra vantagem importante dos modelos de última geração é a
+                    multimodalidade altamente avançada. Outra abordagem de limitação técnica relevante é a integração
+                    dos produtos com sistemas utilizados pelos órgãos públicos. Essa variedade de integrações dificulta
+                    muito o desenvolvimento colaborativo, uma das imposições pela governança imposta pelo CNJ.</p>
+            </div>
+
+            <div class="info-card">
+                <b>2. Escopo:</b>
+                <p>O objetivo principal foi analisar e propor um modelo, validado por meio de protótipos funcionais.
+                    Esses protótipos demonstram a viabilidade técnica e o valor potencial, mas não são sistemas prontos
+                    para produção em larga escala. A implantação é frequentemente mais difícil do que o desenvolvimento.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <b>3. Propagação do erro:</b>
+                <p>Cada tarefa realizada pelo agente possui uma probabilidade de falha. Ao longo do processo como um
+                    todo, essa probabilidade se multiplica, tornando alguns agentes inviáveis em sua implementação,
+                    apesar de provas de conceitos isolados satisfatórios.</p>
+            </div>
+
+
+
+            <div class="info-card">
+                <b>4. Riscos de ações de escrita:</b>
+                <p>Fornecer autonomia de escrita no mundo real ao agente expõe o processo a riscos de segurança e falhas
+                    com graves consequências. Esse nível de permissão exige alto monitoramento e controle.</p>
+            </div>
+        </div>
+
+        <p>Apesar de muitos avanços, ainda é possível vislumbrar um longo caminho pela frente. A adaptação ao modelo de
+            governança proposto pelo CNJ exige um longo processo de melhorias. Os protótipos, desenvolvidos ao longo do
+            processo, deverão ser incorporados no ambiente de produção dos órgãos públicos para consolidar os
+            benefícios. Esse processo de implementação exigirá um grande esforço, esforço este mínimo comparado aos
+            benefícios oferecidos pelos agentes.</p>
+
+        <div class="infographic-container">
+            <div class="info-card">
+                <h4>Principal Achado</h4>
+                <span class="info-value">Viabilidade</span>
+                <small>Agentes eficazes são possíveis no serviço público brasileiro.</small>
+            </div>
+            <div class="info-card">
+                <h4>Metodologia</h4>
+                <span class="info-value">Design Thinking</span>
+                <small>Essencial para criar ferramentas funcionalmente úteis.</small>
+            </div>
+            <div class="info-card">
+                <h4>Evolução</h4>
+                <span class="info-value">2024+</span>
+                <small>Referências e ferramentas concentradas no último ano.</small>
+            </div>
+        </div>
+
+    </article>
+
+    <article id="cap5" class="chapter-content">
+        <h2>Capítulo 5: Conclusão</h2>
+
+        <p>Ao chegar ao fim desta jornada, a sensação é que estamos diante de uma nova revolução no nosso modo de viver
+            e trabalhar. Em cada reunião realizada e em cada ideia nova, um recurso se desvendava; em cada frustração,
+            uma nova alegria; pudemos então perceber que estávamos diante de um caminho sem volta.</p>
+        <p>O que se iniciou com uma visão distante, a visão de criar soluções práticas em sistemas inteligentes, agora
+            tem forma e função. Decidimos sair do estado de inércia do serviço rumo a um novo paradigma na execução dos
+            nossos serviços. A prestação de serviços está prestes a mudar, e nos sentimos parte dessa mudança.</p>
+        <p>Em termos formais, esta pesquisa aplicada demonstrou a viabilidade e a eficácia de um modelo para o
+            desenvolvimento e implementação de agentes de IA, validando todos os objetivos propostos. O trabalho oferece
+            contribuições teóricas, como modelos conceituais, e práticas, como protótipos funcionais que resultaram em
+            maior eficiência operacional.</p>
+
+        <div class="infographic-container">
+            <div class="info-card">
+                <h4>Visão Final</h4>
+                <span class="info-value">Servir</span>
+                <small>A tecnologia como meio para servir à sociedade.</small>
+            </div>
+            <div class="info-card">
+                <h4>O Equilíbrio</h4>
+                <span class="info-value">Humano</span>
+                <small>Autonomia da IA sob a supervisão estratégica humana.</small>
+            </div>
+            <div class="info-card">
+                <h4>O Impacto</h4>
+                <span class="info-value">Democracia</span>
+                <small>IA ética para uma sociedade mais justa e eficiente.</small>
+            </div>
+        </div>
+
+        <p>A pesquisa reforça que o momento atual é propício para essa transformação, dado o alinhamento de avanços
+            tecnológicos. Um dos achados centrais é a importância do equilíbrio entre a autonomia dos agentes e a
+            supervisão humana, posicionando a solução como uma ferramenta de aumento das capacidades humanas, não de
+            substituição. O caminho segue para o uso da IA sob supervisão humana, estando a mente humana como detentora
+            da palavra final.</p>
+        <p>O impacto disso na vida real é imenso: significa abrir as janelas das instituições, nivelar o jogo e trazer
+            mais clareza para o cidadão. Apesar dos desafios persistentes, como a mitigação de vieses e a
+            explicabilidade, a pesquisa conclui que a transformação digital via IA, quando guiada por princípios éticos,
+            é uma ferramenta poderosa para fortalecer a democracia e criar uma sociedade mais justiça e eficiente. O
+            sucesso futuro dependerá da capacidade de adaptar e implementar essas tecnologias de forma responsável e
+            centrada no bem comum.</p>
+        <p>E por fim, olhando para dois anos atrás, este trabalho modificou meu modo de agir e pensar. Não é sobre
+            tecnologia. É sobre servir à sociedade, sendo mais empático, mais produtivo, e mais justo.</p>
+
+    </article>
+
+    <article id="cap6" class="chapter-content">
+        <h2>Referências</h2>
+
+        <div class="infographic-container">
+            <div class="info-card">
+                <h4>Atualidade</h4>
+                <span class="info-value">85%</span>
+                <small>das fontes datam de 2024 ou 2025.</small>
+            </div>
+            <div class="info-card">
+                <h4>Institucional</h4>
+                <span class="info-value">Diretrizes</span>
+                <small>CNJ, Brasil (EFGD), NIST e ISO/IEC.</small>
+            </div>
+            <div class="info-card">
+                <h4>Editoras Técnicas</h4>
+                <span class="info-value">Elite Tech</span>
+                <small>O'Reilly, Packt, Manning e arXiv.</small>
+            </div>
+        </div>
+
+        <div style="text-align: left; font-size: 0.95rem;">
+            <p>Alla, L., Hmioui, A., & Bentalha, B. (2024). AI and Data Engineering Solutions for Effective Marketing.
+                IGI Global Business Science Reference[cite: 929, 930].</p>
+
+            <p>Alto, V. (2025). AI Agents in Practice: Design, Implement, and Scale Autonomous AI Systems for
+                Production. Packt Publishing[cite: 931, 932].</p>
+
+            <p>Biswas, A., & Talukdar, W. (2025). Building Agentic AI Systems: Create intelligent, autonomous Al agents
+                that can reason, plan, and adapt. Packt Publishing[cite: 933, 934].</p>
+
+            <p>Bornet, P., Wirtz, J., Davenport, T. H., De Cremer, D., Evergreen, B., Fersht, P., Gohel, R., & Khiyara,
+                S. (2025). Agentic Artificial Intelligence. Pascal Bornet[cite: 935, 936].</p>
+
+            <p>Brasil. (2024). Decreto nº 12.198, de 24 de setembro de 2024: Institui a Estratégia Federal
+                de Governo Digital para o período de 2024 a 2027. Presidência da República[cite: 937, 938].</p>
+
+            <p>Brown, T. (2008). Design Thinking. Harvard Business Review[cite: 938].</p>
+
+            <p>Caldwell, T. R. (2025). The Al Engineering Bible: The Complete and Up-to-Date Guide to Build, Develop and
+                Scale Production Ready AI Systems. Self-Published[cite: 939, 940].</p>
+
+            <p>Chan, A. et al. (2025). Infrastructure for AI Agents. arXiv preprint arXiv:2501.10114[cite:
+                941, 942].</p>
+
+            <p>Chang, Y. et al. (2024). A Survey on Evaluation of Large Language Models. ACM Transactions on
+                Intelligent Systems and Technology[cite: 943, 944].</p>
+
+            <p>CognitiveGroup. (2023). Cognitive Task Analysis and AI Agents: Extracting Human Expertise for
+                Enhanced AI Performance[cite: 945, 946].</p>
+
+            <p>Conselho Nacional de Justiça. (2025). Resolução nº 615, de 11 de março de 2025: Estabelece
+                diretrizes para o desenvolvimento e governança de soluções de IA no Poder Judiciário[cite: 947, 948].
+            </p>
+
+            <p>Crandall, B., Klein, G., & Hoffman, R. R. (2006). Working Minds: A Practitioner's Guide to Cognitive Task
+                Analysis. The MIT Press[cite: 952, 953].</p>
+
+            <p>Davies, R. (2025). AI Engineering in Practice. Manning Publications[cite: 954].</p>
+
+            <p>De Chezelles, T. L. S. et al. (2024). The BrowserGym Ecosystem for Web Agent Research.
+                arXiv[cite: 955, 956].</p>
+
+            <p>Deng, Z. et al. (2025). AI Agents Under Threat: A Survey of Key Security Challenges. ACM
+                Computing Surveys[cite: 957, 958].</p>
+
+            <p>Dennis, A. R. et al. (2023). AI Agents as Team Members: Effects on Satisfaction, Conflict, and
+                Trustworthiness. Journal of Management Information Systems[cite: 959, 960].</p>
+
+            <p>Dhuliawala, S. et al. (2023). Chain-of-Verification Reduces Hallucination in Large Language
+                Models. arXiv[cite: 961, 962].</p>
+
+            <p>Drouin, A. et al. (2024). WorkArena: How Capable Are Web Agents at Solving Common Knowledge
+                Work Tasks? arXiv[cite: 963, 964].</p>
+
+            <p>Fung, P. et al. (2025). Embodied AI Agents: Modeling the World. arXiv[cite: 965, 966].</p>
+
+            <p>Gallegos, I. O. et al. (2024). Bias and Fairness in Large Language Models: A Survey.
+                Computational Linguistics[cite: 967, 968].</p>
+
+            <p>Gao, L. et al. (2023). Precise Zero-Shot Dense Retrieval without Relevance Labels. ACL
+                Anthology[cite: 969, 970].</p>
+
+            <p>Gao, S. et al. (2024). Empowering biomedical discovery with Al agents. Cell[cite: 971, 972].
+            </p>
+
+            <p>Grand View Research. (2024). AI Agents Market Size, Share Trends Analysis Report
+                2025-2030[cite: 973, 974].</p>
+
+            <p>Grootendorst, M., & Alammar, J. (2025). An Illustrated Guide to AI Agents. O'Reilly
+                Media[cite: 977, 978].</p>
+
+            <p>Gupta, M., & Sen, N. (2025). Model Context Protocol Advanced AI Agents for Beginners[cite:
+                979, 980].</p>
+
+            <p>Hadfield, G. K., & Koh, A. (2025). An Economy of AI Agents. arXiv[cite: 981].</p>
+
+            <p>He, H. et al. (2024). WebVoyager: Building an End-to-End Web Agent with Large Multimodal
+                Models. arXiv[cite: 982, 983].</p>
+
+            <p>Huang, X. et al. (2024). Understanding the planning of LLM agents: A survey. arXiv[cite: 984,
+                985].</p>
+
+            <p>Huyen, C. (2024). AI Engineering: Building Applications with Foundation Models. O'Reilly
+                Media[cite: 986].</p>
+
+            <p>ISO/IEC. (2023). ISO/IEC 42001:2023: Information technology Artificial intelligence
+                Management system[cite: 987, 988, 989].</p>
+
+            <p>Ishida, T. et al. (2025). AI Agents: From Concept to Code to Commerce. TechRxiv[cite: 989,
+                990].</p>
+
+            <p>Kapoor, S. et al. (2024). AI Agents That Matter. arXiv[cite: 991, 992].</p>
+
+            <p>Koh, J. Y. et al. (2024). VisualWebArena: Evaluating Multimodal Agents on Realistic Visual
+                Web Tasks. arXiv[cite: 993, 994].</p>
+
+            <p>Kolt, N. (2025). Governing AI Agents. arXiv[cite: 995].</p>
+
+            <p>Labaschin, B. et al. (2025). Managing Memory for AI Agents. O'Reilly Media[cite: 996, 997].
+            </p>
+
+            <p>LangChain. (2024). State of AI Agents Report 2024[cite: 998].</p>
+
+            <p>Lanham, M. (2025). AI Agents in Action. Manning Publications[cite: 999].</p>
+
+            <p>Larson, J., & Truitt, S. (2024). GraphRAG: Unlocking LLM Discovery on Narrative Private Data.
+                Microsoft Research[cite: 1000, 1001, 1004].</p>
+
+            <p>Lewis, P. et al. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+                arXiv[cite: 1005, 1006].</p>
+
+            <p>Li, X. et al. (2024). A survey on LLM-based multi-agent systems. Vicinagearth[cite: 1007,
+                1008].</p>
+
+            <p>Liang, T. et al. (2023). Encouraging Divergent Thinking in Large Language Models through
+                Multi-Agent Debate[cite: 1009, 1010].</p>
+
+            <p>Lipenkova, J. (2025). The Art of AI Product Development. Manning Publications[cite: 1011].
+            </p>
+
+            <p>Liu, Z. et al. (2023). A Dynamic LLM-Powered Agent Network for Task-Oriented Agent
+                Collaboration. arXiv[cite: 1012, 1013].</p>
+
+            <p>Mandikal, P., & Mooney, R. (2024). Sparse Meets Dense: A Hybrid Approach to Enhance
+                Scientific Document Retrieval[cite: 1014, 1015].</p>
+
+            <p>Ministério da Ciência, Tecnologia e Inovação. (2024). Proposta de Plano Brasileiro de
+                Inteligência Artificial 2024-2028 (PBIA)[cite: 1016, 1017].</p>
+
+            <p>Ning, X. et al. (2024). Skeleton-of-Thought: Prompting LLMs for Efficient Parallel
+                Generation. arXiv[cite: 1018, 1019].</p>
+
+            <p>Pisarevskaya, D., & Zubiaga, A. (2025). Zero-shot and Few-shot Learning with Instruction-following LLMs
+                for Claim Matching. COLING 2025[cite: 1020, 1021].</p>
+
+            <p>Prophecy Market Insights. (2025). Autonomous Al Agents Market Size and Forecast till
+                2035[cite: 1022, 1023].</p>
+
+            <p>Rackauckas, Z. (2024). RAG-Fusion: A New Take on Retrieval-Augmented Generation. arXiv[cite:
+                1024].</p>
+
+            <p>Raieli, S., & Iuculano, G. (2025). Building AI Agents with LLMS, RAG, and Knowledge Graphs.
+                Packt Publishing[cite: 1027, 1028].</p>
+
+            <p>Riedl, M. O., & Desai, D. R. (2025). AI Agents and the Law. AAAI/ACM Conference on AI,
+                Ethics, and Society[cite: 1029, 1030].</p>
+
+            <p>Sapkota, R. et al. (2025). AI Agents vs. Agentic AI: A Conceptual Taxonomy. arXiv[cite: 1031,
+                1032].</p>
+
+            <p>Sevilla, J., & Roldán, E. (2024). Training compute of frontier Al models grows by 4-5x per year.
+                Epoch AI[cite: 1033, 1034].</p>
+
+            <p>Shinn, N. et al. (2023). Reflexion: Language Agents with Verbal Reinforcement Learning.
+                NeurIPS 2023[cite: 1035, 1036, 1037].</p>
+
+            <p>Stratis, K. (2025). Al Agents with MCP Model Context Protocol. O'Reilly Media[cite: 1038,
+                1039].</p>
+
+            <p>Wang, L. et al. (2024). A survey on large language model based autonomous agents. Frontiers
+                of Computer Science[cite: 1040, 1041].</p>
+
+            <p>Wei, J. et al. (2022). Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.
+                arXiv[cite: 1042, 1043].</p>
+
+            <p>Weston, J., & Sukhbaatar, S. (2023). System 2 Attention. arXiv[cite: 1044].</p>
+
+            <p>Xing, F. (2025). Designing Heterogeneous LLM Agents for Financial Sentiment Analysis. ACM
+                Transactions on Management Information Systems[cite: 1045, 1046].</p>
+
+            <p>Yan, S.-Q. et al. (2024). Corrective Retrieval Augmented Generation. arXiv[cite: 1047].</p>
+
+            <p>Yao, S. et al. (2023). Tree of Thoughts: Deliberate Problem Solving with Large Language Models.
+                NeurIPS 2023[cite: 1048, 1049, 1053].</p>
+
+            <p>Yehudai, A. et al. (2025). Survey on Evaluation of LLM-based Agents. arXiv[cite: 1054, 1055].
+            </p>
+
+            <p>Zheng, B. et al. (2024). GPT-4V (ision) is a Generalist Web Agent. arXiv[cite: 1056, 1057].
+            </p>
+
+            <p>Zheng, H. S. et al. (2024). Take a Step Back: Evoking Reasoning via Abstraction in LLMs.
+                arXiv[cite: 1058, 1059].</p>
+        </div>
+    </article>
+
+    <button class="nav-side-btn prev" id="btn-prev" title="Capítulo Anterior">&#10094;</button>
+    <button class="nav-side-btn next" id="btn-next" title="Próximo Capítulo">&#10095;</button>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='scr/tese.js') }}"></script>
+{% endblock %}

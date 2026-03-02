@@ -1,0 +1,35 @@
+services:
+  # ==========================================
+  # AMBIENTE DE DESENVOLVIMENTO (Localhost)
+  # ==========================================
+#  palanqueia_dev:
+#    build: .
+#    container_name: palanqueia-dev
+#    ports:
+#      - "8002:8002"
+#    volumes:
+#      - .:/code  # Sincroniza sua pasta local com o container (Hot Reload)
+#    environment:
+#      - DEBUG=True
+    # Sobrescreve o CMD do Dockerfile para ativar o modo de recarregamento
+#    command: uvicorn main:app --host 0.0.0.0 --port 8002 --reload
+#    restart: unless-stopped
+#    networks:
+#      - nativa-net
+
+  # ==========================================
+  # AMBIENTE DE PRODUÇÃO (VPS)
+  # ==========================================
+  palanqueia_prod:
+    build: .
+    container_name: palanqueia-prod
+    ports:
+      - "8002:8002"
+    # Em produção, o código já está "congelado" dentro da imagem via COPY
+    restart: always
+    networks:
+      - nativa-net
+
+networks:
+  nativa-net:
+    external: true

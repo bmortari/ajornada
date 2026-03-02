@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
+@theme {
+  --color-customBlue: #0097B2;
+  --color-customBlue-light: #E0F2FE;
+  --color-customBlue-hover: #007d96;
+  --color-customAmber: #D97706;
+  --color-customAmber-light: #FEF3C7;
+  --color-customAmber-hover: #B45309;
+  --color-customGreen: #10B981;
+  --color-customGreen-light: #D1FAE5;
+  --color-customGreen-hover: #059669;
+  --color-customOrange: #F97316;
+  --color-customOrange-light: #FFEDD5;
+  --color-customOrange-hover: #EA580C;
+  --color-customPurple: #8B5CF6;
+  --color-customPurple-light: #EDE9FE;
+  --color-customPurple-hover: #7C3AED;
+  --color-customRed: #EF4444;
+  --color-customRed-light: #FEE2E2;
+  --color-customRed-hover: #DC2626;
+  --color-customIndigo: #5850EC;
+  --color-customIndigo-light: #E0E7FF;
+  --color-customIndigo-hover: #4338CA;
+  --color-customDanger: #EF4444;
+  --color-customDanger-hover: #DC2626;
+  --color-customDanger-light: #FEE2E2;
+  --color-customDanger-dark-hover: #450A0A;
+  --color-customTeal: #0D9488;
+  --color-customTeal-light: #CCFBF1;
+  --color-customTeal-hover: #0F766E;
+  --color-customGray: #6B7280;
+  --color-customGray-light: #F3F4F6;
+  --color-customGray-hover: #4B5563;
+  --color-customCyan: #0891B2;
+  --color-customCyan-light: #CFFAFE;
+  --color-customCyan-hover: #0E7490;
+
+  --color-button-2: #277462;
+  --color-button-2-hover: #1e594c;
+
+  --color-button-3: #02968A;
+  --color-button-3-hover: #017d73;
+
+  /* Primary colors (emerald from login) */
+  --color-primary-50: oklch(97.9% 0.021 166.113);
+  --color-primary-100: oklch(95% 0.052 163.051);
+  --color-primary-200: oklch(90.5% 0.093 164.15);
+  --color-primary-300: oklch(84.5% 0.143 164.978);
+  --color-primary-500: oklch(69.6% 0.17 162.48);
+  --color-primary-600: oklch(59.6% 0.145 163.225);
+  --color-primary-700: oklch(50.8% 0.118 165.612);
+  --color-primary-800: oklch(43.2% 0.095 166.913);
+  --color-primary-900: oklch(37.8% 0.077 168.94);
+
+  /* Secondary colors (gray from login) */
+  --color-secondary-50: #F9FAFB;
+  --color-secondary-100: #F3F4F6;
+  --color-secondary-200: #E5E7EB;
+  --color-secondary-300: #D1D5DB;
+  --color-secondary-400: #9CA3AF;
+  --color-secondary-500: #6B7280;
+  --color-secondary-600: #4B5563;
+  --color-secondary-700: #374151;
+  --color-secondary-800: #1F2937;
+  --color-secondary-900: #111827;
+}
+
+@layer base {
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+
+  .animate-spin-icon {
+    display: inline-block;
+    animation: spin 1.5s linear infinite;
+  }
+}

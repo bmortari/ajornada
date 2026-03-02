@@ -1,0 +1,73 @@
+services:
+  # ── Cube Store ────────────────────────────────────────────
+  cubestore:
+    image: cubejs/cubestore:latest
+    container_name: chatdatajud-cubestore
+    restart: unless-stopped
+    environment:
+      CUBESTORE_REMOTE_DIR: /cube/data
+    volumes:
+      - cubestore_data:/cube/data
+    networks:
+      - nativa-net
+
+  # ── Cube.js API ───────────────────────────────────────────
+  cube:
+    image: cubejs/cube:latest
+    container_name: chatdatajud-cube
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      CUBEJS_DB_TYPE: postgres
+      CUBEJS_DB_HOST: postgres-pgvector
+      CUBEJS_DB_PORT: "5432"
+      CUBEJS_DB_NAME: datajud
+      CUBEJS_DB_USER: datajud
+      CUBEJS_DB_PASS: ${POSTGRES_PASSWORD:-datajud_secret}
+      CUBEJS_API_SECRET: ${CUBE_API_SECRET:-cube_secret_change_me}
+      CUBEJS_DEV_MODE: "false"
+      CUBEJS_CUBESTORE_HOST: chatdatajud-cubestore
+      CUBEJS_SCHEMA_PATH: model
+    volumes:
+      - ./cube/model:/cube/conf/model:ro
+    depends_on:
+      - cubestore
+    networks:
+      - nativa-net
+
+  # ── FastAPI Backend ───────────────────────────────────────
+  backend:
+    build: ./backend
+    container_name: chatdatajud-backend
+    restart: unless-stopped
+    volumes:
+      - ./backend/app:/app/app
+    env_file: .env
+    environment:
+      CUBE_API_URL: http://chatdatajud-cube:4000/cubejs-api/v1
+      CUBE_API_SECRET: ${CUBE_API_SECRET:-cube_secret_change_me}
+      DATABASE_URL: postgresql://datajud:datajud_secret@postgres-pgvector:5432/datajud
+    depends_on:
+      - cube
+    networks:
+      - nativa-net
+
+  # ── React Frontend (Nginx) ────────────────────────────────
+  frontend:
+    build: ./frontend
+    container_name: chatdatajud-frontend
+    restart: unless-stopped
+    ports:
+      - "8007:80"
+    depends_on:
+      - backend
+    networks:
+      - nativa-net
+
+volumes:
+  cubestore_data:
+
+networks:
+  nativa-net:
+    external: true

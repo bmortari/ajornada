@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Agradecimentos - Mestrado{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', path='scr/agradecimentos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="agradecimentos-wrapper">
+
+    <div class="hero-agradecimentos">
+        <div class="hero-content">
+            <h1 class="hero-title">Agradecimentos</h1>
+            <div class="hero-subtitle">Dissertação de Mestrado</div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+
+        <h2>Gratidão e Transformação</h2>
+        <p>
+            Primeiramente, expresso minha profunda gratidão a Deus e seu Filho. Este mestrado representa muito mais do que a aquisição de conhecimento técnico; foi uma jornada de transformação pessoal e profissional, construída com o apoio inestimável de pessoas e instituições que acreditaram neste projeto.
+        </p>
+        <p>
+            Cada linha desta dissertação carrega a contribuição de mestres, colegas, familiares e instituições que tornaram este sonho possível. A todos, minha eterna gratidão.
+        </p>
+
+        <img src="{{ url_for('static', path='img/familia.jpeg') }}" alt="Minha Família" class="styled-family-photo">
+
+        <p>
+            À minha família, meu porto seguro. Por acreditarem e suportarem toda essa caminhada. Em meio a tantas mudanças, vocês foram permanentes. Nas minhas ausências, foram presentes.
+        </p>
+        <p>
+            Cada conquista minha é, na verdade, uma conquista nossa. Vocês são a base de tudo que construo e o motivo pelo qual continuo buscando evoluir todos os dias.
+        </p>
+
+        <h2>Banca Examinadora e Orientação</h2>
+        <div class="banca-section">
+            
+            <div class="honorable-mention-card">
+                <div>
+                    <span class="role-badge">Orientador</span>
+                    <h3 class="person-name">Prof. Dr. Gentil Veloso Barbosa</h3>
+                </div>
+                <i class="fas fa-chalkboard-teacher icon-decoration"></i>
+            </div>
+
+            <div class="honorable-mention-card">
+                <div>
+                    <span class="role-badge">Co-Orientador</span>
+                    <h3 class="person-name">Prof. Dr. Rafael Lima</h3>
+                </div>
+                <i class="fas fa-chalkboard-teacher icon-decoration"></i>
+            </div>
+
+            <div class="honorable-mention-card">
+                <div>
+                    <span class="role-badge">Banca Avaliadora</span>
+                    <h3 class="person-name">Marluce Evangelista Carvalho Zacariotti</h3>
+                </div>
+                <i class="fas fa-user-graduate icon-decoration"></i>
+            </div>
+
+            <div class="honorable-mention-card">
+                <div>
+                    <span class="role-badge">Banca Avaliadora</span>
+                    <h3 class="person-name">Sérgio Manuel Serra da Cruz</h3>
+                </div>
+                <i class="fas fa-user-graduate icon-decoration"></i>
+            </div>
+
+        </div>
+
+        <h2>Momentos da Jornada</h2>
+        <div class="memories-grid">
+            
+            <div class="memory-item">
+                <img src="{{ url_for('static', path='img/coptrel_2.jpeg') }}" alt="Apresentação COPTREL">
+            </div>
+
+            <div class="memory-item">
+                <img src="{{ url_for('static', path='img/foto-3.jpeg') }}" alt="Visita Rondônia">
+            </div>
+
+            <div class="memory-item">
+                <img src="{{ url_for('static', path='img/foto-4.jpeg') }}" alt="Novo Momento">
+            </div>
+
+            <div class="memory-item">
+                <img src="{{ url_for('static', path='img/calabria_2.jpeg') }}" alt="Evento Calábria">
+            </div>
+
+            <div class="memory-item">
+                <img src="{{ url_for('static', path='img/foto_2.jpeg') }}" alt="Visita Rondônia">
+            </div>
+
+            <div class="memory-item">
+                <img src="{{ url_for('static', path='img/foto_1.jpeg') }}" alt="Novo Momento">
+            </div>
+
+        </div>
+
+        <div class="final-presentation-block">
+            <h2>Considerações Finais</h2>
+            <p>
+                Agradeço também à turma do mestrado e ao Tribunal Regional Eleitoral de Goiás (TRE-GO). As discussões, visitas técnicas e seminários foram fundamentais para a maturação deste trabalho.
+            </p>
+            <p>
+                Espero que esta pesquisa contribua para o avanço da inovação no setor público e sirva de inspiração para novos caminhos na prestação jurisdicional.
+            </p>
+        </div>
+
+        <div class="final-signature-footer">
+            <span class="signature-name">Bruno Mortari</span>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', path='scr/agradecimentos.js') }}"></script>
+{% endblock %}

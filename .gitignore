@@ -1,0 +1,47 @@
+# Secrets - NUNCA commitar
+.env
+*.env
+!*.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+*.sqlite3
+*.db
+
+# Node
+node_modules/
+dist/
+.next/
+build/
+.nuxt/
+.output/
+
+# Docker volumes e dados persistidos
+logs/
+*.log
+cubestore-data/
+pg_data/
+
+# OS
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dados grandes (CSV de dados)
+# Comente a linha abaixo se quiser versionar os CSVs pequenos
+# *.csv
+.claude/

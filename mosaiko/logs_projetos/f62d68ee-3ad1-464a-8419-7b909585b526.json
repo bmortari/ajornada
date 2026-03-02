@@ -1,0 +1,218 @@
+{
+  "projeto_id": "f62d68ee-3ad1-464a-8419-7b909585b526",
+  "modulos_executados": [
+    "modulo1",
+    "modulo2",
+    "modulo3",
+    "modulo4"
+  ],
+  "resultados": {
+    "modulo1": {
+      "timestamp": "2025-11-03T10:53:56.147984",
+      "resultado": {
+        "resposta": "A imagem mostra uma mulher em uma farmácia examinando medicamentos, um visual que se alinha diretamente com o texto sobreposto. O texto informa que as compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024, após o governo federal anunciar a escassez de doses de vacinas contra a COVID-19. Isso estabelece um contexto de preocupação pública e uma corrida por medicamentos, possivelmente como reação a uma crise de saúde ou falta de vacinas, indicando uma situação de possível escassez e impacto no comportamento do consumidor.",
+        "tipo": "imagem",
+        "descricao_visual": "A imagem exibe uma mulher, aparentemente jovem a de meia-idade, com cabelos castanhos e vestindo uma blusa de manga comprida de cor bege. Ela está usando uma máscara cirúrgica azul clara e sua expressão facial, visível na área dos olhos, parece ser de concentração ou leve preocupação, com as sobrancelhas ligeiramente franzidas. A mulher segura duas caixas retangulares pequenas de cor branca, que parecem ser embalagens de medicamentos ou produtos de saúde, e as está examinando atentamente. O cenário atrás dela é de uma farmácia ou drogaria, com prateleiras repletas de diversas embalagens de produtos farmacêuticos e de saúde em várias cores e tamanhos. As cores predominantes na imagem são tons claros e neutros, com a iluminação sugerindo um ambiente interno bem iluminado. A composição centraliza a mulher, conectando sua ação ao contexto do local.",
+        "texto_extraido_ocr": "AÇÃO DE COMPRAS DE MEDICAMENTOS NO BRASIL AUMENTA 200%\n25 de Abril de 2024\nOs brasileiros passaram a comprar mais medicamentos após o governo federal anunciar que as doses das vacinas contra a COVID-19 entrariam em escassez.",
+        "sentimento": "Neutro/Tensão",
+        "suspeita_manipulacao": "Nenhuma suspeita detectada. A imagem parece ser uma fotografia autêntica, possivelmente uma imagem de banco de dados, sem indícios visíveis de manipulação digital, inconsistências de iluminação ou características de IA generativa.",
+        "dados_completos": {
+          "tipo": "imagem",
+          "descricao": {
+            "descricao_visual": "A imagem exibe uma mulher, aparentemente jovem a de meia-idade, com cabelos castanhos e vestindo uma blusa de manga comprida de cor bege. Ela está usando uma máscara cirúrgica azul clara e sua expressão facial, visível na área dos olhos, parece ser de concentração ou leve preocupação, com as sobrancelhas ligeiramente franzidas. A mulher segura duas caixas retangulares pequenas de cor branca, que parecem ser embalagens de medicamentos ou produtos de saúde, e as está examinando atentamente. O cenário atrás dela é de uma farmácia ou drogaria, com prateleiras repletas de diversas embalagens de produtos farmacêuticos e de saúde em várias cores e tamanhos. As cores predominantes na imagem são tons claros e neutros, com a iluminação sugerindo um ambiente interno bem iluminado. A composição centraliza a mulher, conectando sua ação ao contexto do local.",
+            "texto_extraido_ocr": "AÇÃO DE COMPRAS DE MEDICAMENTOS NO BRASIL AUMENTA 200%\n25 de Abril de 2024\nOs brasileiros passaram a comprar mais medicamentos após o governo federal anunciar que as doses das vacinas contra a COVID-19 entrariam em escassez.",
+            "analise_visual": {
+              "sentimento": "Neutro/Tensão",
+              "suspeita_manipulacao": "Nenhuma suspeita detectada. A imagem parece ser uma fotografia autêntica, possivelmente uma imagem de banco de dados, sem indícios visíveis de manipulação digital, inconsistências de iluminação ou características de IA generativa."
+            },
+            "contexto_geral": "A imagem mostra uma mulher em uma farmácia examinando medicamentos, um visual que se alinha diretamente com o texto sobreposto. O texto informa que as compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024, após o governo federal anunciar a escassez de doses de vacinas contra a COVID-19. Isso estabelece um contexto de preocupação pública e uma corrida por medicamentos, possivelmente como reação a uma crise de saúde ou falta de vacinas, indicando uma situação de possível escassez e impacto no comportamento do consumidor."
+          }
+        }
+      }
+    },
+    "modulo2": {
+      "timestamp": "2025-11-03T10:59:59.562364",
+      "resultado": {
+        "alegacao_id": 1,
+        "texto_da_alegacao": "As compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024.",
+        "justificativa_avaliacao": "Afirmação factual sobre um dado estatístico específico (aumento percentual de compras de medicamentos em data e local definidos), com alto interesse público devido ao seu potencial impacto social e econômico, e diretamente verificável através de dados de mercado ou saúde pública.",
+        "consultas_sugeridas_para_verificacao": [
+          "aumento compras medicamentos Brasil 200% 25 abril 2024",
+          "dados vendas farmácias Brasil abril 2024",
+          "mercado farmacêutico Brasil crescimento 2024"
+        ]
+      }
+    },
+    "modulo3": {
+      "timestamp": "2025-11-03T11:02:38.039319",
+      "resultado": {
+        "resumo_executivo": {
+          "total_fontes_analisadas": 10,
+          "fontes_alta_relevancia": 1,
+          "fontes_media_relevancia": 4,
+          "distribuicao_posicoes": {
+            "Contextualiza (Neutro)": 8,
+            "Contradiz": 1,
+            "Não Conclusivo": 1
+          }
+        },
+        "conclusao": {
+          "veredicto": "As evidências coletadas não apoiam a alegação de que as compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024. Pelo contrário, a ausência de qualquer menção a um evento tão significativo em fontes oficiais e noticiosas relevantes, combinada com a reportagem de um reajuste de preços de apenas 4,5% para 2024, sugere fortemente que a alegação é infundada.",
+          "convergencia": "Há uma convergência clara na ausência de evidências diretas que corroborem a alegação. Nenhuma das fontes de alta ou média relevância (como Agência Brasil, Idec, Ipea) reportou um aumento de 200% nas compras de medicamentos no período especificado. Em vez disso, essas fontes focaram em temas como o teto de reajuste de preços para 2024 (4,5%), pesquisas de mercado sobre preços e comportamento do consumidor, ou aquisições governamentais. A falta de divergência para um aumento tão expressivo é, em si, um forte indicativo de que o evento não ocorreu como alegado.",
+          "confiabilidade": "A evidência coletada é suficiente para chegar a uma conclusão. Apesar de não haver uma declaração explícita de que 'as compras *não* aumentaram 200%', a ausência total de qualquer menção a um evento de tamanha magnitude em veículos de notícias e órgãos governamentais relevantes para o período e tema, aliada à presença de informações sobre reajustes de preços muito mais modestos para o ano, torna a alegação altamente improvável e sem base factual. É razoável concluir que, se um aumento de 200% nas compras de medicamentos tivesse ocorrido, seria um fato amplamente noticiado e facilmente verificável, o que não se observa nos resultados da busca."
+        },
+        "analises_relevantes": {
+          "alta_relevancia": [
+            {
+              "fonte": "https://agenciabrasil.ebc.com.br/saude/noticia/2024-03/teto-para-reajuste-de-medicamentos-em-2024-fica-em-45",
+              "posicao": "Contradiz",
+              "afirmacao_chave": "A CMED fixou o teto de reajuste para medicamentos em 4,5% para 2024, anunciado em 29 de março de 2024, o que contraria a ideia de um aumento extraordinário de 200% nas compras ou o foco da notícia estaria nesse evento.",
+              "snippet": "A Câmara de Regulação do Mercado de Medicamentos (CMED) fixou o teto de reajuste para remédios em 4,5% neste ano, informou nesta sexta-feira (29) o Ministério da Saúde (MS)."
+            }
+          ],
+          "media_relevancia": [
+            {
+              "fonte": "https://www.procon.sp.gov.br/pesquisa-de-precos-de-medicamentos-2024/",
+              "posicao": "Contextualiza (Neutro)",
+              "afirmacao_chave": "O Procon-SP realizou uma pesquisa de preços de medicamentos em 2024, focando em diferenças de preços em cidades específicas, sem mencionar volume de compras ou aumentos percentuais."
+            },
+            {
+              "fonte": "https://idec.org.br/sites/default/files/medicamentos_sumario_executivo.pdf",
+              "posicao": "Não Conclusivo",
+              "afirmacao_chave": "O Idec publicou um sumário executivo sobre medicamentos e preços em farmácias em abril de 2024, que pode conter dados relevantes, mas o snippet em si não detalha aumento percentual de compras."
+            },
+            {
+              "fonte": "https://www.ipea.gov.br/cts/pt/central-de-conteudo/artigos/artigos/370-evolucao-das-aquisicoes-de-medicamentos-pelo-governo-federal-nas-ultimas-duas-decadas",
+              "posicao": "Contextualiza (Neutro)",
+              "afirmacao_chave": "O Ipea publicou uma atualização em 29 de abril de 2024 sobre a evolução das aquisições de medicamentos pelo governo federal, não abordando compras no varejo ou aumento de 200%."
+            },
+            {
+              "fonte": "https://narro.com.br/mergulho-profundo-no-mercado-farmaceutico-brasileiro-insights-de-2023-e-expectativas-para-2024/",
+              "posicao": "Contextualiza (Neutro)",
+              "afirmacao_chave": "Um relatório sobre o mercado farmacêutico brasileiro (2023/2024) aponta para a preferência de compra online e uso de e-commerce por parte dos consumidores, mas não menciona um aumento de 200% em compras."
+            }
+          ]
+        },
+        "evidencias_contradicao": [
+          "A CMED fixou o teto de reajuste para medicamentos em 4,5% para 2024, anunciado em 29 de março de 2024, o que contraria a ideia de um aumento extraordinário de 200% nas compras ou o foco da notícia estaria nesse evento."
+        ],
+        "evidencias_apoio": [],
+        "dados_completos": {
+          "relatorio_consolidado": {
+            "analises_individuais": [
+              {
+                "fonte": "https://www.procon.sp.gov.br/pesquisa-de-precos-de-medicamentos-2024/",
+                "snippet": "Entre as cidades em que o levantamento foi feito presencialmente, a maior diferença de preços apurada foi nos medicamentos genéricos em Presidente Prudente – em um estabelecimento o valor de venda do medicamento Nimesulida (apresentação ...",
+                "relevancia": "Média",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "O Procon-SP realizou uma pesquisa de preços de medicamentos em 2024, focando em diferenças de preços em cidades específicas, sem mencionar volume de compras ou aumentos percentuais."
+              },
+              {
+                "fonte": "https://www.gov.br/gestao/pt-br/assuntos/noticias/2024/outubro/governo-federal-implementa-margem-de-preferencia-para-produtos-nacionais-em-compras-publicas-de-medicamentos-para-o-sus",
+                "snippet": "No evento, foi anunciado investimento recorde para alavancar a produção nacional com foco em demandas estratégias do SUS, garantindo acesso a medicamentos e tratamentos à população.",
+                "relevancia": "Baixa",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "O governo federal anunciou em outubro de 2024 investimentos para a produção nacional de medicamentos para o SUS, o que não se relaciona com o aumento de compras de medicamentos no varejo em abril."
+              },
+              {
+                "fonte": "https://agenciabrasil.ebc.com.br/saude/noticia/2025-03/teto-para-reajuste-de-medicamentos-e-publicado-entenda",
+                "snippet": "Lista com os preços máximos que podem ser cobrados por cada produto fica disponível no site da Anvisa e é atualizada mensalmente.",
+                "relevancia": "Baixa",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "A Agência Brasil informou sobre a publicação do teto de reajuste de medicamentos para 2025, referente à regulação de preços, e não a volumes de compra."
+              },
+              {
+                "fonte": "https://agenciabrasil.ebc.com.br/saude/noticia/2024-03/teto-para-reajuste-de-medicamentos-em-2024-fica-em-45",
+                "snippet": "A Câmara de Regulação do Mercado de Medicamentos (CMED) fixou o teto de reajuste para remédios em 4,5% neste ano, informou nesta sexta-feira (29) o Ministério da Saúde (MS).",
+                "relevancia": "Alta",
+                "posicao": "Contradiz",
+                "afirmacao_chave": "A CMED fixou o teto de reajuste para medicamentos em 4,5% para 2024, anunciado em 29 de março de 2024, o que contraria a ideia de um aumento extraordinário de 200% nas compras ou o foco da notícia estaria nesse evento."
+              },
+              {
+                "fonte": "https://simtax.com.br/tabela-de-precos-de-medicamentos-cmed-2025-em-excel/",
+                "snippet": "Acesse agora a Tabela CMED 2025 completa e atualizada em Excel. Baixe de forma simples e prática os preços de medicamentos!",
+                "relevancia": "Baixa",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "O site SIMTAX oferece a Tabela CMED 2025 de preços de medicamentos, informação genérica e sem relação com a alegação de aumento de compras em 2024."
+              },
+              {
+                "fonte": "https://idec.org.br/sites/default/files/medicamentos_sumario_executivo.pdf",
+                "snippet": "medicamentos e os preços praticados em · farmácias · 3ª edição | abril 2024 · METODOLOGIA · ● · Três maiores redes de farmácia do Brasil (ranking Abrafarma · 2022) ● · 20 princípios ativos: 7 mantidos das pesquisas anteriores do Idec · e 13 selecionados segundo critério ...",
+                "relevancia": "Média",
+                "posicao": "Não Conclusivo",
+                "afirmacao_chave": "O Idec publicou um sumário executivo sobre medicamentos e preços em farmácias em abril de 2024, que pode conter dados relevantes, mas o snippet em si não detalha aumento percentual de compras."
+              },
+              {
+                "fonte": "https://www.ipea.gov.br/cts/pt/central-de-conteudo/artigos/artigos/370-evolucao-das-aquisicoes-de-medicamentos-pelo-governo-federal-nas-ultimas-duas-decadas",
+                "snippet": "Publicado em 31/07/2023 - Última modificação em 29/04/2024 às 17h48 · Fernanda De Negri, Carlos Eduardo R. de Mello, Adriano Cabral Linhares Mourthe ... O governo brasileiro é responsável por um volume significativo de compras de medicamentos, que também representam uma parcela não desprezível do total de gastos com a saúde pública no país.",
+                "relevancia": "Média",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "O Ipea publicou uma atualização em 29 de abril de 2024 sobre a evolução das aquisições de medicamentos pelo governo federal, não abordando compras no varejo ou aumento de 200%."
+              },
+              {
+                "fonte": "https://narro.com.br/mergulho-profundo-no-mercado-farmaceutico-brasileiro-insights-de-2023-e-expectativas-para-2024/",
+                "snippet": "Segundo a Panorama Farmacêutico, 48% dos brasileiros preferem comprar produtos farmacêuticos online, e 85% já realizaram compras através de plataformas de e-commerce. Este comportamento é mais comum entre as classes A e B, e entre os jovens ...",
+                "relevancia": "Média",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "Um relatório sobre o mercado farmacêutico brasileiro (2023/2024) aponta para a preferência de compra online e uso de e-commerce por parte dos consumidores, mas não menciona um aumento de 200% em compras."
+              },
+              {
+                "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2025/fevereiro/ministerio-da-saude-investiu-r-1-8-bilhao-na-assistencia-farmaceutica-em-2024",
+                "snippet": "O Ministério da Saúde investiu R$ 1,8 bilhão na aquisição de medicamentos e insumos disponíveis para a população nas Unidades Básicas de Saúde (UBSs) de todo o país em 2024.",
+                "relevancia": "Baixa",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "O Ministério da Saúde investiu R$ 1,8 bilhão em assistência farmacêutica em 2024, referente a compras governamentais, sem relação com a alegação de aumento de 200% nas compras no varejo."
+              },
+              {
+                "fonte": "https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/cmed/compras-publicas/lista-de-precos-maximos-para-compras-publicas",
+                "snippet": "Publicado em 02/10/2020 09h31 Atualizado em 22/02/2024 15h58 · A lista de preços de medicamentos para compras públicas contém o teto de preço pelo qual entes da Administração Pública podem adquirir medicamentos.",
+                "relevancia": "Baixa",
+                "posicao": "Contextualiza (Neutro)",
+                "afirmacao_chave": "A Anvisa mantém uma lista de preços máximos para compras públicas de medicamentos, atualizada em fevereiro de 2024, que não aborda o volume ou aumento de compras no varejo."
+              }
+            ],
+            "sintese_geral": {
+              "forca_e_direcao": "As evidências coletadas não apoiam a alegação de que as compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024. Pelo contrário, a ausência de qualquer menção a um evento tão significativo em fontes oficiais e noticiosas relevantes, combinada com a reportagem de um reajuste de preços de apenas 4,5% para 2024, sugere fortemente que a alegação é infundada.",
+              "convergencia_divergencia": "Há uma convergência clara na ausência de evidências diretas que corroborem a alegação. Nenhuma das fontes de alta ou média relevância (como Agência Brasil, Idec, Ipea) reportou um aumento de 200% nas compras de medicamentos no período especificado. Em vez disso, essas fontes focaram em temas como o teto de reajuste de preços para 2024 (4,5%), pesquisas de mercado sobre preços e comportamento do consumidor, ou aquisições governamentais. A falta de divergência para um aumento tão expressivo é, em si, um forte indicativo de que o evento não ocorreu como alegado.",
+              "suficiencia": "A evidência coletada é suficiente para chegar a uma conclusão. Apesar de não haver uma declaração explícita de que 'as compras *não* aumentaram 200%', a ausência total de qualquer menção a um evento de tamanha magnitude em veículos de notícias e órgãos governamentais relevantes para o período e tema, aliada à presença de informações sobre reajustes de preços muito mais modestos para o ano, torna a alegação altamente improvável e sem base factual. É razoável concluir que, se um aumento de 200% nas compras de medicamentos tivesse ocorrido, seria um fato amplamente noticiado e facilmente verificável, o que não se observa nos resultados da busca."
+            }
+          }
+        }
+      }
+    },
+    "modulo4": {
+      "timestamp": "2025-11-03T11:03:48.997095",
+      "resultado": {
+        "veredito": "DESINFORMAÇÃO",
+        "confianca": 0.95,
+        "explicacao": "A alegação de que \"As compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024\" é classificada como desinformação porque a análise pericial das evidências revela uma completa ausência de qualquer suporte factual. Nenhuma das 10 fontes analisadas, incluindo veículos de alta e média relevância como a Agência Brasil, Idec e Ipea, reportou um aumento tão extraordinário no volume de compras de medicamentos na data especificada ou em qualquer período próximo. Pelo contrário, a principal evidência relevante da Agência Brasil indica que a Câmara de Regulação do Mercado de Medicamentos (CMED) fixou o teto de reajuste para medicamentos em 4,5% para o ano de 2024, anunciado em março. Um aumento de 200% nas compras representaria uma anomalia de mercado de proporções gigantescas e seria, sem dúvida, amplamente noticiado e facilmente verificável em fontes oficiais e noticiosas. A especificidade da data e a magnitude do número, sem qualquer atribuição de fonte ou contexto verificável, sugerem a fabricação de um dado para enganar o público.",
+        "distribuicao_probabilistica": {
+          "VERDADEIRA": 0,
+          "DESINFORMAÇÃO": 0.95,
+          "PROPAGANDA": 0.05,
+          "CLICKBAIT": 0.6,
+          "SÁTIRA": 0,
+          "ERRO DE EDIÇÃO": 0,
+          "CONTEÚDO PATROCINADO": 0,
+          "NOTÍCIAS TENDENCIOSAS": 0.1,
+          "TEORIA DA CONSPIRAÇÃO": 0,
+          "PSEUDOCIÊNCIA": 0
+        },
+        "justificativa_scores": "O score de DESINFORMAÇÃO (0.95) é altíssimo devido à completa ausência de evidências de apoio e à contradição implícita por informações regulatórias (reajuste de 4,5% em vez de um aumento de 200% nas compras). A alegação carece totalmente de base factual e é, portanto, falsa. O score para CLICKBAIT (0.6) é moderado porque o percentual exagerado de 200% e a data específica, sem fonte, são táticas comuns para atrair a atenção do público. As demais categorias receberam scores baixos ou zero, pois não há elementos que sugiram propaganda, sátira, erro de edição (um número tão grande não é um simples erro), conteúdo patrocinado, teoria da conspiração ou pseudociência, e a alegação não é verdadeira.",
+        "html_report": "\n<!DOCTYPE html><html lang=\"pt-BR\"><head><meta charset=\"UTF-8\"><title>Resultado da Verificação</title><style>body{font-family:sans-serif;background:#f0f2f5;padding:20px;color:#333}.container{max-width:800px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.1);overflow:hidden}.header{background:#4a5568;color:white;padding:30px;text-align:center}h1,h2,h3{margin:0}.veredicto-principal{background:#c53030;color:white;padding:30px;text-align:center}.veredicto-principal .emoji{font-size:48px;margin-bottom:10px}.veredicto-principal h2{font-size:32px;margin-bottom:5px}.veredicto-principal .score{opacity:0.9}.content{padding:30px}.section{margin-bottom:30px}.section h3{font-size:20px;color:#2c5282;padding-bottom:10px;border-bottom:2px solid #e2e8f0;margin-bottom:15px}.explicacao,.justificativa{background:#f7fafc;padding:20px;border-radius:8px;border-left:4px solid #4299e1;line-height:1.7}.justificativa{border-left-color:#ed8936;background:#fffaf0}.distribuicao{display:grid;gap:12px}.categoria{display:flex;align-items:center;padding:12px;background:#f7fafc;border-radius:8px}.categoria-nome{font-weight:600;flex-basis:200px}.categoria-barra{flex-grow:1;margin:0 15px;background:#e2e8f0;height:10px;border-radius:5px;overflow:hidden}.categoria-barra-fill{background:#4299e1;height:100%;border-radius:5px;width:95%}.categoria-score{font-weight:bold;color:#2c5282}</style></head><body><div class=\"container\"><div class=\"header\"><h1>🔍 Resultado da Verificação de Fatos</h1></div><div class=\"veredicto-principal\"><div class=\"emoji\">❌</div><h2>DESINFORMAÇÃO</h2><div class=\"score\">Confiança: 95%</div></div><div class=\"content\"><div class=\"section\"><h3>📝 Explicação Detalhada</h3><div class=\"explicacao\">A alegação de que \"As compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024\" é classificada como desinformação porque a análise pericial das evidências revela uma completa ausência de qualquer suporte factual. Nenhuma das 10 fontes analisadas, incluindo veículos de alta e média relevância como a Agência Brasil, Idec e Ipea, reportou um aumento tão extraordinário no volume de compras de medicamentos na data especificada ou em qualquer período próximo. Pelo contrário, a principal evidência relevante da Agência Brasil indica que a Câmara de Regulação do Mercado de Medicamentos (CMED) fixou o teto de reajuste para medicamentos em 4,5% para o ano de 2024, anunciado em março. Um aumento de 200% nas compras representaria uma anomalia de mercado de proporções gigantescas e seria, sem dúvida, amplamente noticiado e facilmente verificável em fontes oficiais e noticiosas. A especificidade da data e a magnitude do número, sem qualquer atribuição de fonte ou contexto verificável, sugerem a fabricação de um dado para enganar o público.</div></div><div class=\"section\"><h3>📊 Distribuição Probabilística</h3><div class=\"distribuicao\"><div class=\"categoria\"><div class=\"categoria-nome\">DESINFORMAÇÃO</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:95%\"></div></div><div class=\"categoria-score\">95%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">CLICKBAIT</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:60%\"></div></div><div class=\"categoria-score\">60%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">NOTÍCIAS TENDENCIOSAS</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:10%\"></div></div><div class=\"categoria-score\">10%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">PROPAGANDA</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:5%\"></div></div><div class=\"categoria-score\">5%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">VERDADEIRA</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:0%\"></div></div><div class=\"categoria-score\">0%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">SÁTIRA</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:0%\"></div></div><div class=\"categoria-score\">0%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">ERRO DE EDIÇÃO</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:0%\"></div></div><div class=\"categoria-score\">0%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">CONTEÚDO PATROCINADO</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:0%\"></div></div><div class=\"categoria-score\">0%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">TEORIA DA CONSPIRAÇÃO</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:0%\"></div></div><div class=\"categoria-score\">0%</div></div><div class=\"categoria\"><div class=\"categoria-nome\">PSEUDOCIÊNCIA</div><div class=\"categoria-barra\"><div class=\"categoria-barra-fill\" style=\"width:0%\"></div></div><div class=\"categoria-score\">0%</div></div></div></div><div class=\"section\"><h3>💡 Justificativa dos Scores</h3><div class=\"justificativa\">O score de DESINFORMAÇÃO (0.95) é altíssimo devido à completa ausência de evidências de apoio e à contradição implícita por informações regulatórias (reajuste de 4,5% em vez de um aumento de 200% nas compras). A alegação carece totalmente de base factual e é, portanto, falsa. O score para CLICKBAIT (0.6) é moderado porque o percentual exagerado de 200% e a data específica, sem fonte, são táticas comuns para atrair a atenção do público. As demais categorias receberam scores baixos ou zero, pois não há elementos que sugiram propaganda, sátira, erro de edição (um número tão grande não é um simples erro), conteúdo patrocinado, teoria da conspiração ou pseudociência, e a alegação não é verdadeira.</div></div></div></div></body></html>",
+        "markdown_report": "# 🔍 RESULTADO DA VERIFICAÇÃO\n\n## ❌ VEREDITO: DESINFORMAÇÃO\n**Confiança:** 95%\n\n---\n\n### 📝 EXPLICAÇÃO DETALHADA\nA alegação de que \"As compras de medicamentos no Brasil aumentaram 200% em 25 de abril de 2024\" é classificada como desinformação porque a análise pericial das evidências revela uma completa ausência de qualquer suporte factual. Nenhuma das 10 fontes analisadas, incluindo veículos de alta e média relevância como a Agência Brasil, Idec e Ipea, reportou um aumento tão extraordinário no volume de compras de medicamentos na data especificada ou em qualquer período próximo. Pelo contrário, a principal evidência relevante da Agência Brasil indica que a Câmara de Regulação do Mercado de Medicamentos (CMED) fixou o teto de reajuste para medicamentos em 4,5% para o ano de 2024, anunciado em março. Um aumento de 200% nas compras representaria uma anomalia de mercado de proporções gigantescas e seria, sem dúvida, amplamente noticiado e facilmente verificável em fontes oficiais e noticiosas. A especificidade da data e a magnitude do número, sem qualquer atribuição de fonte ou contexto verificável, sugerem a fabricação de um dado para enganar o público.\n\n---\n\n### 📊 DISTRIBUIÇÃO PROBABILÍSTICA\n**DESINFORMAÇÃO:** █████████░ 95%\n**CLICKBAIT:** ██████░░░░ 60%\n**NOTÍCIAS TENDENCIOSAS:** █░░░░░░░░░ 10%\n**PROPAGANDA:** ░░░░░░░░░░ 5%\n**VERDADEIRA:** ░░░░░░░░░░ 0%\n**SÁTIRA:** ░░░░░░░░░░ 0%\n**ERRO DE EDIÇÃO:** ░░░░░░░░░░ 0%\n**CONTEÚDO PATROCINADO:** ░░░░░░░░░░ 0%\n**TEORIA DA CONSPIRAÇÃO:** ░░░░░░░░░░ 0%\n**PSEUDOCIÊNCIA:** ░░░░░░░░░░ 0%\n\n---\n\n### 💡 JUSTIFICATIVA DOS SCORES\nO score de DESINFORMAÇÃO (0.95) é altíssimo devido à completa ausência de evidências de apoio e à contradição implícita por informações regulatórias (reajuste de 4,5% em vez de um aumento de 200% nas compras). A alegação carece totalmente de base factual e é, portanto, falsa. O score para CLICKBAIT (0.6) é moderado porque o percentual exagerado de 200% e a data específica, sem fonte, são táticas comuns para atrair a atenção do público. As demais categorias receberam scores baixos ou zero, pois não há elementos que sugiram propaganda, sátira, erro de edição (um número tão grande não é um simples erro), conteúdo patrocinado, teoria da conspiração ou pseudociência, e a alegação não é verdadeira."
+      }
+    }
+  },
+  "dados_iniciais": {
+    "tipo_midia": "imagem",
+    "arquivo_imagem": "logs_projetos\\f62d68ee-3ad1-464a-8419-7b909585b526\\imagens\\20251103_105338_92121d_desinformacao_1.png",
+    "url_fonte": null,
+    "contexto_adicional": null,
+    "projeto_id": "f62d68ee-3ad1-464a-8419-7b909585b526"
+  },
+  "criado_em": "2025-11-02T23:02:25.823856",
+  "nome": "imagem_covid",
+  "descricao": "",
+  "finalizado_em": "2025-11-03T11:03:48.997095"
+}

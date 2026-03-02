@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso - Jornada Agêntica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='img/logo-front.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='scr/login.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="login-container">
+        <div class="welcome-side">
+            <div class="glass-card welcome-box">
+                <div class="logos">
+                    <img src="{{ url_for('static', path='img/PPGGTD.jpeg') }}" alt="Logo PPGGTD" class="logo-img">
+                    <img src="{{ url_for('static', path='img/logo_tre_go.png') }}" alt="Logo TRE-GO" class="logo-img">
+                </div>
+                <div class="welcome-text">
+                    <h2>Uma Jornada Agêntica</h2>
+                    <div class="academic-info">
+                        <p>
+                            Pesquisa aplicada desenvolvida no âmbito do Mestrado Profissional em Modelagem Computacional e
+                            Transformação Digital (UFT) em convênio com o Tribunal Regional Eleitoral de Goiás (TRE-GO).
+                        </p>
+                        <hr class="divider">
+                        <p class="credits">
+                            Pesquisador: <strong>Bruno Mortari</strong><br>
+                            Orientador: <strong>Prof. Dr. Gentil Veloso Barbosa</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-side">
+            <div class="glass-card login-box">
+                <h3>Acesso à Pesquisa</h3>
+                <p>Credenciais já configuradas.</p>
+
+                {% if error %}
+                <div class="error-message">
+                    <i class="uil uil-exclamation-triangle"></i> {{ error }}
+                </div>
+                {% endif %}
+
+                <form action="/login" method="post">
+                    <div class="input-group">
+                        <i class="uil uil-user"></i>
+                        <input type="text" id="username" name="username" value="admin" readonly>
+                    </div>
+                    <div class="input-group">
+                        <i class="uil uil-lock"></i>
+                        <input type="password" id="password" name="password" value="mestrado" readonly>
+                    </div>
+                    <button type="submit" class="login-button">
+                        Acessar Ambiente <i class="uil uil-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', path='scr/login.js') }}"></script>
+</body>
+
+</html>

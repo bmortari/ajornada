@@ -1,0 +1,289 @@
+/**
+ * Sistema LIA - Projetos Page CSS (Horizontal Cards)
+ * ====================================================
+ * Uses globals.css variables (Shadcn/Tailwind)
+ */
+
+/* ====== Header ====== */
+.projetos-page {
+    max-width: 1200px;
+}
+
+.projetos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    animation: slideDown 0.4s ease-out;
+}
+
+.projetos-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.projetos-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--muted);
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.projetos-icon:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.projetos-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.projetos-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    margin: 2px 0 0 0;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== Filters ====== */
+.projetos-filters {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.projetos-count {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    white-space: nowrap;
+}
+
+.projetos-count span {
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+/* ====== List (Horizontal) ====== */
+.projetos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ====== Horizontal Project Row ====== */
+.projeto-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1.25rem;
+    transition: all 0.15s ease;
+    flex-direction: row;
+}
+
+.projeto-row:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ID Column */
+.projeto-row-id {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 72px;
+    flex-shrink: 0;
+}
+
+.projeto-id-label {
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.projeto-id-num {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--foreground);
+    font-family: var(--font-mono, monospace);
+}
+
+/* Main content (title + desc) */
+.projeto-row-main {
+    flex: 1;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.projeto-row-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.15s ease;
+}
+
+.projeto-row:hover .projeto-row-title {
+    color: var(--primary);
+}
+
+.projeto-row-desc {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    margin: 2px 0 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* SEI Protocol in card */
+.projeto-row-sei {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+.sei-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: hsl(142 76% 36%);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sei-numero {
+    font-family: var(--font-mono, monospace);
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+/* Badges */
+.projeto-row-badges {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.stage-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: white;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Meta (unit + date) */
+.projeto-row-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    min-width: 100px;
+    flex-shrink: 0;
+}
+
+.projeto-row-unidade {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.projeto-row-data {
+    font-size: 0.7rem;
+    color: var(--muted-foreground);
+    white-space: nowrap;
+    font-family: var(--font-mono, monospace);
+}
+
+/* Actions */
+.projeto-row-actions {
+    display: flex;
+    gap: 0.25rem;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity 0.15s ease;
+}
+
+.projeto-row:hover .projeto-row-actions {
+    opacity: 1;
+}
+
+/* ====== Empty State ====== */
+.projetos-empty {
+    border-style: dashed;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 900px) {
+    .projeto-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .projeto-row-main {
+        flex-basis: calc(100% - 90px);
+    }
+
+    .projeto-row-badges,
+    .projeto-row-meta {
+        flex-basis: auto;
+    }
+
+    .projeto-row-actions {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .projetos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .projetos-filters {
+        flex-wrap: wrap;
+    }
+
+    .projetos-count {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jornada Agêntica{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', path='img/logo-front.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', path='scr/base.css') }}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+
+    <header>
+        <div class="header-left">
+            <button id="sidebar-toggle" class="menu-btn"
+                style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; margin-right: 15px;">
+                <i class="uil uil-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="uil uil-university"></i>
+                <span>Uma Jornada de transformação digital no serviço público: <br>rumo ao agêntico</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <button id="theme-toggle" class="theme-btn">
+                <i class="uil uil-moon"></i>
+                <span>Escuro</span>
+            </button>
+
+            {% if user %}
+            <div
+                style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px; height: 30px; display: flex; align-items: center;">
+                <a href="{{ url_for('logout') }}" style="display: flex; align-items: center; gap: 8px;">
+                    <span>Sair</span>
+                    <i class="uil uil-signout"></i>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="main-container">
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li>
+                    <a href="{{ url_for('read_inicio') }}" class="{% if active_page == 'inicio' %}active{% endif %}">
+                        <i class="uil uil-estate"></i> <span>Início</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('read_apresentacao') }}" class="{% if active_page == 'apresentacao' %}active{% endif %}">
+                        <i class="uil uil-presentation-play"></i> <span>Apresentação</span>
+                    </a>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="javascript:void(0)" class="{% if active_page == 'tese' %}active{% endif %}">
+                        <div style="display: flex; align-items: center;">
+                            <i class="uil uil-book-alt"></i> <span>Dissertação</span>
+                        </div>
+                        <i class="uil uil-angle-down submenu-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="{{ url_for('read_tese') }}">
+                                <i class="uil uil-monitor"></i> <span>Versão Web</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('read_tese_pdf') }}">
+                                <i class="uil uil-file-alt"></i> <span>Versão PDF</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li>
+                    <a href="{{ url_for('read_produtos') }}"
+                        class="{% if active_page == 'produtos' %}active{% endif %}">
+                        <i class="uil uil-layer-group"></i> <span>Produtos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('read_agradecimentos') }}"
+                        class="{% if active_page == 'agradecimentos' %}active{% endif %}">
+                        <i class="uil uil-heart"></i> <span>Agradecimentos</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="content-wrapper">
+            <main class="main-content">
+                {% block content %}
+                <div class="project-hero" style="background-image: linear-gradient(to right, #1b5e20, #2e7d32);">
+                    <div class="hero-content">
+                        <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 15px;">Bem-vindo ao Projeto</h1>
+                        <p style="font-size: 1.1rem; opacity: 0.9; font-weight: 300;">Navegue pelo menu lateral para
+                            acessar a Tese e os Produtos desenvolvidos.</p>
+                    </div>
+                </div>
+                {% endblock %}
+            </main>
+
+            <!-- <footer class="main-footer">
+                <div class="footer-logos">
+                    <img src="{{ url_for('static', path='img/PPGGTD.jpeg') }}" alt="UFT" class="footer-logo-img">
+                    <img src="{{ url_for('static', path='img/logo_tre_go.png') }}" alt="TRE-GO" class="footer-logo-img">
+                </div>
+                <div class="footer-contacts">
+                    <p><strong>Bruno Mortari</strong></p>
+                    <p style="opacity: 0.7; margin-top: 4px;">Mestrado Profissional UFT & TRE-GO</p>
+                </div>
+            </footer> -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='scr/base.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

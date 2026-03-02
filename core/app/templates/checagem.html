@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{# Define o título que aparecerá na aba do navegador #}
+{% block title %}Artigo Científico{% endblock %}
+
+{# Adiciona estilos CSS específicos para esta página, se necessário #}
+{% block styles %}
+<style>
+    /* Estilo para o container do PDF ocupar o espaço principal */
+    .pdf-container {
+        width: 100%;
+        height: 100vh; /* Ocupa 100% da altura da viewport */
+        display: flex;
+        flex-direction: column;
+    }
+    /* O elemento que carrega o PDF */
+    .pdf-embed {
+        flex-grow: 1; /* Faz o embed crescer para ocupar o espaço disponível */
+        border: none; /* Remove bordas indesejadas */
+    }
+</style>
+{% endblock %}
+
+{# O conteúdo principal da página: o visualizador de PDF #}
+{% block content %}
+<div class="pdf-container">
+    <embed 
+        src="{{ url_for('static', path='pdf/checagem.pdf') }}" 
+        type="application/pdf" 
+        class="pdf-embed"
+    />
+</div>
+{% endblock %}
