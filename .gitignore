@@ -1,5 +1,6 @@
 # Secrets - NUNCA commitar
 .env
+*.dev
 *.env
 !*.env.example
 

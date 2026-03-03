@@ -1,10 +1,18 @@
 # =============================================================
 # AJORNADA - Docker Compose Unificado
 # =============================================================
-# Uso:
-#   Todos os serviços:     docker compose up -d
-#   Serviço específico:    docker compose up -d core
-#   Rebuild e subir:       docker compose up -d --build <serviço>
+#
+# AMBIENTES — tudo controlado pelo arquivo .env na raiz:
+#
+#   DEV  (máquina local):   cp .env.example .env
+#                           edite .env com URLs localhost
+#                           docker compose up -d --build
+#
+#   PROD (servidor):        cp .env.prod .env
+#                           docker compose up -d --build
+#
+# Comandos úteis:
+#   Serviço específico:    docker compose up -d --build <serviço>
 #   Ver logs:              docker compose logs -f <serviço>
 #   Parar tudo:            docker compose down
 # =============================================================
@@ -20,13 +28,13 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - URL_APP_8001=https://chat.ajornada.top/chatnormas
-      - URL_APP_8002=https://palanqueia.ajornada.top/palanqueia
-      - URL_APP_8003=https://iata.ajornada.top/iata
-      - URL_APP_8004=https://mosaiko.ajornada.top
-      - URL_APP_8005=https://lia.ajornada.top
-      - URL_APP_8006=https://auditoria.ajornada.top
-      - URL_APP_8007=https://chatdatajud.ajornada.top
+      - URL_APP_8001=${URL_APP_8001}
+      - URL_APP_8002=${URL_APP_8002}
+      - URL_APP_8003=${URL_APP_8003}
+      - URL_APP_8004=${URL_APP_8004}
+      - URL_APP_8005=${URL_APP_8005}
+      - URL_APP_8006=${URL_APP_8006}
+      - URL_APP_8007=${URL_APP_8007}
     restart: unless-stopped
     networks:
       - nativa-net
@@ -75,6 +83,7 @@ services:
     container_name: auditoria
     ports:
       - "8006:8006"
+    env_file: .env
     restart: always
     networks:
       - nativa-net
@@ -106,8 +115,7 @@ services:
     container_name: lia-app
     ports:
       - "8005:8000"
-    env_file:
-      - ./lia/.env
+    env_file: .env
     environment:
       - APP_NAME=Sistema LIA
       - REDIS_URL=redis://lia-redis:6379/0
@@ -129,7 +137,7 @@ services:
       dockerfile: Dockerfile
       target: production
       args:
-        - NEXT_PUBLIC_API_URL=https://lia.ajornada.top
+        - NEXT_PUBLIC_API_URL=${LIA_PUBLIC_API_URL}
         - API_PROXY_URL=http://lia:8000
     container_name: lia-frontend
     ports:
@@ -190,7 +198,7 @@ services:
       - "8001:8000"
     volumes:
       - ./chatCNJ/backend/app:/app/app
-    env_file: ./chatCNJ/.env
+    env_file: .env
     environment:
       DATABASE_URL: postgresql://normas:${CHATNORMAS_POSTGRES_PASSWORD:-normas_secret}@chatnormas-postgres:5432/normas
     depends_on:
@@ -259,7 +267,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./chatdatajud/backend/app:/app/app
-    env_file: ./chatdatajud/.env
+    env_file: .env
     environment:
       CUBE_API_URL: http://chatdatajud-cube:4000/cubejs-api/v1
       CUBE_API_SECRET: ${CUBE_API_SECRET:-cube_secret_change_me}
